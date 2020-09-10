@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {getExpStr, getPackageStr} from "../../../utils/jobDetailsUtils";
-import {getPublicJdURL} from "../../../utils/getUrl";
 import getKey from "../../../utils/getKey";
 import SpanWithIcon from "../../molecules/SpanWithIcon";
 import "./CollectionCard.scss";
 import Button from "../../../ui-components/Button";
 
-const CollectionCard = ({ jobDetails }) => {
+const CollectionCard = ({ jobDetails, companyName }) => {
   return (
       <div className="CollectionCard">
           <div className="card-details">
@@ -21,7 +20,7 @@ const CollectionCard = ({ jobDetails }) => {
 
             <div className="cardContent">
           <h4>{jobDetails.designation}</h4>
-          <h5>{jobDetails.companyName}</h5>
+          <h5>{companyName}</h5>
           <div className="jobDetails">
             <span className="cities">{jobDetails.cities.join(", ")}</span>
             <hr className="hideInM detailsSep" />
@@ -69,9 +68,11 @@ const CollectionCard = ({ jobDetails }) => {
         <div className="action-btn-grp">
             <Button
                 className=""
-                onClick={() => window.open(
-                    getPublicJdURL(jobDetails.jobId, jobDetails.designation)
-                )}
+                onClick={() => {
+                    const winRef = window.open(`${location.pathname}/${jobDetails.jobId}`);
+                    jobDetails.companyName = companyName;
+                    winRef.data = jobDetails;
+                }}
                 appearance="secondary"
                 type="button"
                 size="small"

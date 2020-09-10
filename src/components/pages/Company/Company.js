@@ -66,7 +66,7 @@ class Company extends Component {
                 <div className="jobs-grp">
                     {
                         companyData.jobs.map((job) => {
-                            return <CollectionCard key={job.jobId} jobDetails={job}/>
+                            return <CollectionCard key={job.jobId} jobDetails={job} companyName={companyData.companyName}/>
                         })
                     }
                 </div>

@@ -17,6 +17,7 @@ import userTimingsTracker from "./analytics/userTimings";
 import ErrorBoundary from "./components/pages/ErrorBoundary/ErrorBoundary";
 import isMobileDevice from "./utils/isMobileDevice";
 import Company from "./components/pages/Company";
+import CompanyJobDetail from "./components/pages/CompanyJobDetail";
 
 window.__bgperformance = userTimingsTracker();
 
@@ -85,7 +86,8 @@ class App extends Component {
       practice,
       home,
       addPhoneNumber,
-      companyLanding
+      companyLanding,
+      companyJobDetail
     } = routeConfig;
     if (
       !accessToken &&
@@ -120,6 +122,7 @@ class App extends Component {
               {accessToken && (
                 <Route exact path={[addPhoneNumber]} component={Registration} />
               )}
+              <Route exact path={companyJobDetail} component={CompanyJobDetail}/>
               <Route exact path={companyLanding} component={Company}/>
               {accessToken && (
                 <Route exact path={[root, home]} component={Home} />
