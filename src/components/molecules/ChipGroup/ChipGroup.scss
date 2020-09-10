@@ -1,0 +1,40 @@
+@import "../../../assets/styles/common";
+
+.chipItem {
+  margin: getRem(10 10 0 0);
+}
+
+.chipListWrapper.stackBelow {
+  display: flex;
+  flex-direction: column;
+
+  .chipItem {
+    margin: getRem(0 auto 8 0);
+    height: getRem(32);
+    font-size: getRem(15);
+
+    &.selected .chipLabel {
+      color: $midnight;
+    }
+
+    .chipLabel {
+      color: $dusk;
+      padding: getRem(0 20);
+    }
+  }
+}
+
+.ChipGroup__Icon {
+  margin-right: getRem(-8);
+}
+
+.chipGroupClass {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  overflow: auto;
+}
+
+.chipLabel .davidIcon {
+  margin: getRem(2 0 0 4);
+}

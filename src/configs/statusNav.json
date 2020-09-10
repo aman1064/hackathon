@@ -1,0 +1,29 @@
+{
+  "jobs": {
+    "exact": true,
+    "path": "/jobs",
+    "icon": "Jobs",
+    "title": "Jobs",
+    "enabled": true,
+    "cleverTap": "JobsClicked_browse",
+    "activePath": "Jobs jobsviewedJobs jobssavedJobs"
+  },
+  "applied": {
+    "exact": true,
+    "path": "/applied",
+    "icon": "Applied",
+    "title": "Applied",
+    "enabled": true,
+    "cleverTap": "AppliedClicked_browse",
+    "activePath": "Applied"
+  },
+  "profile": {
+    "exact": true,
+    "path": "/profile",
+    "icon": "Profile",
+    "title": "Profile",
+    "enabled": true,
+    "cleverTap": "ProfileClicked_browse",
+    "activePath": "Profile profilesetting"
+  }
+}

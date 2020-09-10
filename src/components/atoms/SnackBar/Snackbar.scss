@@ -1,0 +1,49 @@
+@import "../../../assets//styles/common";
+
+.Snackbar {
+  .success {
+    background-color: $jagged_ice;
+    color: $persian_green;
+  }
+  .warning {
+    background-color: $cape_honey;
+    color: $midnight_express;
+    font-size: 12px;
+    padding: getRem(12 16);
+    font-family: $nunitoSans;
+    img {
+      margin-right: 12px;
+    }
+  }
+  .socialLogin {
+    background-color: #ccebea;
+    height: getRem(48);
+    color: #009b95;
+    padding: getRem(10 16 14 16);
+    font-size: 14px;
+    img {
+      margin-top: 6px;
+      margin-right: 8px;
+    }
+  }
+
+  .Snackbar-Action {
+    padding-left: 0;
+  }
+
+  .Snackbar-Message {
+    width: 100%;
+    padding: 0;
+    bottom: 20px;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .error {
+    background-color: $scarlet;
+  }
+}
+.paddingleft28 {
+  padding-left: getRem(28);
+}

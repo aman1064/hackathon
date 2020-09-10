@@ -1,0 +1,24 @@
+@import "../../../assets//styles/common";
+.ReadMore {
+  position: relative;
+  .icon_cheveronDown,
+  .icon_cheveronUp {
+    font-size: 0;
+    &::after {
+      content: "";
+      display: inline-block;
+      height: getRem(10);
+      width: getRem(10);
+      border: getRem(2) solid $midnight;
+      border-width: getRem(0 2 2 0);
+      transform: rotate(45deg);
+      position: absolute;
+      right: 0;
+      top: getRem(2);
+      transition: 0.3s;
+    }
+  }
+  .icon_cheveronUp::after {
+    transform: rotate(-135deg);
+  }
+}

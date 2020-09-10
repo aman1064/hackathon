@@ -1,0 +1,49 @@
+@import "../../assets/styles/common";
+
+.chip {
+  border-radius: 16px;
+  border: 1px solid $light_blue_grey;
+  color: $blue_grey;
+  height: getRem(32);
+  margin: getRem(8 8 0 0);
+  display: inline-flex;
+  font-size: 13px;
+  font-family: $nunitoSans;
+  align-items: center;
+  cursor: pointer;
+
+  .label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    color: inherit;
+    padding: getRem(2 16);
+    font-size: 13px;
+    max-width: calc(100vw - #{getRem(72)});
+
+    @include respond-from(500px) {
+      max-width: getRem(424);
+    }
+  }
+
+  &.secondary {
+    border-color: $peach;
+    background: $oasis;
+    color: $midnight;
+  }
+
+  .icon {
+    width: 14px;
+    margin: 4px 10px 0 -6px;
+    position: static;
+  }
+
+  .chipAddIcon {
+    margin: 2px -6px 0 6px;
+  }
+
+  .chipLabel {
+    margin: getRem(2 0 0 4);
+  }
+}

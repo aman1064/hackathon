@@ -1,0 +1,212 @@
+{
+  "name": "david-jobseeker-mobile-site",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "7.1.6",
+    "autosuggest-highlight": "^3.1.1",
+    "bfj": "6.1.1",
+    "case-sensitive-paths-webpack-plugin": "2.1.2",
+    "chalk": "^2.4.1",
+    "change-case": "^3.1.0",
+    "classnames": "^2.2.6",
+    "create-react-app": "^2.1.3",
+    "css-loader": "1.0.0",
+    "dayjs": "^1.8.23",
+    "debounce": "^1.2.0",
+    "dotenv": "^6.0.0",
+    "dotenv-expand": "4.2.0",
+    "downshift": "^3.2.2",
+    "ejs": "^3.0.1",
+    "ejs-loader": "^0.3.5",
+    "express": "^4.17.1",
+    "express-useragent": "^1.0.13",
+    "file-loader": "2.0.0",
+    "fingerprintjs2": "^2.1.0",
+    "fork-ts-checker-webpack-plugin-alt": "0.4.14",
+    "fs-extra": "7.0.0",
+    "git-revision-webpack-plugin": "^3.0.3",
+    "glob": "^7.1.4",
+    "hard-source-webpack-plugin": "^0.13.1",
+    "html-webpack-plugin": "4.0.0-alpha.2",
+    "jest": "^24.1.0",
+    "jquery": "^3.4.0",
+    "keymirror": "^0.1.1",
+    "localforage": "^1.7.3",
+    "lodash.deburr": "^4.1.0",
+    "mini-css-extract-plugin": "0.4.3",
+    "newrelic": "^6.1.0",
+    "optimize-css-assets-webpack-plugin": "5.0.1",
+    "pnp-webpack-plugin": "1.1.0",
+    "postcss-flexbugs-fixes": "4.1.0",
+    "postcss-loader": "3.0.0",
+    "postcss-preset-env": "6.3.1",
+    "postcss-safe-parser": "4.0.1",
+    "progress-bar-webpack-plugin": "^1.12.1",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.4.2",
+    "react": "^16.13.1",
+    "react-alice-carousel": "^1.16.0",
+    "react-app-polyfill": "^0.2.0",
+    "react-countup": "^4.3.3",
+    "react-dom": "^16.13.1",
+    "react-easy-swipe": "0.0.17",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.0.2",
+    "react-html-parser": "^2.0.2",
+    "react-linkedin-login-oauth2": "^1.0.6",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^6.0.0",
+    "react-responsive-carousel": "^3.1.51",
+    "react-router-dom": "^4.3.1",
+    "react-transition-group": "^4.3.0",
+    "react-window": "^1.8.5",
+    "react-window-infinite-loader": "^1.0.5",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2",
+    "resize-observer-polyfill": "^1.5.1",
+    "resolve": "1.8.1",
+    "sass-loader": "^7.1.0",
+    "save": "^2.4.0",
+    "script-ext-html-webpack-plugin": "^2.1.4",
+    "style-loader": "0.23.0",
+    "terser-webpack-plugin": "1.1.0",
+    "universal-cookie": "^4.0.0",
+    "url-loader": "1.1.1",
+    "webpack": "4.19.1",
+    "webpack-dev-server": "^3.1.14",
+    "webpack-manifest-plugin": "2.0.4",
+    "workbox-webpack-plugin": "3.6.3"
+  },
+  "lint-staged": {
+    "ignore": [
+      "package.json"
+    ],
+    "linters": {
+      "*.{js,jsx}": [
+        "eslint --no-ignore --fix",
+        "git add --force"
+      ],
+      "*.{json,md}": [
+        "prettier --write",
+        "git add --force"
+      ],
+      "*.{css,less,styl,scss,sass}": [
+        "stylelint --fix",
+        "git add --force"
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build-sw": "node ./src/sw-build.js",
+    "clean-cra-sw": "rm -f build/precache-manifest.*.js && rm -f build/service-worker.js",
+    "build": "node scripts/build.js --static && npm run build-sw && npm run clean-cra-sw",
+    "test": "node scripts/test.js",
+    "build:prod": "node scripts/build.js --static --release"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/**/index.js"
+    ],
+    "resolver": "jest-pnp-resolver",
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "devDependencies": {
+    "@redux-saga/testing-utils": "^1.0.0",
+    "clean-css": "^4.2.1",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "extract-css-chunks-webpack-plugin": "^3.3.2",
+    "highland": "^2.13.0",
+    "html-minifier": "^3.5.21",
+    "mimic": "^2.0.9",
+    "minimalcss": "^0.8.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.15.3",
+    "puppeteer": "^1.20.0",
+    "react-test-renderer": "^16.7.0",
+    "redux-devtools-extension": "^2.13.7",
+    "serve-static": "^1.13.2",
+    "sourcemapped-stacktrace-node": "^2.1.8",
+    "svg-sprite-loader": "^4.2.1",
+    "svgo-loader": "^2.2.1",
+    "tv4": "^1.3.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "workbox-build": "^4.0.0",
+    "worker-loader": "^2.0.0",
+    "zip-webpack-plugin": "^3.0.0",
+    "react-dev-utils": "^7.0.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-css-modules": "^2.11.0",
+    "eslint-plugin-flowtype": "^4.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.4",
+    "babel-plugin-named-asset-import": "^0.3.0",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "babel-preset-react-app": "^7.0.0"
+  }
+}

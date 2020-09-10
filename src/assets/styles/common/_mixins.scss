@@ -1,0 +1,116 @@
+@function getRem($values) {
+  $remValue: "";
+
+  @each $value in $values {
+    @if (
+      $value==
+        "auto" or
+        unit($value) ==
+        "%" or
+        unit($value) ==
+        "em" or
+        unit($value) ==
+        "vh" or
+        unit($value) ==
+        "vw"
+    ) {
+      $remValue: #{$remValue $value};
+    } @else {
+      $remValue: #{$remValue calcRem($value, $baseFont)};
+    }
+  }
+
+  @return $remValue;
+}
+
+@function calcRem($value, $baseFont) {
+  @if (abs($value) < 4) {
+    @return #{$value}px;
+  }
+
+  @if ($baseFont==0) {
+    @error "base font cannot be zero";
+  }
+
+  $remSize: $value / $baseFont;
+
+  @if ($remSize==0) {
+    @return $remSize;
+  } @else {
+    @return #{round($remSize * 100) / 100}rem;
+  }
+}
+
+// Animation
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: getRem(-468 0);
+  }
+
+  100% {
+    background-position: getRem(468 0);
+  }
+}
+
+@mixin animated-background() {
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: $black_haze;
+  background: linear-gradient(
+    to right,
+    $black_haze 8%,
+    $gallery 18%,
+    $black_haze 33%
+  );
+  background-size: getRem(800 104);
+  min-height: getRem(16);
+  position: relative;
+}
+
+@mixin decorateWithHr($bgColor: currentcolor) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after,
+  &::before {
+    content: "";
+    width: getRem(20);
+    height: getRem(1);
+    background: $bgColor;
+    margin: getRem(0 10);
+  }
+}
+
+@mixin small-height-phone {
+  @media (max-height: 556px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+@mixin desktop-retina {
+  // @media only screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  @content;
+  // }
+}
+
+@mixin respond-from($screenWidth: 500px) {
+  @media (min-width: $screenWidth) {
+    @content;
+  }
+}

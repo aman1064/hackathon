@@ -1,0 +1,31 @@
+{
+  "jobConfig": {
+    "ListTypeMap": {
+      "matchDetails": {
+        "type": "ListItem"
+      },
+      "team": {
+        "type": "ImageListItem"
+      },
+      "goodMatch": {
+        "type": "IconListItem",
+        "iconName": "greentick"
+      },
+      "benefits": {
+        "type": "ListItem"
+      },
+      "questionAnswers": {
+        "type": "AccordionListItem"
+      },
+      "jobDescription": {
+        "type": "ListItem"
+      }
+    },
+    "cards": {
+      "questionAnswers": {
+        "footerText": "Still have some doubt ?",
+        "threshold": 3
+      }
+    }
+  }
+}

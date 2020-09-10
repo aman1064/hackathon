@@ -1,0 +1,32 @@
+@import "../../../assets/styles/common";
+
+.statusNav {
+  position: fixed;
+  width: 100%;
+  height: getRem(56);
+  display: flex;
+  justify-content: space-around;
+  bottom: 0;
+  align-items: center;
+  background: $white;
+  max-width: getRem(500);
+
+  &_link {
+    text-align: center;
+    color: $blue_grey;
+    flex-direction: column;
+    display: flex;
+    &_activePath,
+    &.active {
+      color: $midnight;
+    }
+
+    @include desktop-retina {
+      i {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+      }
+    }
+  }
+}

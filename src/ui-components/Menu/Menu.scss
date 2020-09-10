@@ -1,0 +1,79 @@
+@import "../../assets/styles/common";
+
+.Menu {
+  position: relative;
+
+  @at-root div &__Trigger {
+    padding: 0;
+    color: $azure_radiance;
+    font-weight: 600;
+    font-size: getRem(14);
+
+    &--selected {
+      box-shadow: none;
+      font-size: getRem(10);
+      height: auto;
+      padding: getRem(2 8 2 10);
+      background: #dfe6ed;
+      text-transform: none;
+      color: #414b5d;
+      font-weight: 600;
+    }
+  }
+
+  &__List {
+    padding: getRem(6 0);
+    box-shadow: getRem(0 2 10 0) #ddd;
+    border-radius: getRem(4);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: getRem(140);
+    background-color: $white;
+    z-index: 2;
+    display: none;
+    list-style-type: none;
+  }
+
+  &__Item {
+    padding: getRem(10 16);
+    font-size: getRem(13);
+    color: #232832;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+      background: #f1f1f1;
+    }
+
+    &.isSelected {
+      pointer-events: none;
+      color: #999;
+      background: #f5f5f5;
+    }
+  }
+
+  &.isExpanded {
+    @at-root &::after {
+      content: "";
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      cursor: default;
+    }
+
+    .Menu__List {
+      display: block;
+    }
+  }
+
+  &.disabled {
+    .chip {
+      pointer-events: none;
+      opacity: 0.4;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../../assets/styles/common";
+
+.Thumbnail {
+  max-width: getRem(232);
+  text-align: center;
+  margin-top: getRem(44);
+
+  @include desktop {
+    max-width: getRem(388);
+  }
+
+  &__Heading {
+    font-size: getRem(15);
+
+    @include desktop {
+      font-size: getRem(21);
+    }
+  }
+
+  &__Description {
+    font-size: getRem(13);
+    color: $scarpa_flow;
+
+    @include desktop {
+      font-size: getRem(17);
+    }
+  }
+}

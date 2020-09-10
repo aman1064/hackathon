@@ -1,0 +1,46 @@
+@import "../../../assets/styles/common";
+
+.ClosedInputField {
+  .inputWrapper input {
+    text-overflow: unset;
+  }
+}
+
+div.freeInputModal {
+  transform: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  transition: 0s;
+  border-radius: 0;
+  margin: 0 auto;
+  padding: getRem(0 12);
+
+  .modalTitle {
+    padding-top: getRem(40);
+    color: $wild_blue_yonder;
+    font-size: getRem(13);
+    font-weight: 600;
+  }
+
+  .modalCross {
+    top: getRem(30);
+    right: getRem(16);
+
+    .davidIcon {
+      width: 12px !important;
+      height: 12px !important;
+    }
+  }
+
+  .inputWrapper {
+    margin-top: 0;
+  }
+
+  input::placeholder,
+  input:focus::placeholder {
+    color: $ghost;
+  }
+}

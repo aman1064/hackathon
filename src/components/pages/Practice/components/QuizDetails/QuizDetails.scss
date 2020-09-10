@@ -1,0 +1,74 @@
+@import "../../../../../assets/styles/common";
+
+.quizDetails .qdHeading {
+  display: flex;
+  margin: getRem(24 16);
+
+  @include desktop {
+    max-width: getRem(1280);
+    width: 96%;
+    margin: getRem(52 auto 48);
+  }
+
+  .imgCntnr {
+    margin-right: getRem(12);
+    margin-top: getRem(4);
+    max-width: getRem(40);
+
+    @include desktop {
+      margin-right: getRem(14);
+    }
+
+    img {
+      width: getRem(40);
+      height: getRem(40);
+    }
+  }
+
+  h1 {
+    font-size: getRem(24);
+    line-height: getRem(28);
+    font-weight: 800;
+
+    @include desktop {
+      font-size: getRem(36);
+      line-height: getRem(48);
+    }
+  }
+
+  .qdInst {
+    color: $cloud_burst;
+    font-size: getRem(12);
+    margin-top: getRem(6);
+
+    @include desktop {
+      font-size: getRem(16);
+      margin-top: getRem(4);
+    }
+  }
+}
+
+.qdCntnr {
+  @include desktop {
+    display: flex;
+    max-width: getRem(1280);
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+
+.qdLeft {
+  @include desktop {
+    width: 100%;
+    margin-right: getRem(22);
+  }
+}
+
+.qdRight {
+  @include desktop {
+    width: getRem(410);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}

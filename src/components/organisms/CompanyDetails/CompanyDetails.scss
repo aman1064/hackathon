@@ -1,0 +1,207 @@
+@import "../../../assets/styles/common";
+
+.CompanyDetails {
+  padding-bottom: getRem(16);
+  border-bottom: getRem(1) solid $light_blue_grey;
+
+  @include small-height-phone {
+    padding-bottom: getRem(8);
+  }
+
+  @at-root {
+    .darkBG & {
+      border-bottom: transparent;
+      padding-bottom: getRem(0);
+
+      .postedDate {
+        display: none;
+      }
+
+      .alumniStats {
+        text-align: right;
+        position: absolute;
+        right: getRem(-60);
+        bottom: 0;
+        border-bottom: getRem(1) solid $white;
+        line-height: getRem(12);
+      }
+
+      .expandExtra {
+        top: 0;
+      }
+    }
+  }
+
+  &__name {
+    .CompanyDetails__jobTitle {
+      font-size: getRem(15);
+      font-weight: 800;
+      margin-bottom: getRem(4);
+
+      @at-root .darkBG & {
+        font-size: getRem(17);
+        font-weight: 700;
+        margin-bottom: getRem(12);
+      }
+    }
+
+    &.isSwipeCard .CompanyDetails__item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    @at-root {
+      .darkBG & {
+        position: relative;
+      }
+    }
+  }
+
+  &__logo {
+    width: getRem(60);
+    height: getRem(60);
+    margin-bottom: getRem(12);
+    position: relative;
+    margin-left: getRem(-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid $light_blue_grey;
+
+    @at-root .darkBG & {
+      margin-left: 0;
+    }
+
+    img {
+      overflow: visible;
+    }
+  }
+
+  &__item {
+    font-size: getRem(13);
+    margin: getRem(4 0);
+
+    &.verySmall {
+      font-size: getRem(10);
+      color: $blue_grey;
+
+      @at-root {
+        .darkBG & {
+          color: $mischka;
+          font-size: getRem(11);
+        }
+      }
+    }
+
+    &.expandExtra {
+      width: getRem(86);
+      text-align: right;
+      position: relative;
+      left: getRem(-26);
+      top: getRem(8);
+    }
+
+    &.CompanyDetails__AllLocations {
+      position: relative;
+
+      .CompanyDetails__icon {
+        position: absolute;
+      }
+
+      span {
+        display: inline-block;
+        padding-left: getRem(20);
+      }
+    }
+  }
+
+  &__icon {
+    .verySmall & {
+      width: getRem(16);
+      padding-right: 0;
+      font-size: getRem(11);
+      top: getRem(-1);
+    }
+  }
+
+  &__extraInfo {
+    display: flex;
+  }
+
+  &__companyName {
+    font-size: getRem(13);
+    font-weight: bold;
+    margin-bottom: getRem(4);
+  }
+
+  &__location {
+    font-size: getRem(13);
+    margin-bottom: getRem(4);
+
+    @at-root .darkBG & {
+      margin-bottom: getRem(16);
+    }
+  }
+
+  &__CTC .CompanyDetails__icon {
+    padding-right: 0;
+    width: getRem(14);
+  }
+
+  &__ExpiredLabel {
+    color: $mandy;
+    font-size: getRem(10);
+  }
+
+  .ctcConfidential {
+    font-size: getRem(12);
+    margin-left: getRem(32);
+    position: relative;
+    padding-top: 1px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: getRem(12);
+      background: $periwinkle_gray;
+      left: getRem(-16);
+      top: 3px;
+    }
+  }
+}
+
+.jdMarketingMsg {
+  .icon_none img {
+    display: block;
+  }
+
+  .icon {
+    margin-top: getRem(-4);
+    max-height: getRem(18);
+  }
+}
+
+.isHeaderSticky {
+  .CompanyDetails {
+    margin-top: getRem(96);
+
+    &__name h2 {
+      top: 56px;
+      font-size: getRem(12);
+      margin-left: getRem(36);
+      font-weight: 400;
+    }
+
+    &__logo {
+      position: fixed;
+      top: 14px;
+      z-index: 1;
+      width: getRem(32);
+      height: getRem(32);
+    }
+  }
+}

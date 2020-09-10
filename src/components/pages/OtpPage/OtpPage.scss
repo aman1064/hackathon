@@ -1,0 +1,83 @@
+@import "../../../assets/styles/common";
+
+div {
+  .otpView {
+    margin: getRem(54 28);
+  }
+
+  .otpInput {
+    outline: none;
+    padding-bottom: getRem(12);
+    margin-right: getRem(8);
+    width: getRem(37) !important;
+    border: none;
+    border-bottom: 1px solid #d6dce9;
+
+    &:focus {
+      border-color: #ffa800;
+      caret-color: transparent;
+    }
+
+    margin-bottom: getRem(28);
+  }
+
+  .otpHeading {
+    font-size: getRem(17);
+    font-weight: 700;
+    color: #040a1e;
+    margin-bottom: getRem(30);
+  }
+
+  .resendOtp {
+    display: flex;
+
+    &__button {
+      color: #0e88ff;
+      font-weight: 700;
+      cursor: pointer;
+
+      &:disabled {
+        color: #b6dbff;
+        -webkit-tap-highlight-color: transparent;
+        cursor: default;
+      }
+    }
+
+    &__timer {
+      font-size: getRem(13);
+      margin-left: getRem(8);
+    }
+  }
+
+  .otpPageTitle {
+    font-size: getRem(13);
+    margin-bottom: getRem(40);
+
+    &__mobileNumber {
+      font-weight: 700;
+    }
+
+    &__editButton {
+      margin-left: 10px;
+      color: #0e88ff;
+      font-weight: 700;
+    }
+  }
+
+  .otpView .fixedToBottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: getRem(20);
+    z-index: 1;
+    background-color: $white;
+    max-width: 500px;
+    margin: 0 auto;
+
+    button.btn {
+      display: flex;
+      padding: getRem(6 8);
+    }
+  }
+}

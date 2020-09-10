@@ -1,0 +1,208 @@
+@import "../../../assets/styles/common";
+
+.profile {
+  letter-spacing: 0.4px;
+  margin-bottom: getRem(80);
+  background: $white;
+
+  @at-root div &__logoHeader {
+    padding-right: 0;
+  }
+
+  &__navBar {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn {
+      padding: getRem(6 8);
+      margin-right: getRem(8);
+
+      img {
+        display: block;
+      }
+    }
+  }
+
+  &__heading {
+    padding: getRem(0 28);
+  }
+
+  &__prefSubHeading {
+    font-size: getRem(15);
+    font-weight: 600;
+    color: $midnight;
+  }
+
+  &__subHeading {
+    font-size: getRem(13);
+    color: $blue_grey;
+    margin-bottom: getRem(4);
+  }
+
+  &__value {
+    font-size: getRem(15);
+    margin-bottom: getRem(20);
+    color: $midnight;
+    font-weight: 600;
+  }
+
+  &__skillsValue {
+    font-size: getRem(15);
+    padding: getRem(6 0);
+    font-weight: 600;
+    color: $midnight;
+
+    &.border_bottom {
+      border-bottom: 2px solid $athens_gray;
+    }
+  }
+
+  &__companyDetails {
+    font-size: getRem(15);
+    margin-bottom: getRem(4);
+    color: $midnight;
+    font-weight: 600;
+  }
+
+  &__lastvalue {
+    font-size: getRem(15);
+    color: $midnight;
+    font-weight: 600;
+  }
+
+  &__imageWrapper {
+    width: 100%;
+    margin: getRem(151 auto 58);
+    text-align: center;
+  }
+
+  &__message {
+    margin-top: getRem(16);
+    padding: getRem(0 43);
+    font-size: getRem(13);
+    color: $dusk;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  &__missingPref {
+    font-size: getRem(13);
+    font-weight: bold;
+
+    .color_mid_night {
+      font-weight: 600;
+    }
+  }
+
+  .flatCard {
+    position: relative;
+    padding: getRem(20 16);
+  }
+
+  &__graduation .davidIcon {
+    position: relative;
+    top: 2px;
+  }
+
+  @at-root div &__editButton.btn {
+    position: absolute;
+    color: #0e88ff;
+    font-size: getRem(13);
+    top: getRem(10);
+    right: getRem(12);
+    padding: getRem(2 4);
+    min-width: getRem(24);
+
+    .davidIcon {
+      display: block;
+    }
+  }
+
+  @at-root div &__editTextButton.btn {
+    padding: 0;
+    min-width: getRem(24);
+    color: #0e88ff;
+    font-weight: 700;
+    font-size: getRem(13);
+  }
+
+  &__preferences {
+    font-size: getRem(15);
+    color: #040a1e;
+    font-weight: bold;
+    margin-bottom: getRem(12);
+  }
+
+  &__nopreferences {
+    font-size: getRem(13);
+    color: #7a87ac;
+    margin-bottom: getRem(4);
+  }
+}
+
+.Setting {
+  color: $midnight;
+  letter-spacing: 0.4px;
+  background: $white;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    padding: getRem(16);
+
+    h1 {
+      margin-left: getRem(24);
+    }
+  }
+
+  &__content {
+    margin: getRem(52 36);
+    font-size: getRem(17);
+    font-weight: 500;
+  }
+
+  @at-root div &__Link {
+    font-size: getRem(17);
+    padding: getRem(6 8);
+    font-weight: 600;
+
+    &.btn {
+      font-size: getRem(17);
+      padding: getRem(6 8);
+      font-weight: 600;
+      color: $midnight;
+    }
+  }
+}
+
+.preferences .searchBarModal {
+  .modalTitle {
+    padding-bottom: getRem(8);
+  }
+
+  .medium .checkicon-cntr .unchecked,
+  .medium .checkicon-cntr .checked {
+    height: getRem(20);
+    width: getRem(20);
+  }
+
+  .medium .checkicon-cntr .checked::after {
+    left: 7px;
+    top: 3px;
+  }
+
+  .rightIcon .icon {
+    width: getRem(12);
+    cursor: pointer;
+  }
+
+  .CheckboxGroup {
+    .checkboxLabel {
+      font-size: getRem(15);
+    }
+
+    label {
+      margin: getRem(16 0);
+    }
+  }
+}

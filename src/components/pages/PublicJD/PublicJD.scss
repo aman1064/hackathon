@@ -1,0 +1,99 @@
+@import "../../../assets/styles/common";
+
+.JobsNav {
+  height: getRem(56);
+  padding: getRem(18);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  max-width: 500px;
+  z-index: 2;
+  background: $white;
+  box-shadow: 0 3px 10px 0 rgba(33, 60, 116, 0.16);
+
+  &__Link {
+    font-size: getRem(13);
+    font-weight: 600;
+    color: $dodger_blue;
+    z-index: 1;
+
+    &.isDisabled {
+      pointer-events: none;
+      color: $mischka;
+    }
+  }
+
+  &__JobCount {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: getRem(13);
+  }
+}
+
+.isMultiple {
+  .KnowMore {
+    &__CompanyDetails.darkBG.onlyTitle {
+      padding-top: getRem(68);
+    }
+
+    &__fixedNav--onlyTitle {
+      margin-top: getRem(56);
+    }
+
+    &__CompanyDetails.isHeaderSticky {
+      .CompanyDetails {
+        margin-top: getRem(108);
+
+        &__name h2 {
+          top: 56px;
+        }
+
+        &__logo {
+          top: 72px;
+        }
+      }
+
+      &.scrollHeaderUp {
+
+        .CompanyDetails__logo,
+        .CompanyDetails__jobTitle,
+        .shareLinkPosition {
+          top: 0;
+          transition: 1s;
+        }
+
+        .shareLinkPosition {
+          z-index: 0;
+        }
+
+        .KnowMore__fixedNav {
+          transition: 1s;
+          margin-top: getRem(-16);
+        }
+      }
+
+      &.scrollHeaderDown {
+
+        .CompanyDetails__logo,
+        .shareLinkPosition,
+        .KnowMore__fixedNav,
+        .CompanyDetails__jobTitle {
+          transition: 1s;
+        }
+      }
+    }
+  }
+}
+
+.publicJdApply {
+  min-width: getRem(136);
+  font-weight: 600;
+}

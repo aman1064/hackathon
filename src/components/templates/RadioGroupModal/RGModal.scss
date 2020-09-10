@@ -1,0 +1,28 @@
+@import "../../../assets/styles/common";
+
+div .modal.bottomFixedModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 23px 23px 0 0;
+  width: 100%;
+  padding: getRem(0 14);
+  top: unset;
+  transform: none;
+
+  h1 {
+    font-size: 17px;
+    font-family: $nunitoSans;
+    margin-bottom: 0;
+  }
+
+  .modalTitle {
+    margin-top: getRem(8);
+    padding-bottom: getRem(8);
+  }
+
+  .modalContent {
+    padding: getRem(0 16);
+  }
+}

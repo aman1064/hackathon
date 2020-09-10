@@ -1,0 +1,193 @@
+@import "../../../../../assets/styles/common";
+
+.QuizInsights {
+  .headingCntnr {
+    margin: getRem(20 16 26);
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      max-width: getRem(1280);
+      width: 96%;
+      margin: getRem(52 auto 48);
+    }
+
+    h1 {
+      font-size: getRem(14);
+      font-weight: 700;
+      line-height: getRem(23);
+      color: $cloud_burst;
+
+      @include desktop {
+        font-size: getRem(24);
+        line-height: getRem(50);
+      }
+
+      .highlight {
+        display: block;
+        margin-top: getRem(4);
+        font-weight: 800;
+        font-size: getRem(24);
+        line-height: getRem(28);
+
+        @include desktop {
+          font-weight: 700;
+          font-size: getRem(40);
+          line-height: getRem(50);
+          margin-top: 0;
+        }
+      }
+    }
+
+    .comparisonTxt {
+      margin-top: getRem(12);
+      font-size: getRem(12);
+      line-height: getRem(18);
+      color: $black;
+
+      @include desktop {
+        margin-top: getRem(16);
+        font-size: getRem(16);
+        font-weight: 600;
+        color: $cloud_burst;
+      }
+
+      .highlight {
+        font-weight: 700;
+        color: $puerto_rico;
+
+        @include desktop {
+          font-weight: 600;
+        }
+
+        &.isFail {
+          color: $bittersweet;
+        }
+      }
+    }
+
+    .btnCntnr {
+      margin-top: getRem(16);
+    }
+
+    .btn {
+      height: getRem(36);
+      font-size: getRem(13);
+      color: $cloud_burst;
+      font-weight: 800;
+      border-color: $black;
+
+      @include desktop {
+        height: getRem(40);
+        font-size: getRem(14);
+        font-weight: 700;
+        padding: getRem(8 23);
+        color: $black;
+        border-width: 1.5px;
+      }
+    }
+
+    &.isPerformance {
+      margin: getRem(28 16 16);
+
+      @include desktop {
+        margin: getRem(56 auto 48);
+        max-width: getRem(1280);
+        width: 96%;
+      }
+
+      h1 {
+        font-size: getRem(20);
+        font-weight: 700;
+        line-height: getRem(26);
+
+        @include desktop {
+          font-size: getRem(24);
+          line-height: getRem(31);
+        }
+      }
+
+      .chipsCntnr {
+        overflow: scroll;
+        padding-bottom: getRem(8);
+
+        @include desktop {
+          padding-bottom: 0;
+          overflow: auto;
+        }
+      }
+
+      .chipsCntnr {
+        display: flex;
+
+        @include desktop {
+          flex-wrap: wrap;
+        }
+      }
+
+      .chip {
+        margin-top: getRem(12);
+
+        @include desktop {
+          margin-top: getRem(16);
+        }
+
+        .label {
+          color: $black;
+          opacity: 0.9;
+          font-size: getRem(12);
+          font-weight: 600;
+        }
+
+        &.secondary {
+          pointer-events: none;
+
+          .label {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .downloadIcon {
+    width: getRem(12);
+    margin-right: getRem(6);
+    display: inline-block;
+
+    @include desktop {
+      width: getRem(14);
+      margin-right: getRem(8);
+    }
+  }
+
+  .ProgressBar {
+    min-height: unset;
+  }
+}
+
+.insightsCntnr {
+  @include desktop {
+    display: flex;
+    max-width: getRem(1280);
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+
+.insightsLeft {
+  @include desktop {
+    width: 100%;
+    margin-right: getRem(22);
+  }
+}
+
+.insightsRight {
+  @include desktop {
+    width: getRem(410);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}

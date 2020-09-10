@@ -1,0 +1,51 @@
+@import "../../../assets/styles/common";
+
+.LogoHeader {
+  height: getRem(56);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: getRem(0 28);
+
+  @at-root {
+    .SignupView &,
+    .LoginView & {
+      padding: getRem(0 0 32 0);
+    }
+  }
+
+  &__Logo {
+    max-width: getRem(90);
+    display: block;
+
+    &.isSmall {
+      max-width: getRem(21);
+    }
+  }
+
+  .getAppHeader {
+    color: $regent_gray;
+    font-size: 17px;
+    font-weight: bold;
+    margin-right: getRem(36);
+    display: none;
+
+    .icon {
+      margin-top: 2px;
+    }
+
+    @include desktop {
+      display: inline-block;
+    }
+  }
+
+  &.covid_logo {
+    .LogoHeader__Logo {
+      max-width: getRem(152);
+
+      &.isSmall {
+        max-width: getRem(21);
+      }
+    }
+  }
+}

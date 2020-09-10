@@ -1,0 +1,161 @@
+@import "../../../assets/styles/common";
+
+.AppFooter {
+  background: $black_squeeze;
+
+  &__Logo {
+    max-width: getRem(74);
+  }
+
+  &__ContentWrapper {
+    padding: getRem(24 20);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  &__CopyRight {
+    margin-top: getRem(44);
+    font-size: getRem(9);
+    color: $santas_gray;
+  }
+
+  &__InfoEdge {
+    font-size: getRem(9);
+    color: $santas_gray;
+  }
+
+  &__Right {
+    font-size: getRem(11);
+    font-weight: 600;
+    color: $bright_gray;
+    width: calc(100% - 152px);
+  }
+
+  &__Nav {
+    columns: 2;
+    margin-left: auto;
+    position: absolute;
+    right: getRem(20);
+    top: getRem(24);
+
+    @include desktop {
+      position: static;
+    }
+  }
+
+  &__SocialNav {
+    display: flex;
+    position: absolute;
+    left: getRem(20);
+    top: getRem(56);
+
+    li {
+      width: getRem(20);
+      margin-right: getRem(12);
+    }
+  }
+
+  &__LeftSec {
+    width: getRem(150);
+  }
+}
+
+.ClassyFooter {
+  padding: getRem(40 32 60);
+
+  @include desktop {
+    max-width: getRem(950);
+    margin: getRem(80 auto 92);
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Classy__Logo {
+    max-width: getRem(128);
+  }
+
+  .footerDesc {
+    font-size: getRem(12);
+    color: $black;
+    opacity: 0.7;
+    font-weight: 600;
+    margin-bottom: getRem(16);
+
+    @include desktop {
+      margin-bottom: getRem(24);
+      line-height: getRem(28);
+    }
+  }
+
+  &__SocialNav {
+    display: flex;
+    margin-bottom: getRem(36);
+
+    a {
+      width: getRem(32);
+      height: getRem(32);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $mercury;
+      border-radius: 50%;
+      margin-right: getRem(10);
+
+      @include desktop {
+        width: getRem(36);
+        height: getRem(36);
+        margin-right: getRem(12);
+      }
+    }
+
+    img {
+      max-height: getRem(14);
+    }
+  }
+
+  .sitemap {
+    @include desktop {
+    }
+
+    h4 {
+      font-size: getRem(13);
+      font-weight: 700;
+      color: $black;
+      margin-bottom: getRem(12);
+
+      @include desktop {
+        margin-bottom: getRem(16);
+      }
+    }
+
+    ul {
+      columns: 2;
+      color: $regent_gray;
+      font-size: getRem(12);
+      font-weight: 600;
+      line-height: getRem(28);
+
+      @include desktop {
+        width: getRem(420);
+      }
+    }
+  }
+
+  .aboutCntnr {
+    margin-top: getRem(16);
+    font-size: getRem(9);
+    font-weight: 600;
+    color: $regent_gray;
+    opacity: 0.6;
+
+    @include desktop {
+      margin-top: getRem(-10);
+      margin-left: getRem(216);
+      font-size: getRem(10);
+      line-height: getRem(18);
+    }
+  }
+}

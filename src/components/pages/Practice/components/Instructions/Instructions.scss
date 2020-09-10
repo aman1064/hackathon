@@ -1,0 +1,79 @@
+@import "../../../../../assets/styles/common";
+
+.instHeader {
+  padding: getRem(32 16 20);
+  border-bottom: 2px solid $peach;
+  display: flex;
+
+  .title {
+    font-size: getRem(16);
+  }
+
+  .back {
+    margin-right: getRem(20);
+  }
+}
+
+.helpText {
+  color: $martini;
+  font-weight: 700;
+  font-size: getRem(13);
+  margin-bottom: getRem(12);
+}
+
+.instWrapper {
+  padding: getRem(20 16);
+}
+
+.instList {
+  li {
+    margin-bottom: getRem(6);
+    font-size: getRem(13);
+    padding-left: getRem(20);
+    background: url("../../../../../assets/images/png/tick.png") 0px 2px
+      no-repeat;
+    background-size: 12px;
+  }
+
+  a {
+    color: $azure_radiance;
+    font-weight: 600;
+  }
+
+  // span {
+  //   flex-shrink: 0;
+  // }
+
+  // .icon {
+  //   margin-right: getRem(8);
+  //   margin-top: 1px;
+  // }
+}
+
+.instCTAWrapper {
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: getRem(30);
+
+  .bol {
+    color: $martini;
+    display: flex;
+    justify-content: center;
+
+    p {
+      font-size: getRem(13);
+    }
+
+    .gems {
+      max-width: getRem(20);
+      margin-right: getRem(6);
+    }
+  }
+
+  .btn {
+    padding: getRem(10 60);
+    height: unset;
+    margin-top: getRem(10);
+  }
+}

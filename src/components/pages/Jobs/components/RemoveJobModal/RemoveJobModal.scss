@@ -1,0 +1,137 @@
+@import "../../../../../assets/styles/common";
+
+.RemoveJobModal {
+  &__Title {
+    font-size: getRem(17);
+    margin-top: getRem(14);
+  }
+
+  &__Bottom {
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    bottom: 0;
+  }
+
+  &__Card.noBackdrop {
+    position: fixed;
+    top: 120px;
+    padding: calc(100vh - #{getRem(752)}) 0 0;
+    max-width: 361px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: 0s;
+    border: none;
+    box-shadow: none;
+    height: unset;
+    background: none;
+    width: 86%;
+
+    .modalTitle {
+      padding: getRem(16);
+    }
+
+    .modalContent {
+      padding: getRem(0 10 0 20);
+      flex: 1 1 auto;
+    }
+
+    .ModalInnerLayer {
+      border: getRem(1) solid $catskill_white;
+      height: getRem(400);
+      position: relative;
+      background: $white;
+      display: flex;
+      flex-direction: column;
+      border-radius: 4px;
+    }
+
+    @media #{$information-phone} {
+      top: 115px;
+    }
+
+    button {
+      height: getRem(40);
+      margin-bottom: getRem(20);
+
+      &.submitButton {
+        font-weight: 700;
+      }
+    }
+
+    @include small-height-phone {
+      top: 128px;
+    }
+  }
+
+  &__CheckboxGroup {
+    width: 100%;
+    margin-top: getRem(12);
+
+    label {
+      justify-content: space-between;
+      display: flex;
+      margin: getRem(20 0);
+    }
+
+    .checkboxLabel {
+      font-size: getRem(13);
+    }
+  }
+
+  &__Actions {
+    display: flex;
+    justify-content: space-between;
+    margin: getRem(0 16);
+
+    button {
+      min-width: getRem(132);
+      max-width: getRem(136);
+      width: 48%;
+    }
+  }
+
+  &__FlatAction {
+    display: flex;
+    justify-content: space-between;
+    padding: getRem(20 0 0);
+    margin: getRem(0 10);
+
+    button.btn {
+      color: $midnight;
+      font-size: getRem(16);
+      font-weight: 400;
+      min-width: auto;
+      padding: getRem(4);
+      width: auto;
+
+      &.submitButton {
+        color: white;
+        font-weight: 700;
+        height: getRem(40);
+        padding: getRem(8 20);
+        min-width: getRem(136);
+      }
+    }
+  }
+}
+
+.Modal__Bottom {
+  .RemoveJobModal__Title {
+    padding: getRem(8 8 0);
+    margin-top: getRem(-14);
+  }
+
+  .HelpText {
+    margin-top: getRem(8);
+    padding: getRem(0 8);
+  }
+
+  .RemoveJobModal__CheckboxGroup {
+    padding: getRem(0 24 0 8);
+
+    label {
+      margin: getRem(16 0);
+    }
+  }
+}

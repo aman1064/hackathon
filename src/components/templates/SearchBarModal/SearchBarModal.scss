@@ -1,0 +1,217 @@
+@import "../../../assets//styles/common";
+
+.selector_list {
+  background-color: $white;
+  cursor: pointer;
+
+  .thWrapper {
+    pointer-events: none;
+  }
+}
+
+.list_item::before {
+  content: "";
+}
+
+.list_item {
+  padding: getRem(6 0);
+  cursor: active;
+  font-size: getRem(15);
+
+  &.otherOption {
+    font-weight: 600;
+    color: $azure_radiance;
+  }
+}
+
+.list_item:hover {
+  background-color: $disable_grey;
+}
+
+.modalTitle {
+  font-size: getRem(18);
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.searchBar {
+  width: 100%;
+  margin-top: getRem(6);
+  border: none;
+
+  svg {
+    color: $web_orange;
+  }
+
+  input {
+    border-bottom-color: $web_orange;
+
+    &::placeholder,
+    &:focus::placeholder {
+      color: $mountain_mist;
+    }
+
+    &:focus {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+div {
+  .searchBarModal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 30vh;
+    height: 70vh;
+    margin: 0 auto;
+    border-radius: 23px 23px 0 0;
+    width: 100%;
+    padding: getRem(0 12);
+    max-height: 100vh;
+    transition: 0.3s;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+
+    &.isAtTop {
+      height: 100vh;
+      border-radius: 0;
+      bottom: auto;
+      top: 0;
+
+      .searchBarModalContent {
+        padding-bottom: getRem(64);
+
+        &.hasBottomBtn {
+          padding-bottom: getRem(80);
+        }
+      }
+    }
+
+    .blue_grey_InputBorder {
+      &:hover::before,
+      &::before {
+        border-color: $web_orange !important;
+      }
+
+      &::after {
+        border-width: 2px !important;
+      }
+    }
+
+    .list_item {
+      padding: getRem(8 0);
+
+      &:last-of-type {
+        padding-bottom: getRem(16);
+      }
+    }
+
+    .list_label {
+      color: $blue_grey;
+      font-size: getRem(11);
+      cursor: default;
+
+      &.lineBefore {
+        padding-top: getRem(16);
+        margin-top: getRem(8);
+        border-top: 1px solid $gallery;
+      }
+    }
+
+    .searchBarModalContent {
+      padding: getRem(0 16);
+      overflow-y: auto;
+    }
+
+    .CheckboxGroup {
+      width: 100%;
+      margin-top: getRem(12);
+      padding-bottom: getRem(16);
+
+      label {
+        justify-content: space-between;
+        display: flex;
+        margin: getRem(20 0);
+      }
+
+      .checkboxLabel {
+        font-size: getRem(13);
+      }
+    }
+
+    .modalTitle {
+      padding-top: getRem(20);
+    }
+
+    .modalCross {
+      top: getRem(22);
+      right: getRem(16);
+      font-size: getRem(13);
+
+      .davidIcon {
+        width: 12px !important;
+        height: 12px !important;
+      }
+    }
+
+    &.isAtTop {
+      .modalTitle {
+        padding-top: getRem(40);
+      }
+
+      .modalCross {
+        top: getRem(42);
+        right: getRem(16);
+        border-radius: unset;
+        background: unset;
+
+        .davidIcon {
+          width: 12px !important;
+          height: 12px !important;
+        }
+      }
+    }
+  }
+
+  .checkboxList {
+    padding: 0px;
+  }
+
+  .CheckboxGroup {
+    width: 100%;
+
+    label {
+      margin: 0;
+      justify-content: space-between;
+
+      span {
+        font-size: getRem(15);
+      }
+    }
+  }
+}
+
+.checkedIcon {
+  color: #ffa800;
+
+  span {
+    border-radius: 50% !important;
+    font-size: 20px;
+  }
+}
+
+.unCheckedIcon {
+  color: white;
+
+  span {
+    font-size: 20px;
+    border-radius: 50% !important;
+  }
+}
+
+.searchBarModalContent .Loading {
+  height: 48vh;
+  padding: getRem(16 0);
+}

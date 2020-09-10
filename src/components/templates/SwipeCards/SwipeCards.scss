@@ -1,0 +1,100 @@
+@import "../../../assets/styles/common";
+
+.SwipeCards {
+  width: 100%;
+  position: relative;
+  max-width: getRem(420);
+  overflow: hidden;
+  height: getRem(440);
+  margin: 0 auto;
+
+  &Wrapper {
+    padding-top: calc(100vh - #{getRem(752)});
+  }
+
+  &__index {
+    text-align: right;
+    width: 86%;
+    margin: getRem(8 0 4 7.5%);
+    font-size: getRem(11);
+    color: $blue_grey;
+    height: getRem(15);
+
+    &.hideLabel {
+      font-size: 0;
+    }
+
+    @include small-height-phone {
+      margin: getRem(4 0 4 7.5%);
+    }
+  }
+
+  &__item {
+    width: 86%;
+    left: 7.1%;
+    border-radius: getRem(4);
+    background: $white;
+    padding: getRem(20);
+    position: absolute;
+    transition: transform 0.4s;
+    border: getRem(1) solid $catskill_white;
+    margin: getRem(0 0 70 0);
+    height: getRem(400);
+
+    @include small-height-phone {
+      height: getRem(358);
+    }
+
+    &.active:not(.RemoveJobModal__Card) {
+      box-shadow: #{getRem(0 3 10 0)} $blue_whale;
+    }
+
+    &.swiped {
+      transform: translateX(-102%) scale(0.94);
+    }
+
+    &.unswiped {
+      transform: scale(0.94) translateX(7%) !important;
+    }
+  }
+
+  &__Navs.btn {
+    position: absolute;
+    z-index: 1;
+    margin-top: getRem(180);
+    font-size: getRem(10);
+    text-transform: uppercase;
+    display: none;
+
+    &-Label {
+      display: block;
+    }
+
+    &.prev {
+      left: getRem(-58);
+
+      .material-icons {
+        margin-bottom: getRem(-8);
+      }
+    }
+
+    &.next {
+      right: getRem(-58);
+
+      .icon {
+        transform: rotate(180deg);
+        top: getRem(-8);
+      }
+    }
+
+    &.disabled {
+      opacity: 0.4;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+}

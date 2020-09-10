@@ -1,0 +1,61 @@
+@import "../../../assets/styles/common";
+
+.about {
+  &Bigshyft {
+    padding: getRem(60 20 0);
+    text-align: center;
+
+    @include desktop {
+      padding: getRem(36 14 40);
+      box-shadow: 0 1px 7px -1px rgba(0, 106, 194, 0.2);
+      border: 1px solid $athens_gray;
+      width: getRem(286);
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+
+    h3 {
+      font-size: getRem(17);
+      font-weight: 700;
+      margin-bottom: getRem(36);
+    }
+  }
+
+  &Heading {
+    font-size: getRem(15);
+    font-weight: 700;
+    margin: getRem(8 0 12);
+  }
+
+  &Item {
+    .aboutDesc {
+      margin-bottom: getRem(48);
+    }
+
+    &:last-child .aboutDesc {
+      @include desktop {
+        margin-bottom: getRem(36);
+      }
+    }
+
+    &.apply {
+      @include desktop {
+        max-width: getRem(208);
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &Desc {
+    color: $scarpa_flow;
+    font-size: getRem(13);
+    margin: getRem(0 auto);
+    max-width: getRem(260);
+  }
+
+  &CTA {
+    font-size: getRem(17);
+    font-weight: 700;
+    padding: getRem(6 26);
+  }
+}

@@ -1,0 +1,147 @@
+@import "../../../../../assets/styles/common";
+
+.LeaderWidget {
+  margin: getRem(12);
+  border: 1px solid $athens_gray;
+  border-radius: getRem(10);
+  padding: getRem(18 12 20);
+
+  @include desktop {
+    padding: getRem(28 20);
+    margin: getRem(0 0 24 0);
+    order: -1;
+  }
+
+  .headCntnr {
+    display: flex;
+    justify-content: space-between;
+    padding: getRem(0 8);
+
+    @include desktop {
+      padding: getRem(0 16 0 4);
+    }
+
+    .imageCntnr {
+      max-width: getRem(28);
+    }
+  }
+
+  h2 {
+    font-size: getRem(14);
+    font-weight: 700;
+    color: $cloud_burst;
+    line-height: getRem(18);
+
+    @include desktop {
+      font-size: getRem(16);
+      line-height: getRem(21);
+    }
+  }
+
+  .quizName {
+    margin-top: getRem(6);
+    font-size: getRem(11);
+    color: $cloud_burst;
+    font-weight: 600;
+
+    @include desktop {
+      font-size: getRem(14);
+      line-height: getRem(18);
+      margin-top: getRem(5);
+      font-weight: 400;
+    }
+  }
+
+  .leaderCntnr {
+    margin-top: getRem(20);
+  }
+
+  .leaderItem {
+    padding: getRem(9 9 9 6);
+    border-radius: getRem(6);
+    display: flex;
+    align-items: center;
+
+    @include desktop {
+      padding: getRem(12 16 12 8);
+    }
+
+    .rank {
+      font-size: getRem(11);
+      color: $cloud_burst;
+      font-weight: 600;
+      width: getRem(36);
+      text-align: center;
+
+      @include desktop {
+        font-size: getRem(14);
+        width: getRem(46);
+      }
+    }
+
+    .userName,
+    .score {
+      font-size: getRem(12);
+      color: $cloud_burst;
+      font-weight: 600;
+
+      @include desktop {
+        font-size: getRem(14);
+      }
+    }
+
+    .userName {
+      margin-left: getRem(10);
+      max-width: getRem(188);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      @include desktop {
+        margin-left: getRem(12);
+      }
+    }
+
+    .score {
+      margin-left: auto;
+    }
+
+    .thumbnail {
+      width: getRem(26);
+      height: getRem(26);
+      font-size: getRem(10);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: getRem(4);
+      border-radius: 50%;
+      text-transform: uppercase;
+
+      @include desktop {
+        font-size: getRem(12);
+        width: getRem(32);
+        height: getRem(32);
+      }
+    }
+
+    &.userItem {
+      background: $solitude_2;
+
+      .rank,
+      .userName,
+      .score {
+        font-weight: 700;
+      }
+
+      .thumbnail {
+        background-color: $picton_blue;
+        color: $white;
+      }
+    }
+  }
+
+  .Menu {
+    margin-top: getRem(5);
+  }
+}

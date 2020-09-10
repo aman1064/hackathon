@@ -1,0 +1,20 @@
+@import "../../../assets/styles/common";
+
+.PageNotFound {
+  &__ImageWrapper {
+    text-align: center;
+    margin-top: getRem(128);
+  }
+
+  &__TextWrapper {
+    text-align: center;
+    max-width: getRem(280);
+    margin: getRem(118 auto 0);
+
+    p {
+      font-size: getRem(13);
+      color: $blue_grey;
+      margin-top: getRem(24);
+    }
+  }
+}

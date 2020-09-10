@@ -1,0 +1,241 @@
+@import "../../../../../assets/styles/common";
+
+.quizSteps {
+  border: 1px solid $athens_gray;
+  border-radius: getRem(10);
+  padding: getRem(24 12 24 20);
+  margin: getRem(12);
+
+  @include desktop {
+    margin: getRem(0 0 24);
+    padding: getRem(28);
+  }
+
+  h2 {
+    font-size: getRem(14);
+    font-weight: 600;
+    color: $shuttle_gray;
+    margin-bottom: getRem(6);
+    line-height: getRem(18);
+    padding-top: getRem(6);
+
+    @include desktop {
+      font-size: getRem(18);
+    }
+  }
+
+  &Item {
+    margin-bottom: getRem(32);
+    position: relative;
+    padding-left: getRem(36);
+
+    @include desktop {
+      padding-left: getRem(52);
+    }
+
+    &:after {
+      background: $athens_gray;
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: calc(100% - #{getRem(16)});
+      left: getRem(14);
+      top: getRem(38);
+
+      @include desktop {
+        left: getRem(16);
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &.isComplete {
+      .stepBullet {
+        background: $java;
+
+        &:before {
+          content: "";
+          width: getRem(13);
+          height: getRem(7);
+          border: 2px solid #fff;
+          border-width: 0 0 2px 2px;
+          transform: rotate(-45deg);
+          position: absolute;
+          top: getRem(7);
+          left: getRem(5);
+
+          @include desktop {
+            top: getRem(9);
+            left: getRem(7);
+          }
+        }
+      }
+    }
+
+    &.isActive {
+      h2 {
+        font-size: getRem(16);
+        font-weight: 700;
+        color: $cloud_burst;
+        padding-top: getRem(5);
+
+        @include desktop {
+          font-size: getRem(18);
+          color: $black;
+        }
+      }
+
+      .headingCntnr {
+        @include desktop {
+          display: flex;
+          align-items: baseline;
+
+          h2 {
+            margin-right: getRem(8);
+          }
+
+          .stats {
+            font-size: getRem(13);
+          }
+        }
+      }
+    }
+
+    &.isLocked {
+      .stepBullet {
+        border-color: $pigeon_post;
+        color: transparent;
+      }
+    }
+  }
+
+  .stepBullet {
+    position: absolute;
+    left: 0;
+    width: getRem(28);
+    height: getRem(28);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: getRem(14);
+    font-weight: 800;
+    color: $java;
+    border-radius: 50%;
+    border: 2px solid $java;
+
+    @include desktop {
+      width: getRem(32);
+      height: getRem(32);
+    }
+  }
+
+  .stats {
+    font-size: getRem(12);
+    color: $wild_blue_yonder;
+    display: flex;
+    font-weight: 600;
+
+    .score {
+      font-weight: 700;
+      color: $cloud_burst;
+      margin-right: getRem(8);
+    }
+  }
+
+  .resultCTA {
+    color: $azure_radiance;
+    font-weight: 700;
+  }
+
+  .topics {
+    margin-top: getRem(20);
+
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: getRem(8);
+    }
+
+    h3 {
+      font-size: getRem(14);
+      font-weight: 700;
+      color: $cloud_burst;
+
+      @include desktop {
+        flex-shrink: 0;
+        width: getRem(108);
+      }
+    }
+
+    &Name {
+      font-size: getRem(12);
+      color: $cloud_burst;
+      margin-top: getRem(4);
+
+      @include desktop {
+        font-size: getRem(14);
+        margin-top: getRem(0);
+        width: cacl(100% - #{getRem(108)});
+      }
+    }
+  }
+
+  .topics .btn,
+  .cooldownMsg .btn {
+    height: getRem(36);
+    padding: getRem(9 18);
+    margin-top: getRem(20);
+  }
+
+  .isShimmer {
+    .stepBullet {
+      border-color: transparent;
+      top: -4px;
+    }
+  }
+
+  .cooldownMsg {
+    .cooldownCntnr {
+      margin-top: getRem(12);
+
+      @include desktop {
+        margin-top: getRem(15);
+        display: flex;
+        align-items: center;
+
+        .btn {
+          order: -1;
+          margin: getRem(0 12 0 0);
+        }
+      }
+    }
+
+    .cooldownTime {
+      font-size: getRem(12);
+      color: $blue_grey;
+      font-weight: 600;
+      line-height: getRem(18);
+
+      .davidIcon {
+        display: block;
+        margin-right: getRem(4);
+      }
+    }
+  }
+
+  .isCooldown {
+    .stepBullet {
+      border-color: $bittersweet;
+    }
+
+    .davidIcon {
+      display: block;
+    }
+  }
+}

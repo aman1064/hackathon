@@ -1,0 +1,19 @@
+@import "../../assets/styles/common";
+
+.PercentBar {
+  display: flex;
+  align-items: center;
+  height: getRem(16);
+
+  .bar {
+    height: getRem(16);
+    border-radius: getRem(0 3 3 0);
+    transition: 0.6s;
+  }
+
+  .label {
+    font-size: getRem(12);
+    color: $cloud_burst;
+    margin-left: getRem(6);
+  }
+}

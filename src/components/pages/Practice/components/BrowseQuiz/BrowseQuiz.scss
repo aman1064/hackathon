@@ -1,0 +1,69 @@
+@import "../../../../../assets/styles/common";
+
+.BrowseQuiz {
+  h1 {
+    font-size: getRem(14);
+    line-height: getRem(23);
+    font-weight: 700;
+
+    @include desktop {
+      font-size: getRem(24);
+      line-height: getRem(50);
+    }
+
+    .highlighted {
+      display: block;
+      font-size: getRem(24);
+      line-height: getRem(28);
+      font-weight: 800;
+      margin-top: getRem(6);
+
+      @include desktop {
+        font-size: getRem(40);
+        line-height: getRem(50);
+        font-weight: 700;
+        margin-top: getRem(0);
+      }
+    }
+
+    a {
+      color: $azure_radiance;
+    }
+  }
+
+  .browseTitle {
+    margin: getRem(28 16 32);
+    color: $cloud_burst;
+
+    @include desktop {
+      max-width: getRem(1280);
+      width: 96%;
+      margin: getRem(52 auto 30);
+    }
+  }
+}
+
+.browseCntnr {
+  @include desktop {
+    display: flex;
+    max-width: getRem(1280);
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+
+.browseLeft {
+  @include desktop {
+    width: 100%;
+    margin-right: getRem(22);
+  }
+}
+
+.browseRight {
+  @include desktop {
+    width: getRem(410);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+}

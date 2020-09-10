@@ -1,0 +1,64 @@
+@import "../../../../../assets/styles/common";
+
+.read-more-modal {
+  position: relative;
+  max-width: 500px;
+  max-height: 277px;
+
+  .actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .read-more-content {
+    font-family: "Manrope", sans-serif;
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    .profile-img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-bottom: getRem(15);
+    }
+
+    .name {
+      font-size: getRem(14);
+      line-height: 17px;
+      margin-bottom: getRem(12);
+
+      @include desktop {
+        font-size: getRem(18);
+      }
+    }
+
+    .designation {
+      font-size: getRem(12);
+    }
+
+    .msg {
+      font-size: getRem(12);
+      line-height: 18px;
+      text-align: center;
+      color: $trout;
+    }
+
+    .designation,
+    .msg {
+      @include desktop {
+        font-size: getRem(14);
+        line-height: 20px;
+      }
+    }
+
+    .initials {
+      margin-bottom: getRem(4);
+    }
+  }
+}

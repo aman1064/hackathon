@@ -1,0 +1,67 @@
+div.modal {
+  position: fixed;
+  width: 90%;
+  max-width: 520px;
+  background: white;
+  left: 50%;
+  top: 50%;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  padding: 20px;
+  transition: 300ms;
+
+  .modalCross {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    margin: 4px;
+    padding: 4px 12px;
+    font-size: 20px;
+    border-radius: 50%;
+  }
+
+  .modalTitle {
+    padding: 16px;
+  }
+
+  &.hidden:not(.Modal__Bottom) {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.slideFromBottom {
+
+  &-enter,
+  &-appear {
+    bottom: -100%;
+  }
+
+  &-enter-active,
+  &-appear-active {
+    bottom: 0;
+  }
+
+  &-enter-done,
+  &-appear-done {
+    bottom: 0;
+  }
+
+  &-exit {
+    bottom: 0;
+  }
+
+  &-exit-active {
+    bottom: -100%;
+  }
+
+  &-exit-done {
+    bottom: -100%;
+  }
+}

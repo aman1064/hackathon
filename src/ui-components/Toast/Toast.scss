@@ -1,0 +1,74 @@
+@import "../../assets/styles/common";
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+.toast {
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 2px;
+  padding: getRem(8 16);
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  max-width: 500px;
+  right: 0;
+  margin: 0 auto;
+  font-size: getRem(14);
+
+  &.success {
+    background-color: $jagged_ice;
+    color: $persian_green;
+  }
+
+  &.error {
+    background: $scarlet;
+  }
+
+  &.warning {
+    background: $cape_honey;
+    color: $midnight_express;
+  }
+
+  &-msg {
+    text-align: left;
+    padding-right: 12px;
+  }
+
+  &-action {
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    cursor: pointer;
+  }
+
+  &Icon {
+    margin-right: getRem(10);
+  }
+
+  &Info {
+    margin-left: getRem(26);
+  }
+}
+
+.toaster-enter .toast {
+  opacity: 0;
+  bottom: -72px;
+}
+
+.toaster-enter-active .toast {
+  opacity: 1;
+  bottom: 0;
+  transition: bottom 300ms ease-in-out;
+}
+
+.toaster-exit .toast {
+  opacity: 1;
+  bottom: -72px;
+  transition: bottom 300ms ease-in-out;
+}
+
+.toaster-exit-done .toast {
+  opacity: 0;
+  bottom: -72px;
+}

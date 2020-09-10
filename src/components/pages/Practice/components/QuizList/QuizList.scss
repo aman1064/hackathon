@@ -1,0 +1,205 @@
+@import "../../../../../assets/styles/common";
+
+.quizList {
+  margin: getRem(0 12);
+  border-radius: getRem(10);
+  border: 1px solid $selago;
+  padding: getRem(28 20);
+  background: $white;
+  box-shadow: 0 2px 6px -2px rgba(23, 34, 96, 0.3);
+
+  @include desktop {
+    max-width: getRem(990);
+    margin: getRem(0 auto);
+    padding: getRem(44 26 46);
+  }
+
+  .btnCntnr {
+    text-align: center;
+
+    .btn {
+      font-size: getRem(14);
+      font-weight: 600;
+      color: $black;
+      height: getRem(36);
+      border: 1.3px solid $black;
+      padding: getRem(8 23);
+    }
+  }
+}
+
+.quizHeading {
+  font-size: getRem(18);
+  font-weight: 800;
+  color: $black;
+
+  @include desktop {
+    font-size: getRem(28);
+    text-align: center;
+    line-height: getRem(36);
+  }
+}
+
+.quizDesc {
+  font-size: getRem(14);
+  font-weight: 600;
+  color: $trout;
+  margin-top: getRem(2);
+
+  @include desktop {
+    font-size: getRem(16);
+    text-align: center;
+    line-height: getRem(24);
+    margin-top: getRem(4);
+    color: $black;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+  }
+}
+
+.quizCntnr {
+  margin: getRem(30 auto 0);
+  max-width: getRem(300);
+
+  @include desktop {
+    max-width: unset;
+    margin-top: getRem(48);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.quizCardCntnr {
+  @include desktop {
+    width: getRem(186);
+    display: flex;
+    margin-right: getRem(40);
+    justify-content: space-between;
+
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.quizCard {
+  margin-bottom: getRem(36);
+  flex-shrink: 0;
+  width: inherit;
+  display: flex;
+
+  @include desktop {
+    display: block;
+  }
+
+  .mobLeft {
+    flex-shrink: 0;
+    margin-right: getRem(12);
+  }
+
+  .logo {
+    display: block;
+    width: getRem(60);
+    height: getRem(60);
+
+    @include desktop {
+      width: getRem(40);
+      height: getRem(40);
+    }
+  }
+
+  h3 {
+    font-size: getRem(18);
+    font-weight: 700;
+    color: $black;
+    margin-top: getRem(4);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @include desktop {
+      margin-top: getRem(16);
+    }
+  }
+
+  .stats {
+    margin-top: getRem(4);
+    font-size: getRem(14);
+    color: $trout;
+
+    @include desktop {
+      line-height: getRem(23);
+    }
+  }
+
+  .CTA {
+    display: flex;
+    align-items: center;
+    color: $azure_radiance;
+    font-weight: 700;
+    font-size: getRem(14);
+    margin-top: getRem(8);
+  }
+
+  .arrow {
+    max-width: getRem(10);
+    margin-left: getRem(8);
+  }
+}
+
+.isQuizDetails {
+  box-shadow: none;
+  border-color: $athens_gray;
+  padding: getRem(24 20 28);
+
+  @include desktop {
+    padding: getRem(28);
+  }
+
+  .quizHeading {
+    color: $cloud_burst;
+    font-weight: 700;
+
+    @include desktop {
+      font-size: getRem(20);
+      text-align: left;
+      line-height: getRem(24);
+    }
+  }
+
+  .quizDesc {
+    color: $blue_grey;
+    font-weight: 600;
+
+    @include desktop {
+      font-size: getRem(12);
+      text-align: left;
+      line-height: getRem(16);
+    }
+  }
+
+  .quizCntnr {
+    margin: getRem(28 auto -36);
+
+    @include desktop {
+      margin: getRem(36 0 -40);
+    }
+  }
+
+  .quizCard {
+    @include desktop {
+      margin-bottom: getRem(40);
+    }
+  }
+}
+
+.PracticeHome {
+  .quizCardCntnr {
+    @include desktop {
+      width: getRem(232);
+      padding-left: getRem(44);
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "../../../../../assets/styles/common";
+
+.ConceptStats {
+  border-radius: getRem(10);
+  border: 1px solid $athens_gray;
+  margin: getRem(6 12 12);
+  padding: getRem(24 20);
+
+  @include desktop {
+    margin: getRem(24 0);
+    padding: getRem(28);
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: getRem(18);
+    line-height: getRem(24);
+    color: $cloud_burst;
+    width: 100%;
+
+    @include desktop {
+      font-size: getRem(20);
+    }
+  }
+
+  .chartsCntnr {
+    margin: getRem(24 0 32);
+
+    @include desktop {
+      width: getRem(356);
+      flex-shrink: 0;
+    }
+  }
+
+  .chart {
+    margin-bottom: getRem(14);
+
+    &Heading {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: getRem(6);
+      align-items: flex-end;
+    }
+
+    &Name {
+      font-size: getRem(12);
+      font-weight: 700;
+      color: $cloud_burst;
+      max-width: calc(100% - #{getRem(64)});
+    }
+
+    &Score {
+      font-size: getRem(11);
+      font-weight: 600;
+      color: $ebony_clay;
+
+      @include desktop {
+        font-size: getRem(12);
+      }
+    }
+  }
+
+  .topicsCntnr {
+    @include desktop {
+      margin: getRem(24 0 0 54);
+      width: calc(100% - #{getRem(410)});
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: getRem(14);
+      color: $cloud_burst;
+
+      @include desktop {
+        font-size: getRem(12);
+      }
+    }
+
+    .chip {
+      color: $black;
+      font-weight: 600;
+      height: getRem(24);
+      margin: getRem(10 6 0 0);
+      cursor: default;
+
+      @include desktop {
+        margin-right: getRem(8);
+      }
+
+      .label {
+        padding: getRem(4 12);
+        font-size: getRem(12);
+      }
+    }
+
+    .minus {
+      margin-top: getRem(24);
+    }
+
+    .Shimmer.chip {
+      display: inline-block;
+    }
+  }
+}

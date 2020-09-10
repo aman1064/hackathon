@@ -1,0 +1,175 @@
+@import "../../../../../assets/styles/common";
+
+.cvUpload-loader-container {
+  > li::before {
+    content: "";
+  }
+
+  .cancel-upload {
+    display: inline-block;
+    width: getRem(20);
+    height: getRem(20);
+    top: getRem(16);
+    right: getRem(16);
+    position: absolute;
+
+    &::after,
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 1px;
+      background: $blue_grey;
+      position: absolute;
+      top: 0;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .file_upload_label {
+    text-align: left;
+    padding: getRem(20 0 4 0);
+    font-size: getRem(11);
+    color: $blue_grey;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+    }
+
+    &.complete::after {
+      height: getRem(4);
+      width: getRem(7);
+      border: 0 solid $white;
+      border-width: getRem(0 0 1 1);
+      right: getRem(3);
+      z-index: 1;
+      transform: rotate(-50deg);
+      bottom: getRem(10);
+    }
+
+    &.complete::before {
+      background: $green_teal;
+      right: 0;
+      bottom: getRem(4);
+      border-radius: 50%;
+      height: getRem(13);
+      width: getRem(13);
+    }
+
+    &.error {
+      color: $dark_red;
+
+      &::before {
+        background: $dark_red;
+        right: 0;
+        bottom: getRem(4);
+        border-radius: 50%;
+        height: getRem(13);
+        width: getRem(13);
+      }
+
+      &::after {
+        content: "x";
+        color: $white;
+        right: getRem(4);
+        bottom: getRem(4);
+        font-size: getRem(10);
+      }
+    }
+  }
+
+  .file_upload_name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: getRem(13);
+  }
+}
+
+.progress.materialize {
+  height: getRem(5);
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  background: $light_blue_grey;
+  border-radius: getRem(4);
+
+  .determinate {
+    width: 0;
+    background: $cornflower_blue;
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    transition: 0.2s;
+  }
+}
+
+.cvUpload-container {
+  position: relative;
+  text-align: center;
+
+  &.flatCard.large {
+    margin-top: getRem(80);
+    padding: getRem(42 36);
+  }
+
+  @at-root {
+    .registrationPage & .fixedToBottom {
+      z-index: 2;
+    }
+  }
+}
+
+.cvUpload {
+  &_helpText {
+    font-size: getRem(11);
+    color: $dusk;
+    text-align: center;
+    margin-top: getRem(12);
+  }
+
+  &_orText {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: getRem(120);
+  }
+
+  &_ButtonContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 18vh;
+  }
+
+  &_uploadButton {
+    width: getRem(120);
+    margin-right: getRem(8);
+  }
+
+  &_uploadButtonText {
+    padding: getRem(16 0 0);
+    font-size:getRem(15)
+  }
+
+  &_sublabel {
+    color: $midnight;
+    margin-top: getRem(-16);
+  }
+
+  @at-root .registrationPage &_skipCTA {
+    text-transform: none;
+    padding: getRem(0 44);
+    width: auto;
+    font-weight: 600;
+  }
+}

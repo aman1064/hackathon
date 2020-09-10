@@ -1,0 +1,54 @@
+@import "../../../../../assets/styles/common";
+
+.ShareWidget {
+  background: $bridal_heath;
+  border: 1px solid $colonial_white;
+  border-radius: getRem(10);
+  padding: getRem(18 20 20);
+  margin: getRem(12);
+  position: relative;
+  overflow: hidden;
+
+  @include desktop {
+    padding: getRem(24 24 28);
+    margin: getRem(0 0 24);
+  }
+
+  .hifiImg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &Heading {
+    font-size: getRem(16);
+    font-weight: 700;
+    line-height: getRem(24);
+    max-width: getRem(210);
+  }
+
+  .shareCTA {
+    padding: 0;
+    background: transparent;
+    color: $azure_radiance;
+    font-weight: 600;
+    font-size: getRem(14);
+    height: auto;
+    margin-top: getRem(18);
+  }
+
+  .icon {
+    margin-right: getRem(8);
+  }
+
+  .SocialMediaShare {
+    position: absolute;
+    margin-top: getRem(-24);
+  }
+
+  &.universalShare {
+    .ShareWidgetHeading {
+      max-width: getRem(278);
+    }
+  }
+}

@@ -1,0 +1,131 @@
+@import "../../../../../assets/styles/common";
+
+.RecJobs {
+  margin: getRem(16);
+
+  @include desktop {
+    border: 1px solid $athens_gray;
+    border-radius: getRem(10);
+    padding: getRem(28 24);
+    margin: 0;
+  }
+
+  .bigshyftLogo {
+    max-width: getRem(26);
+    margin-bottom: getRem(12);
+    display: block;
+  }
+
+  h2 {
+    color: $cloud_burst;
+    font-weight: 700;
+    font-size: getRem(18);
+
+    @include desktop {
+      font-size: getRem(20);
+    }
+  }
+
+  &Desc {
+    color: $blue_grey;
+    font-size: getRem(12);
+    margin: getRem(6 0 16);
+    font-weight: 600;
+
+    @include desktop {
+      font-size: getRem(14);
+      margin: getRem(6 0 24);
+    }
+  }
+
+  &Card {
+    border: 1px solid $athens_gray;
+    border-radius: getRem(6);
+    padding: getRem(16 16 18 18);
+    margin-top: getRem(12);
+    position: relative;
+  }
+
+  .logoCntnr {
+    position: absolute;
+    right: getRem(16);
+    top: getRem(16);
+    width: getRem(40);
+    height: getRem(40);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $light_blue_grey;
+  }
+
+  .title {
+    font-size: getRem(15);
+    font-weight: 700;
+    color: $cloud_burst;
+    max-width: calc(100% - #{getRem(52)});
+
+    @include desktop {
+      color: $midnight;
+    }
+  }
+
+  .company {
+    margin-top: getRem(4);
+    color: $cloud_burst;
+    font-size: getRem(12);
+    font-weight: 700;
+
+    @include desktop {
+      color: $midnight;
+    }
+  }
+
+  .location {
+    margin-top: getRem(10);
+    color: $midnight;
+    font-size: getRem(12);
+
+    @include desktop {
+      color: $midnight;
+    }
+  }
+
+  .details {
+    margin-top: getRem(6);
+    font-size: getRem(12);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .exp,
+  .salary {
+    display: flex;
+
+    .data {
+      color: $cloud_burst;
+      font-weight: 700;
+      margin-right: getRem(8);
+
+      @include desktop {
+        color: $charade;
+      }
+    }
+
+    .placeholder {
+      color: $shuttle_gray;
+      font-weight: 400;
+      margin-right: getRem(22);
+
+      @include desktop {
+        color: $shuttle_gray;
+      }
+    }
+  }
+
+  .salary.isConfidential {
+    font-size: getRem(11);
+    color: $shuttle_gray;
+  }
+}

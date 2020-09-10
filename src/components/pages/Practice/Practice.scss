@@ -1,0 +1,105 @@
+@import "../../../assets/styles/common";
+
+.Practice {
+  padding-bottom: getRem(40);
+
+  @include desktop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    left: 0;
+    z-index: 1;
+  }
+
+  .banner {
+    background: $bunker;
+    padding: getRem(36 28 92);
+
+    @include desktop {
+      padding: getRem(94 0);
+    }
+
+    &Cntnr {
+      @include desktop {
+        max-width: getRem(990);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &Heading {
+      color: $white;
+      font-weight: 800;
+      font-size: getRem(24);
+      line-height: getRem(28);
+
+      @include desktop {
+        font-size: getRem(36);
+        line-height: getRem(46);
+      }
+    }
+
+    &Subheading {
+      color: $white;
+      font-size: getRem(12);
+      font-weight: 700;
+      line-height: getRem(18);
+      opacity: 0.9;
+      margin-top: getRem(8);
+
+      @include desktop {
+        font-size: getRem(16);
+        opacity: 0.8;
+      }
+    }
+
+    .benefits {
+      font-size: getRem(12);
+      color: $white;
+      font-weight: 700;
+      margin-top: getRem(18);
+
+      @include desktop {
+        margin-top: getRem(30);
+        font-size: getRem(18);
+      }
+
+      li {
+        margin-bottom: getRem(8);
+
+        @include desktop {
+          margin-bottom: getRem(12);
+        }
+      }
+
+      .icon {
+        margin-right: getRem(6);
+        max-width: getRem(14);
+
+        @include desktop {
+          margin-right: getRem(10);
+          max-width: getRem(18);
+        }
+      }
+    }
+
+    .imgCntnr {
+      width: 56%;
+      margin: getRem(30 auto 0);
+      text-align: center;
+
+      @include desktop {
+        width: unset;
+        margin: 0;
+      }
+    }
+
+    .textCntnr {
+      @include desktop {
+        padding-top: getRem(30);
+      }
+    }
+  }
+}

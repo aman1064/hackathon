@@ -1,0 +1,201 @@
+@import "../../../../../assets/styles/common";
+
+.ComparisonStats {
+  border-radius: getRem(10);
+  border: 1px solid $athens_gray;
+  margin: getRem(12);
+  padding: getRem(24 20);
+
+  @include desktop {
+    padding: getRem(28);
+    margin: getRem(24 0);
+  }
+
+  .legendsCntnr {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: getRem(18);
+      line-height: getRem(24);
+      color: $cloud_burst;
+
+      @include desktop {
+        font-size: getRem(20);
+      }
+    }
+
+    .legend {
+      font-weight: 600;
+      font-size: getRem(12);
+      margin-top: getRem(16);
+      color: $cloud_burst;
+
+      @include desktop {
+        margin-top: 0;
+        margin-right: getRem(52);
+      }
+
+      .self,
+      .from {
+        position: relative;
+        padding-left: getRem(20);
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 2px;
+          width: getRem(12);
+          height: getRem(12);
+          background: $sail;
+          border-radius: 50%;
+        }
+      }
+
+      .from {
+        margin-left: getRem(36);
+
+        &:before {
+          background: $goldenrod;
+        }
+      }
+    }
+  }
+
+  .chartCntnr {
+    display: flex;
+    height: getRem(280);
+    margin-top: getRem(16);
+    position: relative;
+
+    @include desktop {
+      flex-direction: column;
+      margin: getRem(16 26 0);
+      height: getRem(200);
+      padding-top: getRem(172);
+    }
+
+    .keys {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: getRem(106);
+
+      @include desktop {
+        order: 1;
+        width: 100%;
+        flex-direction: row;
+        margin-top: getRem(18);
+      }
+
+      .label {
+        @include desktop {
+          width: getRem(100);
+          text-align: center;
+        }
+
+        .increase,
+        .decrease {
+          color: $green_teal;
+          display: inline-flex;
+          align-items: center;
+
+          .davidIcon {
+            display: block;
+            max-height: getRem(8);
+
+            @include desktop {
+              max-height: getRem(9);
+            }
+          }
+        }
+
+        .decrease {
+          color: $sunglo;
+        }
+      }
+    }
+
+    .label {
+      font-size: getRem(10);
+      font-weight: 600;
+      color: $cloud_burst;
+
+      @include desktop {
+        font-size: getRem(12);
+      }
+    }
+
+    .diagram {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-left: 1px solid $athens_gray;
+      position: relative;
+      width: calc(100% - #{getRem(106)});
+
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        border-right: 1px dashed $athens_gray;
+        left: getRem(70);
+        width: 1px;
+        height: 100%;
+        z-index: -1;
+      }
+
+      &:after {
+        left: getRem(140);
+      }
+
+      @include desktop {
+        width: getRem(180);
+        height: calc(100vw - #{getRem(608)});
+        max-height: getRem(738);
+        flex-shrink: 0;
+        position: absolute;
+        transform: rotate(-90deg);
+        transform-origin: 0 0;
+      }
+
+      &.isTopper .barsCntnr {
+        justify-content: center;
+      }
+    }
+  }
+
+  .barsCntnr {
+    display: flex;
+    flex-direction: column;
+    height: getRem(42);
+    justify-content: space-between;
+  }
+
+  .PercentBar {
+    .label {
+      @include desktop {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &.isSelfComparison {
+    .legendsCntnr {
+      .legend {
+        .self:before {
+          background: $pattens_blue;
+        }
+
+        .from:before {
+          background: $sail;
+        }
+      }
+    }
+  }
+}

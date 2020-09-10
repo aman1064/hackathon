@@ -1,0 +1,26 @@
+@import "../../../../../assets/styles/common";
+
+.AddPhoneNo {
+  margin-top: getRem(60);
+
+  &__CTA {
+    margin-top: getRem(78);
+    text-align: center;
+
+    button {
+      font-size: getRem(16);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  &__clear {
+    position: absolute;
+    font-size: getRem(13);
+    color: $dodger_blue;
+    cursor: pointer;
+    right: 0;
+    top: getRem(24);
+  }
+}

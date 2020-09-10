@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Group 16</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Homepage-Explorations" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assessment-Homepage-Web" transform="translate(-692.000000, -1230.000000)">
+            <g id="Group-16" transform="translate(692.000000, 1230.000000)">
+                <circle id="Oval" fill="#FBECF1" cx="26" cy="26" r="26"></circle>
+                <g id="file-chart" transform="translate(17.000000, 15.000000)" fill="#F15581" fill-rule="nonzero">
+                    <path d="M9.9,7.7 L15.95,7.7 L9.9,1.65 L9.9,7.7 M2.2,0 L11,0 L17.6,6.6 L17.6,19.8 C17.6,21.0150264 16.6150264,22 15.4,22 L2.2,22 C0.979,22 0,21.01 0,19.8 L0,2.2 C0,0.979 0.979,0 2.2,0 M3.3,19.8 L5.5,19.8 L5.5,13.2 L3.3,13.2 L3.3,19.8 M7.7,19.8 L9.9,19.8 L9.9,11 L7.7,11 L7.7,19.8 M12.1,19.8 L14.3,19.8 L14.3,15.4 L12.1,15.4 L12.1,19.8 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

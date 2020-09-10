@@ -1,0 +1,75 @@
+@import "../../../assets/styles/common";
+
+.WAModal {
+  .SocialMediaShare__some-network__custom-icon {
+    position: relative;
+    top: 4px;
+  }
+
+  .modalTitle {
+    padding: getRem(14);
+  }
+
+  .HelpText {
+    margin-top: getRem(16);
+    color: $dusk;
+    font-weight: 400;
+  }
+
+  .WATitle {
+    max-width: 91%;
+  }
+
+  .icon {
+    margin-right: getRem(8);
+  }
+
+  .crossBtn {
+    margin-top: getRem(10);
+  }
+
+  .RemoveJobModal__FlatAction {
+    padding: getRem(24 20 20);
+    justify-content: space-between;
+
+    button {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .cancelButton {
+      font-weight: normal;
+    }
+
+    .submitButton {
+      font-weight: 700;
+      height: getRem(40);
+      min-width: getRem(132);
+    }
+  }
+
+  .WAModalContent {
+    overflow: hidden;
+  }
+}
+
+div div.WAModal {
+  padding: getRem(0 8);
+}
+
+div .modal.bottomFixedModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 23px 23px 0 0;
+  width: 100%;
+  padding: getRem(0 14);
+  top: unset;
+  transform: none;
+
+  h1 {
+    font-size: 17px;
+    font-family: $nunitoSans;
+  }
+}

@@ -1,0 +1,26 @@
+@import "../../assets/styles/common";
+
+.ProgressBar {
+  position: relative;
+  border-radius: getRem(6);
+  overflow: hidden;
+
+  .background {
+    width: 100%;
+    height: getRem(6);
+    border-radius: getRem(6);
+    background: currentColor;
+    opacity: 0.2;
+  }
+
+  .progress {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: getRem(6);
+    background: currentColor;
+    transition: 0.6s;
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../../../../assets/styles/common";
+
+.DataIncomplete {
+  margin: getRem(12);
+  border: 1px solid $athens_gray;
+  border-radius: getRem(10);
+  padding: getRem(40 20);
+  text-align: center;
+
+  @include desktop {
+    margin: getRem(24 0);
+    padding: getRem(52 40 50);
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  h2 {
+    margin-top: getRem(18);
+    font-size: getRem(18);
+    font-weight: 700;
+    line-height: getRem(26);
+    color: $cloud_burst;
+
+    @include desktop {
+      font-size: getRem(20);
+      line-height: getRem(30);
+      max-width: getRem(460);
+      margin: getRem(20 auto 0);
+    }
+  }
+
+  .cooldownTime {
+    font-size: getRem(12);
+    color: $blue_grey;
+    margin-top: getRem(16);
+    line-height: getRem(16);
+    font-weight: 600;
+
+    @include desktop {
+      margin-top: getRem(24);
+    }
+  }
+
+  .btn {
+    min-height: unset;
+    height: getRem(36);
+    padding: getRem(8 16);
+    margin-top: getRem(12);
+  }
+}

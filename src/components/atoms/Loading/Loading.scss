@@ -1,0 +1,34 @@
+@import "../../../assets/styles/common";
+
+.Loading {
+  display: block;
+  height: 100vh;
+  font-size: 0;
+  padding: getRem(60 9%);
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    @include animated-background();
+  }
+
+  &::before {
+    height: getRem(36);
+  }
+
+  &::after {
+    margin-top: getRem(52);
+    height: 72%;
+    border-radius: getRem(8);
+  }
+
+  &.isSmall {
+    padding: getRem(20 0);
+    height: getRem(80);
+
+    &::after {
+      display: none;
+    }
+  }
+}

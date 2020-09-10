@@ -1,0 +1,73 @@
+{
+  "id": "applyWithCV",
+  "name": null,
+  "description": "EDIT:: CV Upload screen",
+  "pageName": "apply_with_CV",
+  "header": {
+    "label": null,
+    "progress": null
+  },
+  "defaultComponents": ["5ca498ab08db4e0daf84628a"],
+  "componentIds": ["5ca498ab08db4e0daf84628a"],
+  "components": [
+    {
+      "id": "5ca498ab08db4e0daf84628a",
+      "type": "cvUpload",
+      "description": "CV Upload Component",
+      "dependents": [],
+      "data": [
+        {
+          "id": "5ca498ab08db4e0daf846286",
+          "entity": null,
+          "jsonKey": null,
+          "type": "label",
+          "dataType": "string",
+          "value": "Upload CV",
+          "additionalProperties": {
+            "textColor": "#000000",
+            "size": "large"
+          }
+        },
+        {
+          "id": "5ca498ab08db4e0daf846287",
+          "entity": null,
+          "jsonKey": null,
+          "type": "subLabel",
+          "dataType": "string",
+          "value": "Your Latest CV will let you apply to jobs and receive recruiter interests.",
+          "additionalProperties": {
+            "textColor": "#000000",
+            "size": "small",
+            "className": "cvUpload_sublabel"
+          }
+        },
+        {
+          "id": "5ca498ab08db4e0daf846288",
+          "entity": null,
+          "jsonKey": null,
+          "type": "phone",
+          "dataType": "string",
+          "value": "via Phone",
+          "additionalProperties": {
+            "uploadUrl": "/jobseeker/v1/profile/{profileId}/cv",
+            "iconUrl": "/images/group.png"
+          }
+        },
+        {
+          "id": "5ca498ab08db4e0daf846289",
+          "entity": null,
+          "jsonKey": null,
+          "type": "googleDrive",
+          "dataType": "string",
+          "value": "via Drive",
+          "additionalProperties": {
+            "uploadUrl": "/jobseeker/v1/profile/{profileId}/drive/cv",
+            "iconUrl": "/images/google_drive_logo.png"
+          }
+        }
+      ]
+    }
+  ],
+  "ctaText": "UPDATE",
+  "isSkippable": false
+}

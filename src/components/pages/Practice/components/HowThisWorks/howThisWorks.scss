@@ -1,0 +1,107 @@
+@import "../../../../../assets/styles/common";
+
+.how-this-works {
+  margin: getRem(16 12 0);
+  border-radius: getRem(10);
+  border: 1px solid $selago;
+  padding: getRem(28 24);
+  background: $white;
+  height: getRem(278);
+  box-shadow: 0 2px 6px -2px rgba(23, 34, 96, 0.3);
+  font-family: "Manrope", sans-serif;
+
+  @include desktop {
+    padding: getRem(44 77 48 77);
+    height: getRem(313);
+    max-width: getRem(990);
+    margin: getRem(24 auto 0);
+  }
+
+  .heading {
+    font-size: getRem(18);
+    font-weight: 800;
+    line-height: 1.33;
+    letter-spacing: -0.12px;
+    padding-bottom: getRem(12);
+
+    @include desktop {
+      text-align: center;
+      font-size: getRem(28);
+      line-height: 1.29;
+      letter-spacing: -0.21px;
+      padding-bottom: getRem(40);
+    }
+  }
+
+  .item-group {
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .item-content {
+    display: flex;
+    padding: getRem(7 0);
+
+    &:first-child {
+      padding-top: getRem(14);
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @include desktop {
+      flex-direction: column;
+      align-items: center;
+      width: getRem(228);
+      padding: 0 !important;
+    }
+  }
+
+  .icon {
+    min-width: 32px;
+    min-height: 32px;
+    width: 32px;
+    height: 32px;
+    background-color: #dbf5ec;
+    border-radius: 50%;
+    text-align: center;
+
+    @include desktop {
+      width: 52px;
+      height: 52px;
+      margin-bottom: getRem(16);
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    font-size: getRem(11);
+    line-height: 1.64;
+    margin-left: getRem(10);
+    color: $trout;
+
+    @include desktop {
+      text-align: center;
+      font-size: getRem(14);
+    }
+
+    .title {
+      font-size: getRem(14);
+      font-weight: 600;
+      line-height: 1.57;
+      color: $black;
+
+      @include desktop {
+        font-size: getRem(18);
+        font-weight: bold;
+        line-height: normal;
+        padding-bottom: getRem(8);
+      }
+    }
+  }
+}

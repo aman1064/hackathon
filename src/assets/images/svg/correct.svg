@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Group 2 Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Insights" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Insight-page-mobile" transform="translate(-251.000000, -185.000000)">
+            <g id="Group-2-Copy-3" transform="translate(251.000000, 185.000000)">
+                <circle id="Oval" fill-opacity="0.16" fill="#FFBD00" cx="16" cy="16" r="16"></circle>
+                <path d="M16,8 C11.6,8 8,11.6 8,16 C8,20.4 11.6,24 16,24 C20.4,24 24,20.4 24,16 C24,11.6 20.4,8 16,8 M14.4,20 L10.4,16 L11.528,14.872 L14.4,17.736 L20.472,11.664 L21.6,12.8 L14.4,20 Z" id="Shape" fill="#FFBB00" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

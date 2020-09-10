@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>Group 8 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Insights" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Insight-page-mobile" transform="translate(-251.000000, -300.000000)" fill-rule="nonzero">
+            <g id="Group-8-Copy" transform="translate(251.000000, 300.000000)">
+                <circle id="Oval" fill-opacity="0.9" fill="#FF6E6E" opacity="0.15" cx="16" cy="16" r="16"></circle>
+                <path d="M17.6969697,14.8205607 L17.6969697,24 L13.5411255,24 L13.5411255,14.8205607 L17.6969697,14.8205607 Z M12.1558442,19.7633357 L12.1558442,24 L8,24 L8,19.7633357 L12.1558442,19.7633357 Z M23.2380952,16.9388928 L23.2380952,24 L19.0822511,24 L19.0822511,16.9388928 L23.2380952,16.9388928 Z M15.6190476,8 L16.3878788,9.8641323 L18.3896104,10.04066 L16.8658009,11.3681481 L17.3160173,13.3523192 L15.6190476,12.3002143 L13.8874459,13.3523192 L14.3584416,11.3681481 L12.8484848,10.04066 L14.8363636,9.8641323 L15.6190476,8 Z" id="Combined-Shape" fill="#FF8181"></path>
+            </g>
+        </g>
+    </g>
+</svg>

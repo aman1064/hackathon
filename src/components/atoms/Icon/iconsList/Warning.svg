@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>icon/alert/warning_24px</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1.67981807,14 L14.3201819,14 C15.6127557,14 16.4185159,12.6253124 15.772229,11.5305012 L9.45204711,0.821108335 C8.80576025,-0.273702778 7.19423975,-0.273702778 6.54795289,0.821108335 L0.227770965,11.5305012 C-0.418515899,12.6253124 0.387244347,14 1.67981807,14 Z M8,8.23783625 C7.53836653,8.23783625 7.16066641,7.86741144 7.16066641,7.41467 L7.16066641,5.7683375 C7.16066641,5.31559606 7.53836653,4.94517125 8,4.94517125 C8.46163347,4.94517125 8.83933359,5.31559606 8.83933359,5.7683375 L8.83933359,7.41467 C8.83933359,7.86741144 8.46163347,8.23783625 8,8.23783625 Z M8.83933359,11.5305012 L7.16066641,11.5305012 L7.16066641,9.88416875 L8.83933359,9.88416875 L8.83933359,11.5305012 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="icon/alert/warning_24px" fill="#FFAB00" fill-rule="nonzero" xlink:href="#path-1"></use>
+    </g>
+</svg>

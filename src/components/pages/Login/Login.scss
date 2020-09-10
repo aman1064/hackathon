@@ -1,0 +1,68 @@
+@import "../../../assets/styles/common";
+
+.LoginView {
+  margin: getRem(32 28);
+
+  .LogoHeader {
+    font-size: getRem(14);
+    font-weight: bold;
+  }
+
+  &__CTA {
+    margin-top: getRem(60);
+    text-align: center;
+
+    button {
+      font-size: getRem(16);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  &__loginSignupRedirect {
+    margin-top: getRem(4);
+    color: $blue_grey;
+    font-size: getRem(14);
+    text-align: center;
+  }
+
+  .fixedToBottom {
+    margin-top: getRem(30);
+
+    button {
+      font-size: getRem(16);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+  }
+
+  .label.error {
+    color: $blue_grey;
+  }
+
+  @include small-height-phone {
+    &.marginTop_40 {
+      margin-top: 0;
+    }
+
+    &.marginTop_200 {
+      margin-top: getRem(160);
+    }
+
+    .smButtonSeparator {
+      margin-top: getRem(20);
+    }
+  }
+}
+
+.signupViewForm {
+  display: flex;
+  flex-direction: column;
+
+  .tncLink {
+    order: 1;
+    padding-top: getRem(12);
+  }
+}

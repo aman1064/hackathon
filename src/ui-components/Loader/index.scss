@@ -1,0 +1,118 @@
+@import '../../assets/styles/common';
+
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes spinner {
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinnerLoader {
+  position: relative;
+
+  &::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    margin-top: -1rem;
+    margin-left: -1rem;
+    border-radius: 50%;
+    border: 0.2rem solid rgba($white, 0.4);
+    border-top-color: $white;
+    animation: spinner 0.6s linear infinite;
+  }
+
+  &.dark::before {
+    border-color: rgba($black, 0.6);
+    border-top-color: $black;
+  }
+
+  &.small::before {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-top: -0.8rem;
+    margin-left: -0.8rem;
+  }
+
+  &.large::before {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-top: -1.2rem;
+    margin-left: -1.2rem;
+  }
+
+  &.dots {
+    &::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      left: calc(50% - 4px);
+      top: calc(50% - 4px);
+      border: 0;
+      margin: 0;
+      animation: loading-primary 1s ease-in infinite;
+    }
+
+    &.dark::before {
+      animation: loading-secondary 1s ease-in infinite;
+    }
+  }
+}
+
+@mixin loading-mixin($variant,
+  $highlightColor: $white,
+  $transitionColor: $star_dust) {
+  @keyframes loading-#{$variant} {
+    0% {
+      box-shadow: 12px 0 $transitionColor, -12px 0 $highlightColor;
+      background: $transitionColor;
+    }
+
+    33% {
+      box-shadow: 12px 0 $transitionColor, -12px 0 $transitionColor;
+      background: $highlightColor;
+    }
+
+    66% {
+      box-shadow: 12px 0 $highlightColor, -12px 0 $transitionColor;
+      background: $transitionColor;
+    }
+
+    100% {
+      box-shadow: 12px 0 $transitionColor, -12px 0 $highlightColor;
+      background: $transitionColor;
+    }
+  }
+}
+
+@include loading-mixin(primary);
+@include loading-mixin(secondary, $black);

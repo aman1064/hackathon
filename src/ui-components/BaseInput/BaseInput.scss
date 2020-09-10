@@ -1,0 +1,130 @@
+@import "../../assets/styles/common";
+
+.inputWrapper {
+  position: relative;
+  margin-top: getRem(14);
+  display: inline-block;
+  width: 100%;
+  user-select: none;
+
+  input {
+    border: none;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $light_blue_grey;
+    padding: getRem(6 0 7);
+    width: 100%;
+    font-size: getRem(15);
+    font-weight: 600;
+    color: black;
+    outline: none;
+    font-family: $nunitoSans;
+    text-overflow: ellipsis;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:disabled {
+      background: $pale_grey;
+      cursor: not-allowed;
+    }
+
+    &:focus {
+      border-color: $web_orange;
+    }
+
+    &:focus::placeholder {
+      color: $ghost;
+    }
+
+    /* IE 10+ */
+
+    &:focus+.label,
+    &.active+.label {
+      transform: translateX(-6%) translateY(-170%) scale(0.88);
+      font-weight: 600;
+    }
+
+    &:focus+.label.leftPadding,
+    &.active+.label.leftPadding {
+      transform: translateX(-6%) translateY(-170%) scale(0.88);
+    }
+
+    &.noFloatLabel {
+      padding-top: 0;
+
+      &::placeholder {
+        color: $ghost;
+      }
+    }
+
+    &.leftPadding {
+      padding-left: getRem(32);
+    }
+
+    &.rightPadding {
+      padding-right: getRem(32);
+    }
+  }
+
+  label.label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    font-size: getRem(15);
+    color: $blue_grey;
+    transition: font-weight, transform 300ms;
+    pointer-events: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 92%;
+    overflow: hidden;
+
+    &.leftPadding {
+      padding-left: 3rem;
+    }
+
+    &.rightPadding {
+      padding-right: 3rem;
+    }
+  }
+
+  .rightIcon,
+  .leftIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+  }
+
+  .leftIcon {
+    left: 0;
+  }
+
+  .rightIcon {
+    right: 0;
+  }
+
+  .error {
+    border-color: $red_orange;
+    box-shadow: none;
+
+    &:not(input) {
+      color: $scarlet;
+    }
+
+    &:focus {
+      border-color: $red_orange;
+    }
+  }
+
+  .required::after {
+    content: " *";
+    color: red
+  }
+}

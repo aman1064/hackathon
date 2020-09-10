@@ -1,0 +1,241 @@
+@import "../../../assets/styles/common";
+
+.registrationPage {
+  padding: getRem(110 28 82);
+  min-height: getRem(600);
+
+  h1 {
+    margin-bottom: getRem(32);
+    font-size: getRem(17);
+    line-height: getRem(20);
+  }
+
+  .smallHeading {
+    font-size: getRem(13);
+    font-weight: normal;
+    margin-bottom: getRem(28);
+    line-height: getRem(18);
+  }
+
+  &__headerNav {
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    right: 0;
+    width: 100%;
+    left: 0;
+    padding: getRem(16 28);
+    z-index: 1;
+    background: $white;
+    max-width: getRem(500);
+  }
+
+  .fixedToBottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: getRem(20);
+    z-index: 1;
+    background-color: $white;
+    max-width: 500px;
+    margin: 0 auto;
+
+    button {
+      font-size: getRem(16);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: getRem(6 8);
+      display: flex;
+
+      &.cvUpload_skipCTA {
+        text-transform: capitalize;
+      }
+
+      &.cvUpload_nextCTA {
+        text-transform: none;
+        font-size: getRem(14);
+        margin-bottom: getRem(59);
+        font-weight: 600;
+        color: $sky_blue;
+      }
+    }
+  }
+
+  .chipsWithSuggestorWrapper {
+    display: inline;
+  }
+
+  .preferences {
+    .moreChipsButton {
+      font-size: getRem(13);
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+
+    .cntrDisabled {
+      opacity: 0.8;
+    }
+
+    .expectedCtc {
+      h2 {
+        font-size: getRem(13);
+        color: $blue_grey;
+        font-weight: 400;
+      }
+
+      .inputWrapper {
+        margin-top: 0;
+        max-width: getRem(160);
+      }
+    }
+  }
+
+  @at-root div &__backIcon {
+    color: $ebony_clay;
+    font-size: getRem(32);
+  }
+}
+
+.CWSM .moreChipsButton {
+  margin-top: getRem(8);
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+}
+
+.experienceFieldsWrapper {
+  width: getRem(204);
+  display: flex;
+  justify-content: space-between;
+  margin-top: getRem(-16);
+
+  .marginBottom_20 {
+    width: getRem(86);
+  }
+}
+
+.lgImageCenter {
+  width: 216px;
+  display: block;
+  margin: 0 auto;
+}
+
+.otherDomainPage {
+  text-align: center;
+
+  .lgImageCenter {
+    padding: getRem(60 0 80);
+  }
+
+  h1 {
+    font-size: getRem(17);
+  }
+
+  .HelpText {
+    max-width: getRem(274);
+    letter-spacing: 0.4px;
+    margin: 0 auto;
+  }
+
+  .ExitButton {
+    letter-spacing: 0.5px;
+    font-size: getRem(17);
+    font-weight: 700;
+    position: fixed;
+    bottom: getRem(28);
+    right: getRem(28);
+  }
+}
+
+.noticePeriod_label {
+  font-weight: 600;
+  margin-top: getRem(52);
+}
+
+.salary_checkbox {
+  position: absolute;
+  margin-top: 8px;
+
+  .label {
+    color: $blue_grey;
+  }
+}
+
+.strong_subLabel {
+  color: $midnight;
+  font-size: getRem(17);
+  font-weight: 700;
+}
+
+.radioGroup .cvUpload_sublabel {
+  margin: getRem(-16 0 40 0);
+  color: $midnight;
+  font-size: getRem(11);
+}
+
+.profilePrivacyDescription {
+  color: #040a1e;
+  font-size: getRem(13);
+}
+
+h1.profilePrivacyHeading {
+  color: #040a1e;
+  font-size: getRem(17);
+  margin-bottom: getRem(3);
+}
+
+.profilePrivacyChangeButton {
+  padding: 0px;
+  justify-content: left;
+  color: #0e88ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.autosuggest_maxHeight {
+  .react-autosuggest__suggestions-list {
+    max-height: getRem(400);
+    overflow: auto;
+  }
+}
+
+.btn.skipButton {
+  font-weight: 600;
+  margin-left: auto;
+  font-size: getRem(14);
+  min-width: getRem(64);
+  height: getRem(32);
+}
+
+.OD {
+  &__imageWrapper {
+    margin-bottom: getRem(62);
+    text-align: center;
+    margin-top: 17vh;
+  }
+
+  &__heading {
+    max-width: getRem(206);
+    text-align: center;
+    margin: 0 auto getRem(12);
+  }
+
+  &__message {
+    max-width: getRem(272);
+    text-align: center;
+    margin: 0 auto getRem(36);
+    font-size: getRem(13);
+    color: $dusk;
+  }
+
+  &__CTA.btn {
+    font-weight: 700;
+    font-size: getRem(13);
+    margin: 0 auto;
+    display: block;
+  }
+}

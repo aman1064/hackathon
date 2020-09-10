@@ -1,0 +1,119 @@
+@import "../../../../../assets/styles/common";
+
+.width_169 {
+  width: getRem(169);
+}
+
+.width_56 {
+  width: getRem(56);
+}
+
+.width_41 {
+  width: getRem(41);
+}
+
+.marginBottom_16 {
+  margin-bottom: getRem(16);
+}
+
+label.static-InputLabel + .marginTop_0 {
+  margin-top: 0;
+}
+
+.spreadHr_center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paddingRight_4 {
+  padding-right: getRem(4);
+}
+
+.removeInputUnderline::before {
+  display: none;
+}
+
+.skillsExperienceLabel {
+  font-weight: 600;
+  font-size: getRem(15);
+  padding-right: getRem(24);
+  position: relative;
+}
+
+.QASkillsExperienceLabel {
+  font-size: getRem(13);
+  color: $blue_grey;
+  padding-right: getRem(24);
+}
+
+.skillsExperienceLabel,
+.QASkillsExperienceLabel {
+  .requiredLabel {
+    position: absolute;
+    color: $scarlet;
+  }
+}
+
+.skillsExpItemsWrapper {
+  height: getRem(32);
+  align-items: flex-end;
+
+  .sugMenuWrapper {
+    width: calc(100vw - 56px);
+    max-width: getRem(444);
+  }
+
+  .sugInputWrapper {
+    .inputWrapper {
+      margin-top: getRem(0);
+    }
+
+    input {
+      caret-color: $web_orange;
+
+      &::placeholder {
+        color: $boulder;
+        font-weight: 400;
+      }
+    }
+
+    .chip {
+      margin: getRem(0 4 0 0);
+      max-width: getRem(140);
+    }
+
+    .leftIcon {
+      transform: none;
+      position: relative;
+    }
+
+    .label {
+      position: static;
+      transform: none;
+    }
+
+    .hasChip {
+      border: 0 solid transparent;
+      border-bottom-width: 1px;
+      display: flex;
+
+      input {
+        padding: 0;
+        border: 0;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+
+      &.isFocused {
+        border-color: $web_orange;
+      }
+
+      &.inputWrapper {
+        margin-top: getRem(8);
+      }
+    }
+  }
+}

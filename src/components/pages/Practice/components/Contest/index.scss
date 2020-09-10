@@ -1,0 +1,188 @@
+@import "../../../../../assets/styles/common";
+
+.contest-form {
+  padding: getRem(20 16);
+
+  .question {
+    font-size: getRem(18);
+    font-weight: 600;
+    margin-bottom: getRem(12);
+
+    pre {
+      font-size: getRem(13);
+      background: $mercury;
+      margin: 0;
+      white-space: pre-wrap;
+    }
+  }
+
+  .radioGroup {
+    >div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .radio-question {
+      display: flex;
+      flex: 1;
+      margin: getRem(10 0);
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      cursor: pointer;
+
+      .icon {
+        flex-shrink: 0;
+      }
+
+      pre {
+        font-size: getRem(13);
+        background: $mercury;
+        margin: 0;
+        white-space: pre-wrap;
+      }
+    }
+
+    .RadioGroup__Label {
+      padding-left: getRem(10);
+    }
+  }
+}
+
+.contestHeader {
+  padding: getRem(20 16);
+  border-bottom: 2px solid $peach;
+  display: flex;
+  align-items: center;
+
+  .title {
+    font-size: getRem(16);
+    margin-right: getRem(8);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .timer {
+    margin-left: auto;
+    font-size: getRem(13);
+    width: getRem(80);
+    text-align: right;
+    flex-shrink: 0;
+    color: $mountain_meadow;
+    font-weight: 700;
+  }
+}
+
+.submitCTAWrapper {
+  display: flex;
+  align-items: center;
+  margin-top: getRem(16);
+
+  .btn {
+    padding: getRem(10 36);
+    height: unset;
+  }
+
+  .endCTA {
+    color: $dove_gray;
+    padding: 0;
+    margin-left: auto;
+    font-size: getRem(14);
+  }
+}
+
+.helpText,
+.skipHint {
+  color: $martini;
+  font-size: getRem(13);
+  font-weight: 700;
+}
+
+.helpTextCntnr {
+  display: flex;
+  justify-content: space-between;
+}
+
+.scoreCntnr {
+  display: flex;
+  font-size: getRem(13);
+  font-weight: 700;
+  color: $web_orange;
+
+  .gems {
+    max-width: getRem(18);
+  }
+}
+
+div.Modal__Bottom {
+  left: 0;
+  right: 0;
+  transform: none;
+  width: 100%;
+  max-width: getRem(482);
+  top: unset;
+  margin: 0 auto;
+  border-radius: getRem(10 10 0 0);
+
+  .modalTitle {
+    padding: getRem(16 0 12);
+    font-size: getRem(17);
+    font-weight: 700;
+    width: 80%;
+  }
+
+  .message {
+    color: $dusk;
+    font-size: getRem(13);
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: getRem(20);
+    max-width: getRem(360);
+    margin: 0 auto;
+
+    .btn {
+      padding: getRem(8 26);
+      height: unset;
+    }
+  }
+}
+
+.animate {
+  animation-name: bounce;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+
+  30% {
+    transform: scale(0.9, 1.1) translateY(-20px);
+  }
+
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+
+  57% {
+    transform: scale(1, 1) translateY(-7px);
+  }
+
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}

@@ -1,0 +1,94 @@
+.SocialMediaShare {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 255px;
+  height: 32px;
+  border-radius: 4px;
+  box-shadow: 0 3px 8px 0 rgba(9, 50, 131, 0.2);
+  background-color: #ffffff;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 2;
+
+  &__some-network {
+    margin-right: 15px;
+
+    &__share-button_container {
+      margin-left: 6px;
+    }
+
+    &__share-button {
+      cursor: pointer;
+    }
+
+    &__share-button:hover:not(:active) {
+      opacity: 0.75;
+    }
+
+    &__custom-icon {
+      height: 18px;
+      color: #7c8ba2;
+    }
+
+    &__shareIcon:after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 20px;
+      background: #7c8ba2;
+      right: -8px;
+      top: 0;
+    }
+  }
+}
+
+.SocialMediaShareCvListing {
+  width: 486px;
+  opacity: 0.6;
+  border-radius: 4px;
+  border: solid 1px #bdc5d0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: #414b5d;
+  justify-content: center;
+  z-index: 0;
+  box-shadow: unset;
+}
+
+.SocialMediaShareCvListing p {
+  margin: 0 auto;
+}
+
+.tooltip {
+  position: relative;
+  display: flex;
+  color: #7c8ba2;
+}
+
+.tooltip .toolTipText {
+  visibility: hidden;
+  text-align: center;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: 36px;
+  right: -28px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: 70px;
+  height: 25px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  background-color: #232832;
+}
+
+.tooltip:hover .toolTipText {
+  visibility: visible;
+  opacity: 1;
+}

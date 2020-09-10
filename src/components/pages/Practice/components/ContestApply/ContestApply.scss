@@ -1,0 +1,140 @@
+@import "../../../../../assets/styles/common";
+
+.InstaApply {
+  padding: getRem(0 24);
+
+  .fixedToBottom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: getRem(20);
+    z-index: 1;
+    background-color: $white;
+    max-width: 500px;
+    margin: 0 auto;
+
+    button {
+      display: flex;
+      padding: getRem(4 6);
+    }
+
+    &.freeInputCTA button {
+      padding: getRem(6 8);
+      margin: 0;
+      height: auto;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .formfield_wrapper {
+    position: relative;
+
+    p.formError {
+      color: $scarlet;
+      font-size: getRem(12);
+      position: absolute;
+      bottom: getRem(6);
+    }
+
+    .inputWrapper {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .blue_grey_Input {
+      width: 100%;
+    }
+  }
+
+  .LogoHeader {
+    padding: getRem(20 24);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: $white;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    right: 0;
+
+    &.covid_logo {
+      padding: getRem(12 24);
+    }
+
+    .btn {
+      font-size: getRem(14);
+      font-weight: 700;
+    }
+  }
+}
+
+.InstaApply {
+  padding-top: getRem(70);
+  padding-bottom: getRem(66);
+
+  .InstaApplyForm {
+    padding-bottom: 80px;
+  }
+
+  .expLabel {
+    color: $wild_blue_yonder;
+    font-weight: 600;
+    margin-top: getRem(15);
+  }
+
+  .experienceYear {
+    margin-right: getRem(16);
+  }
+
+  .experienceMonth,
+  .experienceYear {
+    &.blue_grey_Input {
+      label.blue_grey_InputLabel {
+        bottom: getRem(6);
+        font-weight: 600;
+      }
+
+      input {
+        padding: getRem(4 0);
+
+        &::placeholder {
+          color: $mountain_mist;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .cvUploadWrapper {
+    display: flex;
+  }
+
+  .cvUploadIcon {
+    margin-right: getRem(14);
+    width: getRem(36);
+  }
+
+  .cvUploadCTA {
+    font-weight: 600;
+    color: $clear_blue;
+    font-size: getRem(13);
+  }
+
+  .applyNowCTA {
+    display: block;
+    margin: 0 auto;
+    height: getRem(40);
+    min-width: getRem(136);
+    font-weight: 600;
+  }
+}
+
+.marginBottom_15 {
+  margin-bottom: getRem(14px);
+}

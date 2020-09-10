@@ -1,0 +1,31 @@
+@import "../../../assets/styles/common";
+
+button.SocialLogin__CTA {
+  font-size: getRem(15);
+  color: $dusk;
+  font-weight: 500;
+  text-transform: capitalize;
+  border: 1px solid $gallery;
+  background: #fff;
+  width: 92px;
+  min-width: auto;
+  img {
+    margin: 0 auto;
+  }
+  
+}
+button:hover{
+    border-color: $dusk
+}
+
+.SocialLogin__CTAContainer {
+  margin: getRem(20 auto 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include small-height-phone {
+    margin-top: getRem(28);
+  }
+}
+

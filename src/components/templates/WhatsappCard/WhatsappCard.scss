@@ -1,0 +1,36 @@
+@import "../../../assets/styles/common";
+
+.WhatsappCard {
+  margin-top: getRem(130);
+  display: inline-block;
+  width: calc(100% - 20px);
+  position: relative;
+
+  @at-root div &.flatCard {
+    padding-bottom: 0;
+  }
+
+  h1 {
+    margin-bottom: getRem(8);
+    font-size: getRem(17);
+    line-height: getRem(20);
+  }
+
+  .viewedJobsCTA {
+    display: block;
+    margin: getRem(16 0 16 auto);
+    font-size: getRem(15);
+  }
+
+  .WACard_Content {
+    display: flex;
+  }
+
+  .icon {
+    margin-right: getRem(20);
+  }
+
+  &.closedCard {
+    margin-top: getRem(152);
+  }
+}

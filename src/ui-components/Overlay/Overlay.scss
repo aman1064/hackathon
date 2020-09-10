@@ -1,0 +1,34 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  transition: 300ms;
+
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    opacity: 1;
+  }
+
+  &-enter-done {
+    opacity: 1;
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+  }
+
+  &-exit-done {
+    opacity: 0;
+  }
+}

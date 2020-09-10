@@ -1,0 +1,65 @@
+@import "../../../assets/styles/common";
+
+.AnimatedCTA {
+  width: getRem(172);
+  height: getRem(44);
+
+  @include desktop {
+    width: getRem(222);
+    height: getRem(60);
+  }
+
+  background: $web_orange;
+  position: relative;
+  border-radius: getRem(30);
+  text-align: center;
+  transition: all 0.5s ease;
+  overflow: hidden;
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: $white;
+    line-height: getRem(44);
+    font-size: getRem(17);
+    font-weight: 700;
+    position: relative;
+    z-index: 9999;
+
+    @include desktop {
+      font-size: getRem(20);
+      line-height: getRem(60);
+    }
+  }
+
+  .buttonEffect {
+    width: 257px;
+    height: 60px;
+    left: -257px;
+    background: $gamboge;
+    position: absolute;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  &:hover .buttonEffect {
+    left: 0;
+  }
+
+  &:hover a {
+    color: #fff;
+  }
+
+  img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+    margin-left: getRem(8);
+    margin-bottom: 4px;
+
+    @include desktop {
+      margin-left: getRem(10);
+      margin-bottom: 0;
+    }
+  }
+}

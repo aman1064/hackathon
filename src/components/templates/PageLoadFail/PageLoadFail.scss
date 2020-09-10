@@ -1,0 +1,60 @@
+@import "../../../assets/styles/common";
+
+.PageLoadFail {
+  .imgCntnr {
+    max-width: getRem(216);
+    margin: getRem(96 auto 0);
+
+    @include desktop {
+      max-width: getRem(264);
+      margin: getRem(144 auto 0);
+    }
+  }
+
+  .textCntnr {
+    margin: getRem(36 auto 0);
+    max-width: getRem(306);
+    text-align: center;
+
+    @include desktop {
+      max-width: getRem(555);
+      margin: getRem(48 auto 0);
+    }
+  }
+
+  h1 {
+    font-size: getRem(22);
+    line-height: getRem(26);
+    font-weight: 700;
+    color: $shark;
+
+    @include desktop {
+      font-size: getRem(36);
+      line-height: getRem(46);
+    }
+  }
+
+  .desc {
+    margin-top: getRem(12);
+    font-size: getRem(13);
+    line-height: getRem(18);
+    font-weight: 700;
+    color: $wild_blue_yonder;
+
+    @include desktop {
+      margin-top: getRem(16);
+      font-size: getRem(17);
+      line-height: getRem(21);
+    }
+  }
+
+  .btn {
+    margin-top: getRem(10);
+    height: getRem(36);
+    padding: getRem(8 18);
+
+    @include desktop {
+      margin-top: getRem(12);
+    }
+  }
+}

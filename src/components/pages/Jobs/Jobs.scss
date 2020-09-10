@@ -1,0 +1,603 @@
+@import "../../../assets/styles/common";
+
+.NewJobs {
+  padding: getRem(0 35);
+
+  &__imageWrapper {
+    margin: 0 auto 6.2vh;
+    text-align: center;
+  }
+
+  &__message {
+    margin-top: getRem(16);
+    margin-bottom: getRem(21);
+    padding: getRem(0 16);
+    font-size: getRem(13);
+    color: $dusk;
+    text-align: center;
+    letter-spacing: 0.5px;
+    max-width: getRem(300);
+  }
+
+  &__heading {
+    padding: getRem(20 28 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &.hasLogo {
+      padding-top: getRem(10);
+    }
+  }
+
+  &__helpText {
+    padding: getRem(2 28 2);
+
+    @include small-height-phone {
+      padding: getRem(8 35 0);
+    }
+  }
+
+  &__contentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - #{getRem(176)});
+  }
+}
+
+.ViewedJobs,
+.SavedJobs {
+  padding-bottom: getRem(56);
+
+  &__imageWrapper {
+    margin: getRem(50) auto getRem(40);
+    text-align: center;
+  }
+
+  &__message {
+    margin-top: getRem(16);
+    font-size: getRem(13);
+    color: $dusk;
+    text-align: center;
+    letter-spacing: 0.5px;
+    max-width: getRem(300);
+  }
+
+  &__paddingMessage {
+    padding: 0 getRem(16);
+  }
+
+  &__heading {
+    padding: getRem(13);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__contentWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.ViewedJobs {
+  &__bookmarkChipWrapper {
+    transition: 0.3s;
+    height: getRem(60);
+
+    &.isScrolledUp {
+      height: 0;
+      transition: 0.3s;
+    }
+  }
+
+  &__bookmarkChip {
+    margin-left: getRem(25);
+    transition: 0.3s;
+
+    @include desktop {
+      margin: getRem(12 0 0 45);
+    }
+  }
+}
+
+div .MiniJobCard {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+  margin: getRem(0 10);
+
+  &__ActionsWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid $gallery;
+    padding: getRem(12 0);
+    margin-top: getRem(10);
+  }
+
+  &__BookmarkCTA {
+    position: absolute;
+    right: getRem(20);
+    color: $manatee;
+
+    &.isBookmarked {
+      color: $web_orange;
+    }
+  }
+
+  &__FooterCTA {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: getRem(14);
+    letter-spacing: 0.4px;
+
+    &::after {
+      content: "";
+      width: getRem(6);
+      height: getRem(6);
+      border: 1px solid $dusk;
+      border-width: 1px 1px 0 0;
+      transform: rotate(45deg);
+      display: block;
+      margin-left: getRem(4);
+    }
+  }
+
+  &__DescriptionWrapper {
+    width: calc(100% - #{getRem(56)});
+
+    h2 {
+      width: calc(100% - #{getRem(20)});
+    }
+  }
+
+  &__postedDate {
+    font-size: getRem(10);
+    color: $blue_grey;
+    text-align: center;
+    border: 1px solid $catskill_white;
+    margin-top: getRem(4);
+    max-width: getRem(32);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    .MiniJobCard__postedDateIcon {
+      padding-right: getRem(2);
+      font-size: getRem(8);
+      top: getRem(-2);
+      position: relative;
+    }
+  }
+}
+
+.jobCard {
+  &__BookmarkCTA {
+    color: $gun_powder;
+    margin-top: getRem(8);
+    position: absolute;
+    top: getRem(16);
+    right: getRem(16);
+
+    &.isBookmarked {
+      color: $web_orange;
+    }
+  }
+
+  &__cta_wrapper {
+    position: absolute;
+    margin: getRem(0 16);
+    left: 0;
+    right: 0;
+    bottom: getRem(20);
+
+    button {
+      height: getRem(40);
+      min-width: getRem(132);
+      max-width: getRem(136);
+      width: 48%;
+    }
+  }
+}
+
+div .modal.Modal__Bottom {
+  position: fixed;
+  max-width: 482px;
+  width: 100%;
+  border-radius: getRem(10 10 0 0);
+  top: unset;
+  transform: none;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  &.applyWithCV {
+    padding-bottom: 0;
+
+    .HelpText {
+      margin-top: getRem(4);
+      padding: 0;
+    }
+
+    .Modal__FlatAction {
+      margin: 28px 0 0;
+    }
+
+    .btn {
+      padding: getRem(8 4);
+      font-weight: 600;
+    }
+
+    .modalCross {
+      padding: getRem(4 12);
+    }
+  }
+}
+
+.Modal__FlatAction {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid $gallery;
+  padding: getRem(8 0);
+  margin: getRem(28 20 0);
+
+  button {
+    font-size: getRem(16);
+    padding: getRem(8 0);
+    min-width: auto;
+  }
+}
+
+.fixButtonToBottom {
+  padding: getRem(12 40);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  background: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: getRem(490);
+}
+
+.fixButtonToBottom_oneButton {
+  padding: getRem(12 40);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  background: $white;
+  text-align: center;
+  max-width: getRem(490);
+}
+
+.paddingAgainstBottomNav {
+  padding: getRem(64 0 0);
+
+  .fixButtonToBottom {
+    box-shadow: getRem(0 0 15 -2) $twilight_blue;
+  }
+
+  .fixButtonToBottom_oneButton {
+    box-shadow: getRem(0 0 15 -2) $twilight_blue;
+  }
+
+  button {
+    height: getRem(40);
+  }
+}
+
+.KnowMore {
+  &__companyUrl {
+    color: #4a90e2;
+  }
+
+  &__postedDate {
+    font-size: getRem(11);
+
+    .CompanyDetails__icon {
+      color: $white;
+      font-size: getRem(12);
+      padding-right: 0px;
+    }
+  }
+
+  &__fixedNav {
+    position: fixed;
+    padding: getRem(12 20);
+    left: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    background: $white;
+    z-index: 1;
+    max-width: getRem(500);
+    margin: 0 auto;
+
+    &--onlyTitle {
+      padding: 0;
+    }
+  }
+
+  &__CompanyDetails {
+    &.darkBG {
+      padding-top: getRem(44);
+      border-radius: getRem(30);
+      box-shadow: 0 4px 0 0 $serenade;
+      margin-bottom: getRem(16);
+      position: relative;
+
+      &.onlyTitle {
+        padding-top: getRem(12);
+      }
+
+      &.hasHiringStatus {
+        margin-bottom: 0;
+        box-shadow: 0 28px 0 0 $serenade;
+      }
+    }
+
+    &.isHeaderSticky {
+      .shareLinkPosition {
+        position: fixed;
+        top: getRem(18);
+        z-index: 2;
+        width: calc(100% - #{getRem(56)});
+        max-width: getRem(444);
+
+        button {
+          transform: scale(0.7);
+        }
+
+        @at-root .isMultiple & {
+          top: getRem(74);
+        }
+      }
+
+      .CompanyDetails__name {
+        padding-top: getRem(28);
+
+        h2 {
+          font-size: getRem(12);
+          font-weight: 400;
+          position: fixed;
+          top: 0;
+          z-index: 1;
+          width: calc(100% - #{getRem(140)});
+          max-width: getRem(302);
+          margin: getRem(20 54 22 44);
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+      }
+
+      .KnowMore__fixedNav {
+        &--onlyTitle {
+          height: getRem(64);
+          padding: getRem(12 20);
+        }
+      }
+
+      &.isNormalJD {
+        .CompanyDetails {
+          &__name h2 {
+            margin-left: getRem(80);
+            width: calc(100% - #{getRem(192)});
+          }
+
+          &__logo {
+            position: fixed;
+            width: 32px;
+            height: 32px;
+            top: 14px;
+            z-index: 1;
+            margin-left: getRem(36);
+          }
+        }
+      }
+    }
+  }
+
+  &__JDWrapper,
+  &__aboutComp {
+    ol {
+      list-style-type: decimal;
+      padding-left: getRem(14);
+      margin-bottom: getRem(8);
+    }
+
+    ul {
+      padding-left: getRem(14);
+      margin-bottom: getRem(8);
+
+      li::before {
+        content: "\2022";
+        color: $web_orange;
+        display: inline-block;
+        width: getRem(12);
+        margin-left: getRem(-12);
+      }
+
+      p {
+        display: inline;
+      }
+    }
+  }
+
+  &__ActionsWrapper {
+    display: flex;
+
+    .bookmarkIcon {
+      margin-top: 4px;
+      margin-left: getRem(12);
+    }
+
+    @at-root .isHeaderSticky & button {
+      transform: scale(0.8);
+    }
+  }
+
+  &__Share {
+    margin-top: getRem(6);
+    height: getRem(27);
+  }
+}
+
+.browse__PrimaryBtn {
+  height: getRem(40);
+  text-transform: none;
+  padding: getRem(0 32);
+}
+
+.LastJobCard__TextBtn.btn {
+  text-transform: none;
+  font-size: getRem(13);
+  font-weight: bold;
+}
+
+.jobCards__MatchDetails {
+  min-height: getRem(76);
+
+  .icon {
+    max-height: getRem(18);
+  }
+}
+
+.JD__expiredIcon {
+  color: $brink_pink;
+
+  .CompanyDetails__icon {
+    width: getRem(16);
+  }
+}
+
+.isHeaderBordered .KnowMore__fixedNav--onlyTitle {
+  border-radius: getRem(0 0 30 30);
+  box-shadow: 0 4px 0 0 $serenade;
+}
+
+.isNormalJD {
+  .KnowMore__fixedNav {
+    background: transparent;
+    z-index: 2;
+  }
+}
+
+.headerStickyBG {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  max-width: getRem(500);
+  margin: 0 auto;
+  height: getRem(60);
+  background: $white;
+  z-index: 1;
+}
+
+.isHeaderBordered {
+  .headerStickyBG {
+    border-radius: getRem(0 0 30 30);
+    box-shadow: 0 4px 0 0 $serenade;
+  }
+}
+
+.KnowMore__fixedNav--QA {
+  @at-root .isHeaderSticky & {
+    background: transparent;
+    z-index: 2;
+  }
+
+  .KnowMore__ActionsWrapper {
+    margin-left: auto;
+  }
+}
+
+.KnowMore__CompanyDetails--isExpired.isQAFlow {
+  padding-top: 0;
+
+  .KnowMore__fixedNav--QA {
+    display: none;
+  }
+
+  .headerStickyBG {
+    height: 0;
+  }
+
+  &.isHeaderSticky .headerStickyBG {
+    height: getRem(60);
+  }
+}
+
+.isQAFlow .KnowMore__fixedNav {
+  z-index: 2;
+}
+
+.viewedJobsCTA {
+  margin: getRem(20 28 0 28);
+}
+
+.openInAppBar {
+  font-size: getRem(13);
+  color: $dusk;
+  padding: getRem(6 9);
+  max-width: getRem(448);
+  margin: getRem(16 24 4);
+  display: block;
+  background: $zumthor;
+  text-align: center;
+
+  span {
+    color: $azure_radiance;
+  }
+}
+
+.sampleJC {
+  max-width: getRem(360);
+  margin: getRem(30) auto 0;
+  left: 0;
+  right: 0;
+
+  &_imgWrapper {
+    margin: getRem(56 auto 62);
+    text-align: center;
+  }
+
+  &_message {
+    font-size: getRem(13);
+    color: $dusk;
+    margin-top: getRem(12);
+    text-align: center;
+    max-width: getRem(300);
+  }
+}
+
+.JDHiringStatus {
+  font-size: getRem(11);
+  font-weight: 600;
+  color: $dorado;
+  padding: getRem(8 8 8 20);
+  position: relative;
+  display: flex;
+  background: $serenade;
+  border-radius: getRem(0 0 24 24);
+  margin-bottom: getRem(10);
+  align-items: center;
+
+  .icon {
+    flex-shrink: 0;
+    margin-right: getRem(8);
+    display: flex;
+    align-items: center;
+  }
+}

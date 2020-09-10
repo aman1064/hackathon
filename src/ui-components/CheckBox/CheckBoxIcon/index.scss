@@ -1,0 +1,65 @@
+.checkicon-cntr {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  @at-root .primary & {
+    .checked {
+      background-color: #ffa800;
+
+      &::after {
+        border-color: #ffffff;
+      }
+    }
+
+    .unchecked {
+      border-color: #bcc3d5;
+    }
+  }
+
+  @at-root .medium & {
+    font-size: 22px;
+
+    .checked {
+      height: 16px;
+      width: 16px;
+
+      &::after {
+        left: 5px;
+        top: 1px;
+        width: 6px;
+        height: 11px;
+      }
+    }
+
+    .unchecked {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .checked {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+  }
+
+  .checked::after {
+    display: block;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    content: "";
+    position: absolute;
+  }
+
+  .unchecked {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid;
+    border-radius: 2px;
+  }
+}

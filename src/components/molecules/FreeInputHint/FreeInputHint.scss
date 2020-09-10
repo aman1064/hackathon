@@ -1,0 +1,25 @@
+@import "../../../assets/styles/common";
+
+.FIHint {
+  border: 1px solid $athens_gray;
+  padding: getRem(14);
+  font-size: getRem(11);
+  border-radius: 4px;
+
+  &_title {
+    font-size: getRem(11);
+  }
+
+  &_list li {
+    padding-left: getRem(16);
+    position: relative;
+    margin-top: getRem(8);
+
+    &:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: $web_orange;
+    }
+  }
+}

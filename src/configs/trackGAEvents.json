@@ -1,0 +1,653 @@
+{
+  "landing_screen$login": {
+    "category": "onboarding",
+    "label": "landing_screen",
+    "action": "login_clicked"
+  },
+  "landing_screen$start_now_top": {
+    "category": "onboarding",
+    "label": "landing_screen",
+    "action": "start_now_top_clicked"
+  },
+  "landing_screen$start_now_bottom": {
+    "category": "onboarding",
+    "label": "landing_screen",
+    "action": "start_now_bottom_clicked"
+  },
+  "landing_screen$support_email": {
+    "category": "onboarding",
+    "label": "landing_screen",
+    "action": "support_email_clicked"
+  },
+  "signup_screen$get_started": {
+    "category": "registration",
+    "label": "signup_screen",
+    "action": "get_started_clicked"
+  },
+  "signup_screen$login": {
+    "category": "registration",
+    "label": "signup_screen",
+    "action": "login_clicked"
+  },
+  "signup_screen$google": {
+    "category": "registration",
+    "label": "signup_screen",
+    "action": "google_clicked"
+  },
+  "signup_screen$facebook": {
+    "category": "registration",
+    "label": "signup_screen",
+    "action": "facebook_clicked"
+  },
+  "signup_screen$get_started_success": {
+    "category": "registration",
+    "label": "signup_screen",
+    "action": "get_started_clicked"
+  },
+  "profile$domainId$chipGroup": {
+    "category": "registration",
+    "label": "domain_experience",
+    "action": "type_of_postion_clicked"
+  },
+  "domain_experience$next_success": {
+    "category": "registration",
+    "label": "domain_experience",
+    "action": "next_button_clicked"
+  },
+  "skill_selection$current_job_role": {
+    "category": "registration",
+    "label": "skill_selection",
+    "action": "current_job_role_clicked"
+  },
+  "skill_selection$people_manager": {
+    "category": "registration",
+    "label": "skill_selection",
+    "action": "people_manager_clicked"
+  },
+  "skill_selection$next_success": {
+    "category": "registration",
+    "label": "skill_selection",
+    "action": "next_button_clicked"
+  },
+  "skill_selection$back": {
+    "category": "registration",
+    "label": "skill_selection",
+    "action": "back_button_clicked"
+  },
+  // "cv_upload$via_phone": {
+  //   "category": "registration",
+  //   "label": "cv_upload",
+  //   "action": "via_phone_clicked"
+  // },
+  // "cv_upload$via_drive": {
+  //   "category": "registration",
+  //   "label": "cv_upload",
+  //   "action": "via_drive_clicked"
+  // },
+  "cv_upload$next_success": {
+    "category": "registration",
+    "label": "cv_upload",
+    "action": "next_button_clicked"
+  },
+  "cv_upload$back": {
+    "category": "registration",
+    "label": "cv_upload",
+    "action": "back_button_clicked"
+  },
+  "company_details_cv_upload_success$confidential_salary": {
+    "category": "registration",
+    "label": "company_details",
+    "action": "confidential_salary_clicked"
+  },
+  "latestCompanyDetails$noticePeriodId$singleSelection": {
+    "category": "registration",
+    "label": "company_details",
+    "action": "notice_period_clicked"
+  },
+  "company_details_cv_upload_success$next_success": {
+    "category": "registration",
+    "label": "company_details",
+    "action": "next_button_clicked"
+  },
+  "company_details_cv_upload_success$back": {
+    "category": "registration",
+    "label": "company_details",
+    "action": "back_button_clicked"
+  },
+  "highest_education$next_success": {
+    "category": "registration",
+    "label": "highest_education",
+    "action": "next_button_clicked"
+  },
+  "highest_education$back": {
+    "category": "registration",
+    "label": "highest_education",
+    "action": "back_button_clicked"
+  },
+  "wishlist$skip": {
+    "category": "registration",
+    "label": "wishlist",
+    "action": "skip_button_clicked"
+  },
+  "wishlist$next_success": {
+    "category": "registration",
+    "label": "wishlist",
+    "action": "next_button_clicked"
+  },
+  "wishlist$back": {
+    "category": "registration",
+    "label": "wishlist",
+    "action": "back_button_clicked"
+  },
+  "welcome_screen$go_to_jobs": {
+    "category": "welcome",
+    "label": "welcome_screen",
+    "action": "go_to_jobs_clicked"
+  },
+  "header$viewed_jobs": {
+    "category": "browse",
+    "label": "header",
+    "action": "viewed_jobs_clicked"
+  },
+  "header$saved_jobs": {
+    "category": "browse",
+    "label": "header",
+    "action": "saved_jobs_clicked"
+  },
+  // "footer$Jobs": {
+  //   "category": "browse",
+  //   "label": "footer",
+  //   "action": "jobs_clicked"
+  // },
+  // "footer$Applied": {
+  //   "category": "browse",
+  //   "label": "footer",
+  //   "action": "applied_clicked"
+  // },
+  // "footer$Profile": {
+  //   "category": "browse",
+  //   "label": "footer",
+  //   "action": "profile_clicked"
+  // },
+  "card$mandate_bookmark": {
+    "category": "browse",
+    "label": "card",
+    "action": "mandate_bookmark_clicked"
+  },
+  "card$mandate_unbookmark": {
+    "category": "browse",
+    "label": "card",
+    "action": "mandate_unbookmark_clicked"
+  },
+  "card$not_relevant": {
+    "category": "browse",
+    "label": "card",
+    "action": "not_relevant_clicked"
+  },
+  "card$know_more": {
+    "category": "browse",
+    "label": "card",
+    "action": "know_more_clicked"
+  },
+  "card$not_relevant_continue": {
+    "category": "browse",
+    "label": "card",
+    "action": "not_relevant_continue_clicked"
+  },
+  "card$not_relevant_cancel": {
+    "category": "browse",
+    "label": "card",
+    "action": "not_relevant_cancel_clicked"
+  },
+  "card$go_to_viewed_jobs": {
+    "category": "browse",
+    "label": "card",
+    "action": "go_to_viewed_jobs_clicked"
+  },
+  "card$update_preferences": {
+    "category": "browse",
+    "label": "card",
+    "action": "update_preferences_clicked"
+  },
+  "detailed_jd$not_relevant": {
+    "category": "browse",
+    "label": "detailed_jd",
+    "action": "not_relevant_clicked"
+  },
+  "detailed_jd$apply": {
+    "category": "browse",
+    "label": "detailed_jd",
+    "action": "apply_clicked"
+  },
+  "detailed_jd$bookmark": {
+    "category": "browse",
+    "label": "detailed_jd",
+    "action": "bookmark_clicked"
+  },
+  "detailed_jd$unbookmark": {
+    "category": "browse",
+    "label": "detailed_jd",
+    "action": "unbookmark_clicked"
+  },
+  "detailed_jd$jd_read_more": {
+    "category": "browse",
+    "label": "detailed_jd",
+    "action": "jd_read_more_clicked"
+  },
+  "detailed_jd$company_read_more": {
+    "category": "browse",
+    "label": "detailed_jd",
+    "action": "company_read_more_clicked"
+  },
+  "detailed_jd$not_relevant_continue": {
+    "category": "browse",
+    "label": "detailed_jd",
+    "action": "not_relevant_continue_clicked"
+  },
+  "detailed_jd$not_relevant_cancel": {
+    "category": "browse",
+    "label": "detailed_jd",
+    "action": "not_relevant_cancel_clicked"
+  },
+  "viewed_jobs$mandate_bookmark": {
+    "category": "browse",
+    "label": "viewed_jobs",
+    "action": "mandate_bookmark_clicked"
+  },
+  "viewed_jobs$mandate_unbookmark": {
+    "category": "browse",
+    "label": "viewed_jobs",
+    "action": "mandate_unbookmark_clicked"
+  },
+  "viewed_jobs$not_relevant": {
+    "category": "browse",
+    "label": "viewed_jobs",
+    "action": "not_relevant_clicked"
+  },
+  "viewed_jobs$know_more": {
+    "category": "browse",
+    "label": "viewed_jobs",
+    "action": "know_more_clicked"
+  },
+  "viewed_jobs$not_relevant_continue": {
+    "category": "browse",
+    "label": "viewed_jobs",
+    "action": "not_relevant_continue_clicked"
+  },
+  "viewed_jobs$not_relevant_cancel": {
+    "category": "browse",
+    "label": "viewed_jobs",
+    "action": "not_relevant_cancel_clicked"
+  },
+  "saved_jobs$mandate_bookmark": {
+    "category": "browse",
+    "label": "saved_jobs",
+    "action": "mandate_bookmark_clicked"
+  },
+  "saved_jobs$mandate_unbookmark": {
+    "category": "browse",
+    "label": "saved_jobs",
+    "action": "mandate_unbookmark_clicked"
+  },
+  "saved_jobs$not_relevant": {
+    "category": "browse",
+    "label": "saved_jobs",
+    "action": "not_relevant_clicked"
+  },
+  "saved_jobs$know_more": {
+    "category": "browse",
+    "label": "saved_jobs",
+    "action": "know_more_clicked"
+  },
+  "saved_jobs$not_relevant_continue": {
+    "category": "browse",
+    "label": "saved_jobs",
+    "action": "not_relevant_continue_clicked"
+  },
+  "saved_jobs$not_relevant_cancel": {
+    "category": "browse",
+    "label": "saved_jobs",
+    "action": "not_relevant_cancel_clicked"
+  },
+  "applied_jobs_list$jd_click": {
+    "category": "applied_jobs",
+    "label": "applied_jobs_list",
+    "action": "jd_click"
+  },
+  "applied_jobs$detailed_jd$company_read_more": {
+    "category": "applied_jobs",
+    "label": "applied_jobs_list",
+    "action": "company_read_more"
+  },
+  "applied_jobs$detailed_jd$jd_read_more": {
+    "category": "applied_jobs",
+    "label": "detailed_jd",
+    "action": "jd_read_more_clicked"
+  },
+  "profile$edit": {
+    "category": "profile",
+    "label": "edit",
+    "action": "edit_icon_clicked"
+  },
+  "profile$header$settings_page": {
+    "category": "profile",
+    "label": "header",
+    "action": "settings_page_clicked"
+  },
+  "edit_domain_experience$update": {
+    "category": "profile",
+    "label": "edit_domain_experience",
+    "action": "update_clicked"
+  },
+  "edit_domain_experience$back": {
+    "category": "profile",
+    "label": "edit_domain_experience",
+    "action": "back_clicked"
+  },
+  "edit_skill_selection$update": {
+    "category": "profile",
+    "label": "edit_skill_selection",
+    "action": "update_clicked"
+  },
+  "edit_skill_selection$back": {
+    "category": "profile",
+    "label": "edit_skill_selection",
+    "action": "back_clicked"
+  },
+  "edit_cv_upload$update": {
+    "category": "profile",
+    "label": "edit_cv_upload",
+    "action": "update_clicked"
+  },
+  "edit_cv_upload$back": {
+    "category": "profile",
+    "label": "edit_cv_upload",
+    "action": "back_clicked"
+  },
+  "edit_company_details$update": {
+    "category": "profile",
+    "label": "edit_company_details",
+    "action": "update_clicked"
+  },
+  "edit_company_details$back": {
+    "category": "profile",
+    "label": "edit_company_details",
+    "action": "back_clicked"
+  },
+  "edit_highest_education$update": {
+    "category": "profile",
+    "label": "edit_highest_education",
+    "action": "update_clicked"
+  },
+  "edit_highest_education$back": {
+    "category": "profile",
+    "label": "edit_highest_education",
+    "action": "back_clicked"
+  },
+  "edit_wishlist$update": {
+    "category": "profile",
+    "label": "edit_wishlist",
+    "action": "update_clicked"
+  },
+  "edit_wishlist$back": {
+    "category": "profile",
+    "label": "edit_wishlist",
+    "action": "back_clicked"
+  },
+  "settings$privacy_policy": {
+    "category": "profile",
+    "label": "settings",
+    "action": "privacy_policy_clicked"
+  },
+  "settings$log_out": {
+    "category": "profile",
+    "label": "settings",
+    "action": "log_out_clicked"
+  },
+  "settings$back_button": {
+    "category": "profile",
+    "label": "settings",
+    "action": "back_button_clicked"
+  },
+  "signup$email_error": {
+    "category": "registration",
+    "label": "signup_screen",
+    "action": "email_error"
+  },
+  "signup$mobileNumber_error": {
+    "category": "registration",
+    "label": "signup_screen",
+    "action": "mobile_error"
+  },
+  "signup$password_error": {
+    "category": "registration",
+    "label": "signup_screen",
+    "action": "password_error"
+  },
+  "signup$login_failed": {
+    "category": "registration",
+    "label": "signup_screen",
+    "action": "login_failed"
+  },
+  "cv_upload$upload_cv_wrong_file": {
+    "category": "registration",
+    "label": "cv_upload",
+    "action": "upload_cv_wrong_file"
+  },
+  "cv_upload$upload_cv_success": {
+    "category": "registration",
+    "label": "cv_upload",
+    "action": "upload_cv_success"
+  },
+  "cv_upload$upload_cv_failed": {
+    "category": "registration",
+    "label": "cv_upload",
+    "action": "upload_cv_failed"
+  },
+  "cv_upload$next_wo_CV": {
+    "category": "registration",
+    "label": "cv_upload",
+    "action": "next_wo_CV"
+  },
+  "latestEducationDetails$yearOfPassing_error": {
+    "category": "registration",
+    "label": "highest_education",
+    "action": "graduation_year_error"
+  },
+  "login_screen$forgot_password_clicked": {
+    "category": "registration",
+    "label": "login_screen",
+    "action": "forgot_password_clicked"
+  },
+  "forgot_password_screen$submit_clicked": {
+    "category": "registration",
+    "label": "forgot_password_screen",
+    "action": "submit_clicked"
+  },
+  "forgot_password_screen$resend_clicked": {
+    "category": "registration",
+    "label": "forgot_password_screen",
+    "action": "resend_clicked"
+  },
+  "forgot_password_screen$login_clicked": {
+    "category": "registration",
+    "label": "forgot_password_screen",
+    "action": "login_clicked"
+  },
+  "reset_password_screen$update_clicked": {
+    "category": "registration",
+    "label": "reset_password_screen",
+    "action": "update_clicked"
+  },
+  "card$card_swiped": {
+    "category": "browse",
+    "label": "card",
+    "action": "card_swiped"
+  },
+  "login_screen$login_success_clicked": {
+    "category": "registration",
+    "label": "login_screen",
+    "action": "login_success_clicked"
+  },
+  "login_screen$register_clicked": {
+    "category": "registration",
+    "label": "login_screen",
+    "action": "register_clicked"
+  },
+  "login_screen$google_clicked": {
+    "category": "registration",
+    "label": "login_screen",
+    "action": "google_clicked"
+  },
+  "login_screen$facebook_clicked": {
+    "category": "registration",
+    "label": "login_screen",
+    "action": "facebook_clicked"
+  },
+
+  "JD_screen$quick_apply_clicked": {
+    "category": "QAF",
+    "label": "JD_screen",
+    "action": "quick_apply_clicked"
+  },
+  "JD_screen$view_more_jobs_clicked": {
+    "category": "QAF",
+    "label": "JD_screen",
+    "action": "view_more_jobs_clicked"
+  },
+  "naukri_data_screen_apply$edit_details_clicked": {
+    "category": "QAF",
+    "label": "naukri_data_screen_apply",
+    "action": "edit_details_clicked"
+  },
+  "naukri_data_screen_apply_update$update_details_success": {
+    "category": "QAF",
+    "label": "naukri_data_screen_apply_update",
+    "action": "update_details_success"
+  },
+  "naukri_data_screen_apply_update$update_details_error": {
+    "category": "QAF",
+    "label": "naukri_data_screen_apply_update",
+    "action": "update_details_error"
+  },
+  "naukri_data_screen_apply$save_and_apply_success": {
+    "category": "QAF",
+    "label": "naukri_data_screen_apply",
+    "action": "save_and_apply_success"
+  },
+  "naukri_data_screen_apply$save_and_apply_error": {
+    "category": "QAF",
+    "label": "naukri_data_screen_apply",
+    "action": "save_and_apply_error"
+  },
+  "naukri_data_screen_viewmore$view_jobs_clicked": {
+    "category": "QAF",
+    "label": "naukri_data_screen_viewmore",
+    "action": "view_jobs_clicked"
+  },
+  "naukri_data_screen_viewmore_update$update_details_success": {
+    "category": "QAF",
+    "label": "naukri_data_screen_viewmore_update",
+    "action": "update_details_success"
+  },
+  "naukri_data_screen_viewmore_update$update_details_error": {
+    "category": "QAF",
+    "label": "naukri_data_screen_viewmore_update",
+    "action": "update_details_error"
+  },
+  "profile_privacy_apply$continue_clicked": {
+    "category": "QAF",
+    "label": "profile_privacy_apply",
+    "action": "continue_clicked"
+  },
+  "profile_privacy_viewmore$continue_clicked": {
+    "category": "QAF",
+    "label": "profile_privacy_viewmore",
+    "action": "continue_clicked"
+  },
+  "header$login_clicked": {
+    "category": "Home",
+    "label": "header",
+    "action": "login_clicked"
+  },
+  "header$looking_for_hire_clicked": {
+    "category": "Home",
+    "label": "header",
+    "action": "looking_for_hire_clicked"
+  },
+  "fold_1$sign_up_clicked": {
+    "category": "Home",
+    "label": "fold_1",
+    "action": "sign_up_clicked"
+  },
+  "fold_3$sign_up_clicked": {
+    "category": "Home",
+    "label": "fold_3",
+    "action": "sign_up_clicked"
+  },
+  "fold_4$sign_up_clicked": {
+    "category": "Home",
+    "label": "fold_4",
+    "action": "sign_up_clicked"
+  },
+  "fold_5$sign_up_clicked": {
+    "category": "Home",
+    "label": "fold_5",
+    "action": "sign_up_clicked"
+  },
+  "footer$for_recruiters_clicked": {
+    "category": "Home",
+    "label": "footer",
+    "action": "for_recruiters_clicked"
+  },
+  "footer$contact_us_clicked": {
+    "category": "Home",
+    "label": "footer",
+    "action": "contact_us_clicked"
+  },
+  "footer$terms_of_service_clicked": {
+    "category": "Home",
+    "label": "footer",
+    "action": "terms_of_service_clicked"
+  },
+  "footer$facebook_clicked": {
+    "category": "Home",
+    "label": "footer",
+    "action": "facebook_clicked"
+  },
+  "footer$twitter_clicked": {
+    "category": "Home",
+    "label": "footer",
+    "action": "twitter_clicked"
+  },
+  "footer$linkedin_clicked": {
+    "category": "Home",
+    "label": "footer",
+    "action": "linkedin_clicked"
+  },
+  "card$job_viewed": {
+    "category": "browse",
+    "label": "card",
+    "action": "job_viewed"
+  },
+  "click$ApplyClicked_PublicJD": {
+    "category": "click",
+    "label": "",
+    "action": "ApplyClicked_PublicJD"
+  },
+  "upload$InstaApply_cv_upload_success": {
+    "category": "upload",
+    "label": "",
+    "action": "InstaApply_cv_upload_success"
+  },
+  "click$InstaApply_ApplyNowClicked_SignUp": {
+    "category": "click",
+    "label": "",
+    "action": "InstaApply_ApplyNowClicked_SignUp"
+  },
+  "click$InstaApply_UpdateApplicationClicked": {
+    "category": "click",
+    "label": "",
+    "action": "InstaApply_UpdateApplicationClicked"
+  }
+}

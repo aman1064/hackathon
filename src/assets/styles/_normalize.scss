@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $midnight;
+  position: relative;
+  font-family: $nunitoSans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+html,
+body {
+  font-size: #{$baseFont}px;
+  max-width: 500px;
+  margin: 0 auto;
+
+  @media #{$information-phone} {
+    font-size: 14px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+ol,
+p {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: getRem(13);
+  padding: 0;
+  font-family: $nunitoSans;
+  letter-spacing: 0.4px;
+  outline: none;
+}
+
+li.nativeList:before {
+  content: "•";
+  padding-right: getRem(8);
+}
+
+h1 {
+  font-size: getRem(19);
+  line-height: getRem(22);
+}
+
+h2 {
+  font-size: getRem(15);
+  line-height: getRem(20);
+}
+
+h3 {
+  font-size: getRem(13);
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+form {
+  position: relative;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+input {
+  -webkit-border-radius: 0px;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}

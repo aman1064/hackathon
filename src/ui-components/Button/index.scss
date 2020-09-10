@@ -1,0 +1,81 @@
+@import "../../assets/styles/common";
+
+.btn {
+  box-sizing: border-box;
+  cursor: pointer;
+  color: $primaryColor;
+  background-color: $primaryBgColor;
+  border: none;
+  outline: none;
+  border-radius: getRem(100);
+  padding: getRem(8 20);
+  font-size: getRem(14);
+  font-weight: bold;
+  font-family: $nunitoSans;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 88px;
+  height: getRem(44);
+  letter-spacing: 0.5px;
+  -webkit-tap-highlight-color: transparent;
+
+  &.secondary {
+    color: $secondaryColor;
+    background: $secondaryBgColor;
+    border: 1px solid $midnight;
+    font-weight: 600;
+  }
+
+  &.large {
+    height: 60px;
+    font-size: 20px;
+    min-width: 256px;
+  }
+
+  &.link {
+    color: $primaryTxtColor;
+    height: auto;
+    padding: 0;
+    background: transparent;
+    min-height: auto;
+    min-width: auto;
+    font-size: inherit;
+    display: inline-block;
+    font-weight: inherit;
+    border-radius: getRem(4);
+    border-width: 0;
+
+    &.hasHover:hover {
+      background: $cararra;
+    }
+
+    &.secondary {
+      color: $midnight;
+    }
+  }
+
+  &.card {
+    height: getRem(120);
+    width: getRem(120);
+    box-shadow: 0 3px 15px 0 #0f263633;
+    background: transparent;
+    color: $midnight;
+    font-weight: 500;
+    border-radius: 4px;
+
+    &:active {
+      background: rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &.loading {
+    pointer-events: none;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.3;
+  }
+}

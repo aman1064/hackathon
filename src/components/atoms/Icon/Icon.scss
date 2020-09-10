@@ -1,0 +1,19 @@
+@import "../../../assets/styles/common";
+
+.glyph {
+  display: inline-block;
+
+  vertical-align: middle;
+
+  pointer-events: none;
+}
+
+.icon {
+  position: relative;
+
+  display: inline-block;
+
+  vertical-align: middle;
+
+  fill: currentColor;
+}
