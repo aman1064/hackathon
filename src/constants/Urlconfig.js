@@ -106,6 +106,6 @@ const Urlconfig = {
   getPerformanceHistory: `/contest/attempt/insights/profile/{profileId}`,
 
   // hackathon
-  getLandingLogo: `${base}/jobfair/query`
+  getLandingLogo: `${base}/jobfair/query`,
 };
 export default Urlconfig;

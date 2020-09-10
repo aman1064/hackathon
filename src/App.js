@@ -14,9 +14,9 @@ import { getJobDetails } from "./components/pages/Jobs/saga/ActionCreator";
 import { getUserProfile } from "./components/pages/Profile/saga/ActionCreator";
 import { getRegistrationScreenData } from "./components/pages/Registration/saga/ActionCreator";
 import userTimingsTracker from "./analytics/userTimings";
-import tracker from "./tracker";
 import ErrorBoundary from "./components/pages/ErrorBoundary/ErrorBoundary";
 import isMobileDevice from "./utils/isMobileDevice";
+import Company from "./components/pages/Company";
 
 window.__bgperformance = userTimingsTracker();
 
@@ -84,7 +84,8 @@ class App extends Component {
       otpPage,
       practice,
       home,
-      addPhoneNumber
+      addPhoneNumber,
+      companyLanding
     } = routeConfig;
     if (
       !accessToken &&
@@ -119,6 +120,7 @@ class App extends Component {
               {accessToken && (
                 <Route exact path={[addPhoneNumber]} component={Registration} />
               )}
+              <Route exact path={companyLanding} component={Company}/>
               {accessToken && (
                 <Route exact path={[root, home]} component={Home} />
               )}
