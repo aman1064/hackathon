@@ -17,7 +17,7 @@ class Company extends Component {
     componentDidMount() {
         const url = Urls.getLandingLogo;
         const {companyId} = this.state;
-        const postobj = { query: `{ getCompanyPage(id: ${companyId}){id,companyName,companyLogoUrl,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyWebsiteUrl,jobs{jobId,designation,cities,matchDetails,jobDescription,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyLogoUrl,companyWebsiteURL,minCTC,maxCTC,minExperience,maxExperience,benefits,empType,jobRole,ctcConfidential},recruiters{recName,recEmail}} }`
+        const postobj = { query: `{ getCompanyPage(id: ${companyId}){id,companyName,companyLogoUrl,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyWebsiteUrl,companyVideoUrl,jobs{jobId,designation,cities,matchDetails,jobDescription,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyLogoUrl,companyWebsiteURL,minCTC,maxCTC,minExperience,maxExperience,benefits,empType,jobRole,ctcConfidential},recruiters{recName,recEmail}} }`
         };
         servives.post(url, postobj).then(res => {
             this.setState({ companyData: res.data.getCompanyPage });
@@ -69,6 +69,11 @@ class Company extends Component {
                             return <CollectionCard key={job.jobId} jobDetails={job} companyName={companyData.companyName}/>
                         })
                     }
+                </div>
+                <div className="video-container">
+                    <iframe className="video-frame" key={companyData.companyVideoUrl} height="500"
+                            src={`${companyData.companyVideoUrl}?autoplay=1&mute=1&controls=0`}>
+                    </iframe>
                 </div>
             </div>
         </div>
