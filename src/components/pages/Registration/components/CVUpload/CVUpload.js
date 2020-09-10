@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import config from "../../../../../configs/globalConfig";
-import cv_icon from "../../../../../assets/images/png/cv_icon.png";
 import "./CVUpload.scss";
 import { imagesBase } from "../../../../../constants/config";
 
@@ -119,7 +118,9 @@ class CVUpload extends Component {
       this.showCtaText();
     }
     const accessToken = getAccessToken();
-    import(/* webpackChunkName: "ncAdvancedUploader" */ "../../../../../utils/ncAdvancedUploader/ncAdvancedUploader_v5").then(
+    import(
+      /* webpackChunkName: "ncAdvancedUploader" */ "../../../../../utils/ncAdvancedUploader/ncAdvancedUploader_v5"
+    ).then(
       module =>
         (this.ncUploaderIns = new module.NCUploader({
           fileId: "resumeUpload",
@@ -217,7 +218,7 @@ class CVUpload extends Component {
   }
 
   handleNextButtonClick = () => {
-    const { profile, history, location ,currentScreen } = this.props;
+    const { profile, history, location, currentScreen } = this.props;
     if (this.isRegistration) {
       tracker().on("ctapEvent", {
         hitName: "cv_upload_next_click",
@@ -337,7 +338,9 @@ class CVUpload extends Component {
     if (this.state.isRedirectToProfile) {
       return <Redirect to={routeConfig.profile} />;
     } else if (this.state.isRedirectToKnowMore) {
-      const { jobData: { jobId } } = Store.getState();
+      const {
+        jobData: { jobId }
+      } = Store.getState();
       return (
         <Redirect
           to={{
@@ -350,7 +353,9 @@ class CVUpload extends Component {
     } else if (this.state.isRedirectToQuickApplyProfile) {
       return <Redirect to={routeConfig.quickApplyProfile} />;
     } else if (this.state.isRedirectToSource) {
-      const { jobData: { jobId } } = Store.getState();
+      const {
+        jobData: { jobId }
+      } = Store.getState();
       return (
         <Redirect
           to={{
@@ -376,9 +381,9 @@ class CVUpload extends Component {
     return (
       <div>
         <div
-          className={`cvUpload_ButtonContainer ${this.state.isUploding
-            ? "isHidden"
-            : ""}`}
+          className={`cvUpload_ButtonContainer ${
+            this.state.isUploding ? "isHidden" : ""
+          }`}
         >
           <input
             className="uploadAction sr-only"
@@ -396,11 +401,9 @@ class CVUpload extends Component {
                     appearance="card"
                     key={uploadButton.type}
                     id={
-                      uploadButton.type === "googleDrive" ? (
-                        "GoogleDriveButton"
-                      ) : (
-                        "DropBoxButton"
-                      )
+                      uploadButton.type === "googleDrive"
+                        ? "GoogleDriveButton"
+                        : "DropBoxButton"
                     }
                     className="cvUpload_uploadButton"
                     onClick={() => {
@@ -415,12 +418,9 @@ class CVUpload extends Component {
                         src={
                           uploadButton.additionalProperties.iconUrl.includes(
                             "http"
-                          ) ? (
-                            uploadButton.additionalProperties.iconUrl
-                          ) : (
-                            `${imagesBase}${uploadButton.additionalProperties
-                              .iconUrl}`
                           )
+                            ? uploadButton.additionalProperties.iconUrl
+                            : `${imagesBase}${uploadButton.additionalProperties.iconUrl}`
                         }
                         alt={`upload CV ${uploadButton.value}`}
                         width="50"
@@ -455,12 +455,9 @@ class CVUpload extends Component {
                           src={
                             uploadButton.additionalProperties.iconUrl.includes(
                               "http"
-                            ) ? (
-                              uploadButton.additionalProperties.iconUrl
-                            ) : (
-                              `${imagesBase}${uploadButton.additionalProperties
-                                .iconUrl}`
                             )
+                              ? uploadButton.additionalProperties.iconUrl
+                              : `${imagesBase}${uploadButton.additionalProperties.iconUrl}`
                           }
                           alt={`upload CV ${uploadButton.value}`}
                           width="50"
@@ -483,11 +480,10 @@ class CVUpload extends Component {
           </div>
         </div>
         <div
-          className={`cvUpload-container flatCard large ${!this.state.isUploding
-            ? "isHidden"
-            : ""}`}
+          className={`cvUpload-container flatCard large ${
+            !this.state.isUploding ? "isHidden" : ""
+          }`}
         >
-          <img src={cv_icon} alt="cv icon" />
           <ul id="uploadResults" className="cvUpload-loader-container" />
           <div className={`fixedToBottom spreadHr `}>
             <Button
@@ -540,7 +536,8 @@ const mapStateToProps = (
     optionData: registrationData.optionData,
     profile: commonData.userDetails.profile,
     id: quickApplyData.id,
-    currentScreen:registrationData.currentScreen || ownProps.currentScreenConfig
+    currentScreen:
+      registrationData.currentScreen || ownProps.currentScreenConfig
   };
 };
 

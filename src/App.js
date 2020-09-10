@@ -12,15 +12,10 @@ import ErrorPage from "./components/pages/ErrorPage";
 import * as CommonSaga from "./sagas/ActionCreator";
 import { getJobDetails } from "./components/pages/Jobs/saga/ActionCreator";
 import { getUserProfile } from "./components/pages/Profile/saga/ActionCreator";
-import parseJwt from "./utils/isAgent";
 import { getRegistrationScreenData } from "./components/pages/Registration/saga/ActionCreator";
 import userTimingsTracker from "./analytics/userTimings";
 import tracker from "./tracker";
-
 import ErrorBoundary from "./components/pages/ErrorBoundary/ErrorBoundary";
-import WhatsappOptInModal from "./components/templates/WhatsappOptInModal";
-import showOptIn from "./utils/showOptIn";
-import { getCookie } from "./utils/Cookie";
 import isMobileDevice from "./utils/isMobileDevice";
 
 window.__bgperformance = userTimingsTracker();
@@ -49,6 +44,20 @@ const Practice = Loadable({
   loading: isMobileDevice() ? Loading : () => <div />
 });
 
+const Home = Loadable({
+  loader: () =>
+    import(/* webpackChunkName: "home" */ "./components/pages/Home"),
+  loading: Loading
+});
+
+const Registration = Loadable({
+  loader: () =>
+    import(
+      /* webpackChunkName: "registration-view" */ "./components/pages/Registration"
+    ),
+  loading: Loading
+});
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -64,16 +73,7 @@ class App extends Component {
   }
 
   render() {
-    const {
-      location,
-      whatsappOptin,
-      showWhatsappOptInModal,
-      whatsappSubscription,
-      showWhatsappOptIn,
-      isJobApplied,
-      trackerCat,
-      accessToken
-    } = this.props;
+    const { location, accessToken } = this.props;
     let { mobileNumberVerified } = this.props;
     const {
       login,
@@ -82,7 +82,9 @@ class App extends Component {
       errorPage,
       publicJD,
       otpPage,
-      practice
+      practice,
+      home,
+      addPhoneNumber
     } = routeConfig;
     if (
       !accessToken &&
@@ -90,31 +92,10 @@ class App extends Component {
     ) {
       this.setLandingRoute(location.pathname);
     }
-    const isAgentProcess = accessToken && parseJwt(accessToken);
-    if (isAgentProcess) {
-      mobileNumberVerified = true;
-    }
-    const showWAModal =
-      !isAgentProcess &&
-      !whatsappSubscription &&
-      showWhatsappOptInModal &&
-      showOptIn(
-        getCookie("lastRejectTime") || 0,
-        getCookie("rejectCount") || 0
-      );
     return (
       <ErrorBoundary>
         <React.Fragment>
           <GlobalTemplates />
-          {accessToken && (
-            <WhatsappOptInModal
-              open={showWAModal}
-              whatsappOptin={whatsappOptin}
-              showWhatsappOptIn={showWhatsappOptIn}
-              isJobApplied={isJobApplied}
-              trackerCat={trackerCat}
-            />
-          )}
 
           {navigator.onLine ? (
             <Switch>
@@ -123,7 +104,7 @@ class App extends Component {
               <Route exact path={publicJD} component={PublicJD} />
               <Route exact path={otpPage} component={OtpPage} />
               {((accessToken && !mobileNumberVerified) || !accessToken) && (
-                <Route exact path={[login, signup]} component={Login} />
+                <Route exact path={[login, signup, root]} component={Login} />
               )}
 
               {!accessToken && (
@@ -134,6 +115,12 @@ class App extends Component {
                     search: this.props.location.search
                   }}
                 />
+              )}
+              {accessToken && (
+                <Route exact path={[addPhoneNumber]} component={Registration} />
+              )}
+              {accessToken && (
+                <Route exact path={[root, home]} component={Home} />
               )}
             </Switch>
           ) : (
