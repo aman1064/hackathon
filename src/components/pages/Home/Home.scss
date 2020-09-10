@@ -1,45 +1,67 @@
 @import "../../../assets/styles/common";
 
 .Home {
-    @include desktop {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        overflow: auto;
-        left: 0;
-        z-index: 1;
+  @include desktop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    left: 0;
+    z-index: 1;
+  }
+
+  .imgWrapper {
+    position: relative;
+
+    img {
+      display: block;
     }
+  }
 
-    .imgWrapper {
-        position: relative;
+  .diamondList {
+    position: absolute;
+    top: 19%;
+    left: 11%;
+    width: 128px;
 
-        img {
-            display: block;
-        }
+    &.isRight {
+      right: 11.5%;
+      left: unset;
     }
+  }
 
-    .diamondList {
-        position: absolute;
-        top: 19%;
-        left: 11%;
-        width: 128px;
+  .goldList {
+    position: absolute;
+    top: 23%;
+    left: 25%;
+    width: 90px;
 
-        &.isRight {
-            right: 11.5%;
-            left: unset;
-        }
+    &.isRight {
+      left: unset;
+      right: 23%;
+      top: 23%;
     }
+  }
 
-    .goldList {
-        position: absolute;
-        top: 23%;
-        left: 25%;
-        width: 90px;
+  .companyLink {
+    display: inline-block;
+  }
 
-        &.isRight {
-            left: unset;
-            right: 23%;
-            top: 21%;
-        }
-    }
+  .diamondItem,
+  .goldItem {
+    text-align: center;
+  }
+
+  .diamondItem + .diamondItem {
+    margin-top: 6px;
+  }
+
+  .goldItem {
+    max-width: 44px;
+    margin: 0 auto;
+  }
+
+  .goldItem + .goldItem {
+    margin-top: 4px;
+  }
 }
