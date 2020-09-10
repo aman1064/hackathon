@@ -22,7 +22,7 @@
     position: absolute;
     top: 19%;
     left: 11%;
-    width: 128px;
+    width: getRem(128);
 
     &.isRight {
       right: 11.5%;
@@ -34,7 +34,7 @@
     position: absolute;
     top: 23%;
     left: 25%;
-    width: 90px;
+    width: getRem(90);
 
     &.isRight {
       left: unset;
@@ -57,11 +57,79 @@
   }
 
   .goldItem {
-    max-width: 44px;
+    max-width: getRem(44);
     margin: 0 auto;
   }
 
   .goldItem + .goldItem {
     margin-top: 4px;
+  }
+
+  .videoThumb {
+    position: absolute;
+    top: 27.3%;
+    left: 34%;
+    width: 10.4%;
+    height: getRem(70);
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+
+    &:after {
+      content: "";
+      border: 8px solid transparent;
+      border-left-color: #fff;
+      border-left-width: 12px;
+      border-right-width: 0;
+      position: absolute;
+      top: 50%;
+      left: calc(50% + 2px);
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover:before {
+      content: "";
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: red;
+      border-radius: 50%;
+    }
+
+    &.is2nd {
+      top: 27.4%;
+      left: 57.7%;
+      width: 10.2%;
+    }
+
+    &.is3rd {
+      width: 8%;
+      top: 46.3%;
+      left: 47.2%;
+    }
+  }
+
+  div.youtubeModal {
+    padding: 0;
+    background: transparent;
+  }
+
+  div.modalTitle {
+    padding: 0;
+
+    .modalCross {
+      background: white;
+      top: -20px;
+      right: -20px;
+      min-height: unset;
+      padding: 0;
+      height: 40px;
+      width: 40px;
+    }
   }
 }

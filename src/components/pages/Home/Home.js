@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Modal from "../../../ui-components/Modal";
+import ModalTitle from "../../../ui-components/Modal/Title";
+
 import servives from "../../../utils/services";
 import Urls from "../../../constants/Urlconfig";
 import routeConfig from "../../../constants/routeConfig";
@@ -13,7 +16,8 @@ class Home extends React.PureComponent {
   constructor() {
     super();
     this.state = {
-      landingData: null
+      landingData: null,
+      isYoutubeModalOpen: false
     };
   }
 
@@ -21,20 +25,40 @@ class Home extends React.PureComponent {
     const url = Urls.getLandingLogo;
     const postobj = {
       query:
-        "{getExhibitionHomePageData{goldPartner{id,name,companies{id,companyLogoUrl}},diamondPartner{id,name,companies{id,companyLogoUrl}} silverPartner{id,name,companies{id,companyLogoUrl}},  bronzePartner{id,name,companies{id,companyLogoUrl}},  youtubeLink1, youtubeLink2,youtubeLink3,venue,organiser}}"
+        "{getExhibitionHomePageData{goldPartner{id,name,companies{id,companyLogoUrl}},diamondPartner{id,name,companies{id,companyLogoUrl}} silverPartner{id,name,companies{id,companyLogoUrl}},  bronzePartner{id,name,companies{id,companyLogoUrl}},   youtubeLink1{videoUrl,thumbnailUrl,title}, youtubeLink2{videoUrl,thumbnailUrl,title},youtubeLink3{videoUrl,thumbnailUrl,title},venue,organiser}}"
     };
     servives.post(url, postobj).then(res => {
-      this.setState({ landingData: res.data.getExhibitionHomePageData });
+      if (res.data) {
+        this.setState({ landingData: res.data.getExhibitionHomePageData });
+      }
     });
   }
+
+  openYoutubeModal = ({ videoUrl }) => () => {
+    this.setState({
+      youtubeUrl: videoUrl
+    });
+    window.setTimeout(() => {
+      this.setState({ isYoutubeModalOpen: true });
+    }, 0);
+  };
+
+  closeYoutubeModal = () => {
+    this.setState({ isYoutubeModalOpen: false });
+  };
+
   render() {
-    const { landingData } = this.state;
+    const { landingData, isYoutubeModalOpen, youtubeUrl } = this.state;
+    // const modalContent = (
+
+    // );
+    // console.info("qwe", { youtubeUrl });
     return (
       <div className="Home">
         <div className="imgWrapper">
           <img alt="landing" src={LandingImg} />
           {landingData && (
-            <div>
+            <div className="overlayWrapper">
               <div className="diamondList">
                 {landingData.diamondPartner.companies.map((el, index) => (
                   <div
@@ -89,6 +113,48 @@ class Home extends React.PureComponent {
                   </div>
                 ))}
               </div>
+              {landingData.youtubeLink1 && (
+                <div
+                  className="videoThumb is1st"
+                  onClick={this.openYoutubeModal(landingData.youtubeLink1)}
+                  title={landingData.youtubeLink1.title}
+                >
+                  <img src={landingData.youtubeLink1.thumbnailUrl} />
+                </div>
+              )}
+              {landingData.youtubeLink2 && (
+                <div
+                  className="videoThumb is2nd"
+                  onClick={this.openYoutubeModal(landingData.youtubeLink2)}
+                  title={landingData.youtubeLink2.title}
+                >
+                  <img src={landingData.youtubeLink2.thumbnailUrl} />
+                </div>
+              )}
+              {landingData.youtubeLink3 && (
+                <div
+                  className="videoThumb is3rd"
+                  onClick={this.openYoutubeModal(landingData.youtubeLink3)}
+                  title={landingData.youtubeLink3.title}
+                >
+                  <img src={landingData.youtubeLink3.thumbnailUrl} />
+                </div>
+              )}
+              <Modal
+                className="youtubeModal"
+                open={isYoutubeModalOpen}
+                onClose={this.closeYoutubeModal}
+                closeOnClickOutside
+                backdrop
+              >
+                <ModalTitle handleClose={this.closeYoutubeModal} />
+                <iframe
+                  key={youtubeUrl}
+                  width="520"
+                  height="380"
+                  src={`${youtubeUrl}?autoplay=1&mute=1`}
+                ></iframe>
+              </Modal>
             </div>
           )}
         </div>
