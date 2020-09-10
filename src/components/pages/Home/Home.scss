@@ -1,1 +1,45 @@
 @import "../../../assets/styles/common";
+
+.Home {
+    @include desktop {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        overflow: auto;
+        left: 0;
+        z-index: 1;
+    }
+
+    .imgWrapper {
+        position: relative;
+
+        img {
+            display: block;
+        }
+    }
+
+    .diamondList {
+        position: absolute;
+        top: 19%;
+        left: 11%;
+        width: 128px;
+
+        &.isRight {
+            right: 11.5%;
+            left: unset;
+        }
+    }
+
+    .goldList {
+        position: absolute;
+        top: 23%;
+        left: 25%;
+        width: 90px;
+
+        &.isRight {
+            left: unset;
+            right: 23%;
+            top: 21%;
+        }
+    }
+}

@@ -80,14 +80,6 @@ const Urlconfig = {
   validateSocialLoginOTP: `${base}/user/v2/otp/verifyAndLink`,
   getAllSectionData: `${base}/jobseeker/v1/job/jobdetails/section/list?sectionCount={sectionCount}&sectionsWithData={sectionsWithData}&jobPerSection={jobPerSection}`,
   getNextSectionData: `${base}/jobseeker/v1/job/jobdetails/section/list/{sectionId}?skip={offset}&limit={jobCount}`,
-  /* Whatsapp Opt in */
-  whatsappSubscribe: `${base}/user/whatsapp/subscribe`,
-  getWhatsappStatus: `${base}/user/whatsapp/status*`,
-  /* User Consent */
-  getConsentOTP: `${base}/communication/tempUser/activate`,
-  postMarkNotInterested: `/jobseeker/v1/actions/user/{userId}/profile/{profileId}/job/{jobId}/markNotInterested?rcvId={rcvId}`,
-  postMarkInterested: `/jobseeker/v1/actions/user/{userId}/profile/{profileId}/job/{jobId}/markInterested?rcvId={rcvId}`,
-  postUpdateNotInterested: `${base}/jobseeker/v1/awek/user/profile/job/markNotInterested/updateReason?userId={userId}&profileId={profileId}&jobId={jobId}`,
 
   // covid-19
   getContest: "/contest/list",
@@ -103,9 +95,6 @@ const Urlconfig = {
     `/contest/${contestId}/profile/${profileId}/attempt/${attemptId}/certificate`,
   postShareSuccess: `${base}/contest/share/{attemptId}`,
   getRecommendedJobs: `/contest/profile/{profileId}/jobs`,
-  // unsubscribe
-  saveUnsubscribeReasons: unSubscriptionId =>
-    `${base}/communication/user/mail/unsubscribe/${unSubscriptionId}/update`,
   // practise
   getQuizList: `/contest/groups`,
   getQuizDetails: `/contest/group/details?groupId={groupId}&profileId={profileId}`,
@@ -115,8 +104,8 @@ const Urlconfig = {
   getGroupLeaderboard: `/contest/group/leaderboard?groupId={groupId}&profileId={profileId}`,
   getContestLeaderboard: `/contest/{contestId}/leaderboard?profileId={profileId}`,
   getPerformanceHistory: `/contest/attempt/insights/profile/{profileId}`,
-  /* Collection View */
-  collectionData: `${base}/jobseeker/v1/job/jobdetails/collection/{collectionName}?page={page}&size={size}`,
-  getReverseMap: `${base}/suggestions/v2/suggestions/byTime/0/reverseMap?type=college,location,company,courseDepartment,noticePeriod,preferredBenefits,preferredCompanyType,preferredRoles,course`
+
+  // hackathon
+  getLandingLogo: `${base}/jobfair/query`
 };
 export default Urlconfig;
