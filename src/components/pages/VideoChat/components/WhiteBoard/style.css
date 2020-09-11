@@ -1,0 +1,10 @@
+.white-board-container {
+  position: fixed;
+  top: 50px;
+  height: calc(100vh - 90px);
+}
+
+.white-board-container canvas {
+  background: #6db86d;
+  height: 100%;
+}

@@ -87,7 +87,8 @@ class App extends Component {
       home,
       addPhoneNumber,
       companyLanding,
-      companyJobDetail
+      companyJobDetail,
+      video
     } = routeConfig;
     if (
       !accessToken &&

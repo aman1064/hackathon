@@ -18,6 +18,7 @@ const routeConfig = {
   practiceSignup: "/practice/signup",
   companyLanding: "/company/:id",
   companyJobDetail: "/company/:id/:jobId",
+  video: "/video"
 };
 
 export default routeConfig;
