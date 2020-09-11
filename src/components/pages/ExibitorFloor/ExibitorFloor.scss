@@ -57,6 +57,19 @@
     &.username {
       color: $azure_radiance;
     }
+
+    .red-dot {
+      &:after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: red;
+        right: -6px;
+        top: 2px;
+      }
+    }
   }
 
   .exhibitor-container {
