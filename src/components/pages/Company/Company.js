@@ -38,6 +38,7 @@ class Company extends Component {
   applyOnJob = (jobId, index, loaderReset) => {
     const url = Urls.getLandingLogo;
     const { companyId, companyData } = this.state;
+    const { getNotifications, userId } = this.props;
     const postobj = {
       query: `mutation {markJobInterested(companyId:"${companyId}",jobId:"${jobId}")}`
     };
@@ -49,6 +50,7 @@ class Company extends Component {
           jobs[index] = { ...jobs[index], shownInterest: true };
           this.setState({ companyData: { ...companyData } });
         }
+        getNotifications(userId)
       })
       .finally(() => {
         loaderReset(false);

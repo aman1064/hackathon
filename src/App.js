@@ -210,7 +210,7 @@ const mapStateToProps = ({ commonData, registrationData }) => {
     firstScreenId: registrationData.firstScreenId,
     statusNavRoute: commonData.statusNavRoute,
     profile: commonData.userDetails.profile,
-    userId: commonData.userBasicDetails.id,
+    userId: commonData.userBasicDetails && commonData.userBasicDetails.id,
     showWhatsappOptInModal: commonData.showWhatsappOptInModal,
     isJobApplied: commonData.isJobApplied,
     trackerCat: commonData.trackerCat,

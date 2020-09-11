@@ -79,7 +79,7 @@ const Notification = ({
 };
 
 const mSTP = ({ commonData }) => ({
-  userId: commonData.userBasicDetails.id,
+  userId: commonData.userBasicDetails && commonData.userBasicDetails.id,
   notificationHistory: commonData.notifications,
   newNotifications: commonData.newNotifications,
   userName: commonData.userDetails.name
