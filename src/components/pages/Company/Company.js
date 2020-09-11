@@ -28,7 +28,9 @@ class Company extends Component {
       query: `{ getCompanyPage(id: ${companyId}){id,companyName,companyLogoUrl,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyWebsiteUrl,companyVideoUrl,jobs{jobId,designation,cities,matchDetails,jobDescription,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyLogoUrl,companyWebsiteURL,minCTC,maxCTC,minExperience,maxExperience,benefits,empType,jobRole,ctcConfidential},recruiters{recName,recEmail}} }`
     };
     servives.post(url, postobj).then(res => {
-      this.setState({ companyData: res.data.getCompanyPage });
+      if (res.data) {
+        this.setState({ companyData: res.data.getCompanyPage });
+      }
     });
   }
 
