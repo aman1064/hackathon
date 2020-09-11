@@ -13,7 +13,8 @@ class Analytics extends PureComponent {
   constructor() {
     super();
     this.state = {
-      stats: null
+      stats: null,
+      processedData: null
     };
   }
   componentDidMount() {
@@ -30,10 +31,61 @@ class Analytics extends PureComponent {
     });
   }
 
-  processData = jobFairStatistics => {};
+  processData = ({
+    footFallByBooths,
+    footFallByJobInterests,
+    footFallByInInterview,
+    footFallByAssessmentDone
+  }) => {
+    const processedData = {};
+    const hash = [];
+    processedData.visitors = footFallByBooths.bars.reduce(
+      (acc, el) => {
+        hash[+el.label] = 1;
+        acc.thumbs += el.value;
+        acc.bars[+el.label] = el.value;
+        return acc;
+      },
+      { thumbs: 0, bars: new Array(24).fill(0) }
+    );
+    processedData.applies = footFallByJobInterests.bars.reduce(
+      (acc, el) => {
+        hash[+el.label] = 1;
+        acc.thumbs += el.value;
+        acc.bars[+el.label] = el.value;
+        return acc;
+      },
+      { thumbs: 0, bars: new Array(24).fill(0) }
+    );
+    processedData.interviews = footFallByInInterview.bars.reduce(
+      (acc, el) => {
+        hash[+el.label] = 1;
+        acc.thumbs += el.value;
+        acc.bars[+el.label] = el.value;
+        return acc;
+      },
+      { thumbs: 0, bars: new Array(24).fill(0) }
+    );
+    processedData.assessments = footFallByAssessmentDone.bars.reduce(
+      (acc, el) => {
+        hash[+el.label] = 1;
+        acc.thumbs += el.value;
+        acc.bars[+el.label] = el.value;
+        return acc;
+      },
+      { thumbs: 0, bars: new Array(24).fill(0) }
+    );
+    const latest4 = [
+      hash.length - 4,
+      hash.length - 3,
+      hash.length - 2,
+      hash.length - 1
+    ];
+    this.setState({ processedData, latest4 });
+  };
 
   render() {
-    const { stats } = this.state;
+    const { stats, processedData, latest4 } = this.state;
     if (!stats) {
       return <Loading />;
     } else {
@@ -51,13 +103,14 @@ class Analytics extends PureComponent {
             </div>
           </div>
           <ThumbStats
-            visits={20}
-            applies={10}
-            assessments={5}
-            interviews={3}
-            totalAssessments={8}
+            visits={(processedData && processedData.visitors.thumbs) || 0}
+            applies={(processedData && processedData.applies.thumbs) || 0}
+            assessments={
+              (processedData && processedData.assessments.thumbs) || 0
+            }
+            interviews={(processedData && processedData.interviews.thumbs) || 0}
           />
-          <BarChart />
+          <BarChart processedData={processedData} latest4={latest4} />
         </div>
       );
     }

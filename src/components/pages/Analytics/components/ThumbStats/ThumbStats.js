@@ -9,13 +9,7 @@ import winner from "../../../../../assets/images/svg/winner.svg";
 
 import "./ThumbStats.scss";
 
-const ThumbStats = ({
-  visits,
-  applies,
-  assessments,
-  interviews,
-  totalAssessments
-}) => {
+const ThumbStats = ({ visits, applies, assessments, interviews }) => {
   return (
     <div className="ThumbStats">
       <div className="ThumbStatsCard">
@@ -36,7 +30,7 @@ const ThumbStats = ({
         <img className="ThumbStatsIcon" src={stopWatch} alt="icon" />
         <p className="title">Assesments Done</p>
         <p className="score">
-          <CountUp end={assessments} /> / <CountUp end={totalAssessments} />
+          <CountUp end={assessments} />
         </p>
       </div>
       <div className="ThumbStatsCard">

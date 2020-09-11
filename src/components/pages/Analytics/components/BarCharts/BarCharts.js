@@ -4,30 +4,46 @@ import PercentBar from "../../../../../ui-components/PercentBar";
 
 import "./BarCharts.scss";
 
-const BarChartsGroup = () => (
+const getPercent = (score, outOf) => {
+  let percent = 0;
+  if (outOf === 0) {
+    return 0;
+  }
+  if (Number.isInteger(score) && Number.isInteger(outOf)) {
+    percent = parseInt((score / outOf) * 100, 10);
+  }
+  return percent;
+};
+
+const BarChartsGroup = ({
+  visitsPercent,
+  appliesPercent,
+  interviewsPercent,
+  assessmentsPercent
+}) => (
   <div className="barsCntnr score">
     <PercentBar
       multiplier={2}
       direction="vertical"
-      percent={100}
+      percent={visitsPercent}
       color="#c6b9f1"
     />
     <PercentBar
       multiplier={2}
       direction="vertical"
-      percent={50}
+      percent={appliesPercent}
       color="#f8b5b5"
     />
     <PercentBar
       multiplier={2}
       direction="vertical"
-      percent={30}
+      percent={interviewsPercent}
       color="#b7dcfd"
     />
     <PercentBar
       multiplier={2}
       direction="vertical"
-      percent={20}
+      percent={assessmentsPercent}
       color="#ffd768"
     />
   </div>
@@ -35,6 +51,7 @@ const BarChartsGroup = () => (
 
 class BarCharts extends PureComponent {
   render() {
+    const { latest4, processedData } = this.props;
     return (
       <div className="BarCharts">
         <div>
@@ -50,16 +67,92 @@ class BarCharts extends PureComponent {
 
           <div className="chartCntnr">
             <div className="diagram">
-              <BarChartsGroup />
-              <BarChartsGroup />
-              <BarChartsGroup />
-              <BarChartsGroup />
+              <BarChartsGroup
+                visitsPercent={getPercent(
+                  processedData.visitors.bars[latest4[0]],
+                  processedData.visitors.thumbs || 0
+                )}
+                appliesPercent={getPercent(
+                  processedData.applies.bars[latest4[0]],
+                  processedData.applies.thumbs || 0
+                )}
+                interviewsPercent={getPercent(
+                  processedData.interviews.bars[latest4[0]],
+                  processedData.interviews.thumbs || 0
+                )}
+                assessmentsPercent={getPercent(
+                  processedData.assessments.bars[latest4[0]],
+                  processedData.assessments.thumbs || 0
+                )}
+              />
+              <BarChartsGroup
+                visitsPercent={getPercent(
+                  processedData.visitors.bars[latest4[1]],
+                  processedData.visitors.thumbs || 0
+                )}
+                appliesPercent={getPercent(
+                  processedData.applies.bars[latest4[1]],
+                  processedData.applies.thumbs || 0
+                )}
+                interviewsPercent={getPercent(
+                  processedData.interviews.bars[latest4[1]],
+                  processedData.interviews.thumbs || 0
+                )}
+                assessmentsPercent={getPercent(
+                  processedData.assessments.bars[latest4[1]],
+                  processedData.assessments.thumbs || 0
+                )}
+              />
+              <BarChartsGroup
+                visitsPercent={getPercent(
+                  processedData.visitors.bars[latest4[2]],
+                  processedData.visitors.thumbs || 0
+                )}
+                appliesPercent={getPercent(
+                  processedData.applies.bars[latest4[2]],
+                  processedData.applies.thumbs || 0
+                )}
+                interviewsPercent={getPercent(
+                  processedData.interviews.bars[latest4[2]],
+                  processedData.interviews.thumbs || 0
+                )}
+                assessmentsPercent={getPercent(
+                  processedData.assessments.bars[latest4[2]],
+                  processedData.assessments.thumbs || 0
+                )}
+              />
+              <BarChartsGroup
+                visitsPercent={getPercent(
+                  processedData.visitors.bars[latest4[3]],
+                  processedData.visitors.thumbs || 0
+                )}
+                appliesPercent={getPercent(
+                  processedData.applies.bars[latest4[3]],
+                  processedData.applies.thumbs || 0
+                )}
+                interviewsPercent={getPercent(
+                  processedData.interviews.bars[latest4[3]],
+                  processedData.interviews.thumbs || 0
+                )}
+                assessmentsPercent={getPercent(
+                  processedData.assessments.bars[latest4[3]],
+                  processedData.assessments.thumbs || 0
+                )}
+              />
             </div>
             <div className="keys">
-              <p className="label">8:00-11:00</p>
-              <p className="label">11:00-14:00</p>
-              <p className="label">14:00-17:00</p>
-              <p className="label">17:00-20:00</p>
+              <p className="label">
+                {latest4[0] + 5}:00 - {latest4[1] + 5}:00
+              </p>
+              <p className="label">
+                {latest4[1] + 5}:00 - {latest4[2] + 5}:00
+              </p>
+              <p className="label">
+                {latest4[2] + 5}:00 - {latest4[3] + 5}:00
+              </p>
+              <p className="label">
+                {latest4[3] + 5}:00 - {latest4[3] + 6}:00
+              </p>
             </div>
           </div>
         </div>
