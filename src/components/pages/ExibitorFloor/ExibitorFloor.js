@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import LogoHeader from "../../organisms/LogoHeader";
 import Loading from "../../atoms/Loading";
+import Username from "../../templates/Username";
 
 import Urls from "../../../constants/Urlconfig";
 import servives from "../../../utils/services";
@@ -23,7 +24,7 @@ class ExibitorFloor extends PureComponent {
     const url = Urls.getLandingLogo;
     const postobj = {
       query:
-        "{getExhibitionHomePageData{goldPartner{id,name,companies{id,companyLogoUrl,companyWebsiteUrl,companyName,aboutCompany,companyLocation}},diamondPartner{id,name,companies{id,companyLogoUrl,companyWebsiteUrl,companyName,aboutCompany,companyLocation}} silverPartner{id,name,companies{id,companyLogoUrl,companyWebsiteUrl,companyName,aboutCompany,companyLocation}}, bronzePartner{id,name,companies{id,companyLogoUrl,companyWebsiteUrl,companyName,aboutCompany,companyLocation}}, youtubeLink1{videoUrl,thumbnailUrl,title}, youtubeLink2{videoUrl,thumbnailUrl,title},youtubeLink3{videoUrl,thumbnailUrl,title},venue,organiser}}"
+        "{getExhibitionHomePageData{goldPartner{id,name,companies{id,companyLogoUrl,companyWebsiteUrl,companyName,aboutCompany,companyLocation,companySize}},diamondPartner{id,name,companies{id,companyLogoUrl,companyWebsiteUrl,companyName,aboutCompany,companyLocation,companySize}} silverPartner{id,name,companies{id,companyLogoUrl,companyWebsiteUrl,companyName,aboutCompany,companyLocation,companySize}}, bronzePartner{id,name,companies{id,companyLogoUrl,companyWebsiteUrl,companyName,aboutCompany,companyLocation,companySize}}, youtubeLink1{videoUrl,thumbnailUrl,title}, youtubeLink2{videoUrl,thumbnailUrl,title},youtubeLink3{videoUrl,thumbnailUrl,title},venue,organiser}}"
     };
     servives.post(url, postobj).then(res => {
       if (res.data) {
@@ -46,29 +47,57 @@ class ExibitorFloor extends PureComponent {
               <div className="linkItem">
                 <Link to={routeConfig.exibitorFloor}>Exibitor Floor</Link>
               </div>
-              <div className="username linkItem">Hi {userName}</div>
+              <Username history={history} userName={userName} isLoggedIn />
             </div>
           </LogoHeader>
         </div>
         {!landingData && <Loading />}
         {landingData && (
-            <div className="exhibitor-container">
-              {
-                ["goldPartner", "diamondPartner", "silverPartner"].map((key) => {
-                  return (<div key={key} className={key}>
-                    <p className="title">{landingData[key].name}</p>
-                    <div className="card-container">
-                      {
-                        landingData[key].companies.map(companydata => {
-                          return <ExhibitorCard key={companydata.id} companyData={companydata}
-                                                history={history} isPremium={key !== "silverPartner"}/>
-                        })
-                      }
-                    </div>
-                  </div>)
-                })
-              }
-            </div>
+          <div className="exhibitor-container">
+            {["diamondPartner"].map(key => {
+              return (
+                <div key={key} className={key}>
+                  <p className="title">{landingData[key].name}</p>
+                  <div className="card-container">
+                    {landingData[key].companies.map(companydata => {
+                      return (
+                        <ExhibitorCard
+                          key={companydata.id}
+                          companyData={companydata}
+                          history={history}
+                          isMostImp
+                          isPremium={key !== "silverPartner"}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+        {landingData && (
+          <div className="exhibitor-container">
+            {["goldPartner", "silverPartner"].map(key => {
+              return (
+                <div key={key} className={key}>
+                  <p className="title">{landingData[key].name}</p>
+                  <div className="card-container">
+                    {landingData[key].companies.map(companydata => {
+                      return (
+                        <ExhibitorCard
+                          key={companydata.id}
+                          companyData={companydata}
+                          history={history}
+                          isPremium={key !== "silverPartner"}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         )}
       </div>
     );

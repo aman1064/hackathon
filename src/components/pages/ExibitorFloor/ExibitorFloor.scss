@@ -64,16 +64,17 @@
     margin: 0 auto;
 
     .title {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: bold;
-      color: #0f1732;
+      color: #7c8aa1;
+      margin-left: 8px;
+      margin-bottom: 20px;
     }
   }
 
   .card-container {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 1px solid #d0d3d4;
     padding-bottom: 10px;
     margin-bottom: 30px;
   }
@@ -88,4 +89,86 @@
       padding-right: 20px;
     }
   }
+
+  .heading {
+    display: flex;
+    margin-top: 2px;
+  }
+
+  .logoCntnr {
+    margin-right: 8px;
+  }
+
+  .link.btn {
+    font-weight: 700;
+  }
+
+  .about {
+    font-size: 15px;
+    color: #333333;
+  }
+}
+
+.companyNameCntnr {
+  padding-top: 6px;
+
+  h1 {
+    font-size: 24px;
+    display: inline;
+
+    &:after {
+      content: ", ";
+    }
+  }
+
+  .desc {
+    display: inline;
+    color: #7c8aa1;
+  }
+}
+
+.goldPartner {
+  .card-container {
+    justify-content: space-between;
+  }
+
+  .exhibitor-card {
+    max-width: 31%;
+  }
+}
+
+.silverPartner {
+  .exhibitor-card {
+    max-width: 23%;
+  }
+
+  .about {
+    display: none;
+  }
+
+  .desc {
+    display: none;
+  }
+
+  .logoCntnr {
+    max-width: 40px;
+  }
+
+  .companyNameCntnr h1 {
+    font-size: 20px;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .card-container {
+    justify-content: space-between;
+  }
+}
+
+.cta-container {
+  margin-top: 8px;
+  justify-content: space-between;
+  display: flex;
 }

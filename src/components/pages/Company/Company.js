@@ -72,16 +72,6 @@ class Company extends Component {
               <div className="linkItem">
                 <Link to={routeConfig.exibitorFloor}>Exibitor Floor</Link>
               </div>
-              <div className="linkItem">
-                <Link
-                  to={routeConfig.companyAnalytics.replace(
-                    ":id",
-                    companyData.id
-                  )}
-                >
-                  Analytics
-                </Link>
-              </div>
               <Username history={history} userName={userName} isLoggedIn />
             </div>
           </LogoHeader>

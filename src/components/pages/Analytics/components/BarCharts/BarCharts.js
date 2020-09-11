@@ -41,12 +41,10 @@ class BarCharts extends PureComponent {
           <div className="legendsCntnr">
             <h2>Time based Analysis in Percentage</h2>
             <div className="legend">
-              <span className="visits">
-                Company Visitors out of total visitors
-              </span>
-              <span className="applies">Applies out of visitors</span>
-              <span className="assessments">Assessments out of Applies</span>
-              <span className="interviews">Interviews out of assessments</span>
+              <span className="visits">Company Booth Visitors</span>
+              <span className="applies">User Applies</span>
+              <span className="assessments">Assesments Done</span>
+              <span className="interviews">Users at inteview stage</span>
             </div>
           </div>
 

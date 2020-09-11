@@ -24,10 +24,13 @@ class Analytics extends PureComponent {
     };
     servives.post(url, postobj).then(res => {
       if (res.data) {
+        this.processData(res.data.getJobFairStatistics);
         this.setState({ stats: res.data.getJobFairStatistics });
       }
     });
   }
+
+  processData = jobFairStatistics => {};
 
   render() {
     const { stats } = this.state;

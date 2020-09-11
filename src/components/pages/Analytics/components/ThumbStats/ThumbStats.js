@@ -20,28 +20,28 @@ const ThumbStats = ({
     <div className="ThumbStats">
       <div className="ThumbStatsCard">
         <img className="ThumbStatsIcon" src={speedometer} alt="icon" />
-        <p className="title">Visitors</p>
+        <p className="title">Company Booth Visitors</p>
         <p className="score">
           <CountUp end={visits} />
         </p>
       </div>
       <div className="ThumbStatsCard">
         <img className="ThumbStatsIcon" src={correct} alt="icon" />
-        <p className="title">Applies</p>
+        <p className="title">User Applies</p>
         <p className="score">
           <CountUp end={applies} />
         </p>
       </div>
       <div className="ThumbStatsCard">
         <img className="ThumbStatsIcon" src={stopWatch} alt="icon" />
-        <p className="title">Assessments taken</p>
+        <p className="title">Assesments Done</p>
         <p className="score">
           <CountUp end={assessments} /> / <CountUp end={totalAssessments} />
         </p>
       </div>
       <div className="ThumbStatsCard">
         <img className="ThumbStatsIcon" src={winner} alt="icon" />
-        <p className="title">Interviews</p>
+        <p className="title">Users at inteview stage</p>
         <p className="score">
           <CountUp end={interviews} />
         </p>
