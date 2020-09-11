@@ -9,14 +9,34 @@ import winner from "../../../../../assets/images/svg/winner.svg";
 
 import "./ThumbStats.scss";
 
-const ThumbStats = ({ visits, applies, assessments, interviews }) => {
+const getPercent = (score, outOf) => {
+  let percent = 0;
+  if (outOf === 0) {
+    return 0;
+  }
+  if (Number.isInteger(score) && Number.isInteger(outOf)) {
+    percent = parseInt((score / outOf) * 100, 10);
+  }
+  return percent;
+};
+
+const ThumbStats = ({
+  visits,
+  applies,
+  assessments,
+  interviews,
+  totalVisitors
+}) => {
   return (
     <div className="ThumbStats">
       <div className="ThumbStatsCard">
         <img className="ThumbStatsIcon" src={speedometer} alt="icon" />
         <p className="title">Company Booth Visitors</p>
         <p className="score">
-          <CountUp end={visits} />
+          <CountUp end={visits} />{" "}
+          <span className="conversion">
+            ({getPercent(visits, totalVisitors)}% Conversion)
+          </span>
         </p>
       </div>
       <div className="ThumbStatsCard">
