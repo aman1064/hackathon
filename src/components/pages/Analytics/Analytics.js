@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 
 import ThumbStats from "./components/ThumbStats";
+import BarChart from "./components/BarCharts";
 
 import servives from "../../../utils/services";
 import Urls from "../../../constants/Urlconfig";
@@ -31,12 +32,18 @@ class Analytics extends PureComponent {
           <div>
             <h1>Times Internet Dashboard</h1>
             <p className="desc">
-              You received 70% more footfall than the average footfall of all
-              companies
+              You received 70% more footfall than the average footfall
             </p>
           </div>
         </div>
-        <ThumbStats visits={20} applies={10} assessments={5} interviews={3} />
+        <ThumbStats
+          visits={20}
+          applies={10}
+          assessments={5}
+          interviews={3}
+          totalAssessments={8}
+        />
+        <BarChart />
       </div>
     );
   }
