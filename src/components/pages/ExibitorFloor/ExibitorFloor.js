@@ -35,7 +35,7 @@ class ExibitorFloor extends PureComponent {
 
   render() {
     const { landingData } = this.state;
-    const { userName, history } = this.props;
+    const { userName, history, newNotifications } = this.props;
     return (
       <div className="ExibitorFloor">
         <div className="LogoHeaderCntnr">
@@ -46,6 +46,11 @@ class ExibitorFloor extends PureComponent {
               </div>
               <div className="linkItem">
                 <Link to={routeConfig.exibitorFloor}>Exibitor Floor</Link>
+              </div>
+              <div className="linkItem">
+                <Link to={routeConfig.noticeBoard} className={newNotifications ? "red-dot" : ""}>
+                  Notifications
+                </Link>
               </div>
               <Username history={history} userName={userName} isLoggedIn />
             </div>

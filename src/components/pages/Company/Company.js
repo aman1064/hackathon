@@ -57,7 +57,7 @@ class Company extends Component {
 
   render() {
     const { companyData } = this.state;
-    const { userName, history, resetContestQuest } = this.props;
+    const { userName, history, resetContestQuest, newNotifications } = this.props;
     if (!companyData) {
       return <Loading />;
     }
@@ -71,6 +71,11 @@ class Company extends Component {
               </div>
               <div className="linkItem">
                 <Link to={routeConfig.exibitorFloor}>Exibitor Floor</Link>
+              </div>
+              <div className="linkItem">
+                <Link to={routeConfig.noticeBoard} className={newNotifications ? "red-dot" : ""}>
+                  Notifications
+                </Link>
               </div>
               <Username history={history} userName={userName} isLoggedIn />
             </div>
