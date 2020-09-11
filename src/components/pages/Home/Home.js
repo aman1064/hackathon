@@ -113,6 +113,47 @@ class Home extends React.PureComponent {
                   </div>
                 ))}
               </div>
+
+              <div className="silverList">
+                {landingData.silverPartner.companies.map((el, index) => {
+                  if (index < 2) {
+                    return (
+                      <div
+                        key={el.id}
+                        className={`silverItem silver${index + 1}`}
+                      >
+                        <Link
+                          className="companyLink"
+                          to={routeConfig.companyLanding.replace(":id", el.id)}
+                        >
+                          <img src={el.companyLogoUrl} />
+                        </Link>
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+
+              <div className="silverList isRight">
+                {landingData.silverPartner.companies.map((el, index) => {
+                  if (index > 1) {
+                    return (
+                      <div
+                        key={el.id}
+                        className={`silverItem silver${index + 1}`}
+                      >
+                        <Link
+                          className="companyLink"
+                          to={routeConfig.companyLanding.replace(":id", el.id)}
+                        >
+                          <img src={el.companyLogoUrl} />
+                        </Link>
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+
               {landingData.youtubeLink1 && (
                 <div
                   className="videoThumb is1st"

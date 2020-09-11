@@ -20,6 +20,9 @@ import Company from "./components/pages/Company";
 import CompanyJobDetail from "./components/pages/CompanyJobDetail";
 
 window.__bgperformance = userTimingsTracker();
+window.inTrack = {
+  push: () => {}
+};
 
 const Login = Loadable({
   loader: () =>
@@ -59,6 +62,14 @@ const Registration = Loadable({
   loading: Loading
 });
 
+const Analytics = Loadable({
+  loader: () =>
+    import(
+      /* webpackChunkName: "analytics-view" */ "./components/pages/Analytics"
+    ),
+  loading: Loading
+});
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -86,6 +97,7 @@ class App extends Component {
       practice,
       home,
       addPhoneNumber,
+      companyAnalytics,
       companyLanding,
       companyJobDetail,
       video
@@ -107,6 +119,7 @@ class App extends Component {
               <Route exact path={errorPage} component={ErrorPage} />
               <Route exact path={publicJD} component={PublicJD} />
               <Route exact path={otpPage} component={OtpPage} />
+              <Route exact path={companyAnalytics} component={Analytics} />
               {((accessToken && !mobileNumberVerified) || !accessToken) && (
                 <Route exact path={[login, signup, root]} component={Login} />
               )}
@@ -123,8 +136,12 @@ class App extends Component {
               {accessToken && (
                 <Route exact path={[addPhoneNumber]} component={Registration} />
               )}
-              <Route exact path={companyJobDetail} component={CompanyJobDetail}/>
-              <Route exact path={companyLanding} component={Company}/>
+              <Route
+                exact
+                path={companyJobDetail}
+                component={CompanyJobDetail}
+              />
+              <Route exact path={companyLanding} component={Company} />
               {accessToken && (
                 <Route exact path={[root, home]} component={Home} />
               )}

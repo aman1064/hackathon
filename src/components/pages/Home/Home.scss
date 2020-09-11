@@ -65,6 +65,23 @@
     margin-top: 4px;
   }
 
+  .silverList {
+    position: absolute;
+    left: 38.9%;
+    top: 47%;
+    display: flex;
+    width: 7%;
+    flex-wrap: wrap;
+
+    &.isRight {
+      left: 56.5%;
+    }
+  }
+
+  .silverItem {
+    width: 50%;
+  }
+
   .videoThumb {
     position: absolute;
     top: 27.3%;

@@ -1,0 +1,33 @@
+@import "../../../assets/styles/common";
+
+.Analytics {
+  @include desktop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    left: 0;
+    z-index: 1;
+    padding: 20px;
+  }
+
+  .heading {
+    display: flex;
+
+    h1 {
+      font-size: getRem(36);
+      font-weight: 800;
+      margin-top: 6px;
+      margin-left: 8px;
+    }
+
+    .desc {
+      color: $cloud_burst;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    img {
+    }
+  }
+}
