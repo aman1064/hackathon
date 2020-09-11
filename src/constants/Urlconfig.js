@@ -86,8 +86,8 @@ const Urlconfig = {
   getContestStats: "/contest/stats",
   getLeaderBoard: `${base}/contest/{contestId}/leaderBoard`,
   getGlobalLeaderBoard: `${base}/contest/leaderBoard/global?profileId={profileId}`,
-  startContest: (contestId, profileId) =>
-    `/contest/${contestId}/profile/${profileId}`,
+  startContest: (contestId, jobId) =>
+    `/jobfair/contest/${contestId}/job/${jobId}`,
   submitContestQuest: (contestId, profileId) =>
     `/contest/${contestId}/profile/${profileId}/submit`,
   getAttemptedTests: profileId => `/contest/profile/${profileId}/attempts`,

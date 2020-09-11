@@ -20,10 +20,13 @@ const CollectionCard = ({ jobDetails, companyName, applyOnJob, renderIndex, hist
                 break;
 
             case CTA_TYPE.ASSESSMENT.value:
+                history.push(`/practice/contest/${jobDetails.contestId}`, {
+                    jobDetails: jobDetails
+                })
                 break;
 
             case CTA_TYPE.INTERVIEW.value:
-                history.push(`#/${jobDetails.interviewRoomId}`);
+                history.push(`/#/${jobDetails.interviewRoomId}`);
                 location.reload();
                 break;
             default:
