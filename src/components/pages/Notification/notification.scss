@@ -53,9 +53,23 @@
     color: #7c8ba2;
     font-weight: 700;
     font-size: 18px;
+    position: relative;
 
     &.username {
       color: $azure_radiance;
+    }
+
+    .red-dot {
+      &:after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: red;
+        right: -6px;
+        top: 2px;
+      }
     }
   }
 }
