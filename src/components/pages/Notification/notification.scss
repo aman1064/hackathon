@@ -1,6 +1,43 @@
-.container {
+@import "../../../assets/styles/common";
+
+.notification-container {
   max-width: 600px;
   margin: 4em auto;
+
+  .LogoHeaderCntnr {
+    position: fixed;
+    top: 0;
+    background: $white;
+    box-shadow: 0 1px 4px 0 #ddd;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+  }
+
+  .LogoHeader {
+    @include desktop {
+      max-width: 77.5rem;
+      height: 5rem;
+      position: fixed;
+      width: 100%;
+      background: #fff;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    &.covid_logo .LogoHeader__Logo {
+      @include desktop {
+        max-width: 13.75rem;
+        width: 13.75rem;
+      }
+    }
+  }
+
+  .LogoHeaderLinks {
+    display: flex;
+  }
 }
 .interviewPending,
 .assessmentPassed {
