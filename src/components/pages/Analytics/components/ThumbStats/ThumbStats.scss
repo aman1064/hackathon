@@ -1,0 +1,67 @@
+@import "../../../../../assets/styles/common";
+
+.ThumbStats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: getRem(6);
+
+  @include desktop {
+    margin: getRem(40 6 6);
+  }
+
+  &Card {
+    padding: getRem(14 14 12);
+    text-align: center;
+    border-radius: getRem(10);
+    border: 1px solid $athens_gray;
+    width: calc(50% - #{getRem(13)});
+    margin: getRem(6);
+
+    @include desktop {
+      width: calc(25% - #{getRem(19)});
+      margin: getRem(0 25 0 0);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &Icon {
+    width: getRem(32);
+    display: block;
+    margin: 0 auto;
+
+    @include desktop {
+      width: getRem(48);
+    }
+  }
+
+  .title {
+    font-size: getRem(12);
+    color: $cloud_burst;
+    margin-top: getRem(6);
+    line-height: getRem(16);
+
+    @include desktop {
+      margin-top: getRem(10);
+      font-size: getRem(14);
+      font-weight: 600;
+      line-height: getRem(18);
+    }
+  }
+
+  .score {
+    font-size: getRem(18);
+    color: $cloud_burst;
+    font-weight: 700;
+    line-height: getRem(23);
+
+    @include desktop {
+      font-size: getRem(24);
+      margin-top: getRem(2);
+      line-height: getRem(31);
+    }
+  }
+}

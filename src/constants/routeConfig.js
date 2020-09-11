@@ -16,7 +16,8 @@ const routeConfig = {
   practicePerformanceHistory: "/practice/performance",
   practicePerformanceHistoryWithId: "/practice/performance/:id",
   practiceSignup: "/practice/signup",
-  companyLanding: "/company/:id"
+  companyLanding: "/company/:id",
+  companyAnalytics: "/analytics/:id"
 };
 
 export default routeConfig;

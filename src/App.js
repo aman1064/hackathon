@@ -58,6 +58,14 @@ const Registration = Loadable({
   loading: Loading
 });
 
+const Analytics = Loadable({
+  loader: () =>
+    import(
+      /* webpackChunkName: "analytics-view" */ "./components/pages/Analytics"
+    ),
+  loading: Loading
+});
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -84,7 +92,8 @@ class App extends Component {
       otpPage,
       practice,
       home,
-      addPhoneNumber
+      addPhoneNumber,
+      companyAnalytics
     } = routeConfig;
     if (
       !accessToken &&
@@ -103,6 +112,7 @@ class App extends Component {
               <Route exact path={errorPage} component={ErrorPage} />
               <Route exact path={publicJD} component={PublicJD} />
               <Route exact path={otpPage} component={OtpPage} />
+              <Route exact path={companyAnalytics} component={Analytics} />
               {((accessToken && !mobileNumberVerified) || !accessToken) && (
                 <Route exact path={[login, signup, root]} component={Login} />
               )}
