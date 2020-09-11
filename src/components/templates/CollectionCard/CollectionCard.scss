@@ -1,0 +1,167 @@
+@import "~styles/common";
+
+.CollectionCard {
+  padding: getRem(20 20 24);
+  border-radius: getRem(4);
+  box-shadow: 1px 3px 10px 0 rgba(137, 163, 197, 0.3);
+  position: relative;
+  margin: getRem(12 0);
+  border: 1px solid $athens_gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include desktop {
+    box-shadow: 0 1px 7px -1px rgba(0, 106, 194, 0.2);
+    padding: getRem(24 24 24 16);
+    //max-width: 450px;
+    margin: 8px;
+    flex: 1;
+  }
+
+  .card-details {
+    display: flex;
+  }
+
+
+  .cardContent {
+    h4 {
+      font-weight: 700;
+      font-size: getRem(17);
+      margin-bottom: getRem(4);
+      max-width: calc(100% - 52px);
+
+      @include desktop {
+        margin-bottom: getRem(8);
+        max-width: 100%;
+      }
+    }
+
+    h5 {
+      font-size: getRem(13);
+      font-weight: 400;
+      margin-bottom: getRem(4);
+      max-width: calc(100% - 52px);
+
+      @include desktop {
+        color: $dusk;
+        margin-bottom: getRem(8);
+        max-width: 100%;
+      }
+    }
+  }
+
+  hr {
+    background: $gallery;
+    border: none;
+    height: 1px;
+    margin-top: 16px;
+  }
+
+  .detailsSep {
+    width: 1px;
+    height: getRem(17);
+    margin: getRem(0 8);
+    background: $whisper;
+  }
+
+  .logoWrapper {
+    position: absolute;
+    right: getRem(20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #eee;
+
+    @include desktop {
+      position: static;
+      margin-right: getRem(24);
+      flex-shrink: 0;
+    }
+  }
+
+  .jobDetails {
+    font-size: getRem(13);
+    display: flex;
+    flex-wrap: wrap;
+
+    @include desktop {
+      color: $dusk;
+    }
+
+    .cities {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+      margin-bottom: getRem(4);
+
+      @include desktop {
+        width: auto;
+      }
+    }
+
+    .isConfidential {
+      font-size: getRem(12);
+    }
+  }
+
+  .marketingMessage {
+    border-top: 1px solid $gallery;
+    padding-top: getRem(7);
+    margin-top: getRem(12);
+
+    @include desktop {
+      border: none;
+      padding-top: 0;
+    }
+  }
+
+  .messageHeading {
+    color: $silver_chalice;
+    font-size: getRem(10);
+    font-weight: 400;
+    margin-bottom: getRem(8);
+
+    @include desktop {
+      font-size: getRem(9);
+      margin-bottom: getRem(10);
+    }
+  }
+
+  .messageItem {
+    font-size: getRem(13);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: getRem(4);
+    color: $charade;
+
+    @include desktop {
+      margin-bottom: getRem(8);
+      max-width: getRem(480);
+    }
+
+    .checkedIcon {
+      margin-right: getRem(8);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .cardContent {
+    width: 100%;
+  }
+
+  .action-btn-grp {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+  }
+}

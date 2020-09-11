@@ -25,7 +25,7 @@ class Home extends React.PureComponent {
     const url = Urls.getLandingLogo;
     const postobj = {
       query:
-        "{getExhibitionHomePageData{goldPartner{id,name,companies{id,companyLogoUrl}},diamondPartner{id,name,companies{id,companyLogoUrl}} silverPartner{id,name,companies{id,companyLogoUrl}},  bronzePartner{id,name,companies{id,companyLogoUrl}},   youtubeLink1{videoUrl,thumbnailUrl,title}, youtubeLink2{videoUrl,thumbnailUrl,title},youtubeLink3{videoUrl,thumbnailUrl,title},venue,organiser}}"
+        "{getExhibitionHomePageData{goldPartner{id,name,companies{id,companyLogoUrl}},diamondPartner{id,name,companies{id,companyLogoUrl}} silverPartner{id,name,companies{id,companyLogoUrl}}, bronzePartner{id,name,companies{id,companyLogoUrl}}, youtubeLink1{videoUrl,thumbnailUrl,title}, youtubeLink2{videoUrl,thumbnailUrl,title},youtubeLink3{videoUrl,thumbnailUrl,title},venue,organiser}}"
     };
     servives.post(url, postobj).then(res => {
       if (res.data) {

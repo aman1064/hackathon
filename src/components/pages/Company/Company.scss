@@ -1,0 +1,85 @@
+@import "../../../assets/styles/common";
+
+.Company {
+  @include desktop {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    left: 0;
+    z-index: 1;
+  }
+  .page-container {
+    margin: 0 auto;
+    width: 1200px;
+  }
+  .name-logo-grp {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d0d3d4;
+  }
+
+  .url-link {
+    height: 100px;
+    width: 100px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .financial-note {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .overview {
+    border: 1px solid #d0d3d4;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #feca64;
+
+    .title {
+      font-size: 25px;
+      padding-bottom: 10px;
+      text-decoration: underline;
+    }
+
+    ul {
+      column-count: 2;
+    }
+    .meta-info {
+      padding: 5px 0;
+      a {
+        color: #0b69c5;
+      }
+    }
+    .key-label {
+      width: 150px;
+      font-weight: 700;
+      display: inline-block;
+    }
+  }
+
+  .about-company {
+    line-height: 2;
+    background-color: #feca64;
+    padding: 30px 20px;
+    //box-shadow: 3px 7px 20px 0 #d0d3d4;
+    border-radius: 10px;
+    margin-top: 30px;
+  }
+
+  .jobs-grp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .video-frame {
+    width: 100%;
+    border: none;
+  }
+
+}
