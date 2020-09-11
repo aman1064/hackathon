@@ -18,7 +18,8 @@ const initialState = {
   suggestors: {
     company: [],
     location: []
-  }
+  },
+  notifications: {}
 };
 
 export default function(state = initialState, action) {
@@ -127,6 +128,12 @@ export default function(state = initialState, action) {
           ...action.payload.data,
           updatedTime: action.payload.currentTime
         }
+      };
+
+    case `${APP_EVENT.GET_USER_NOTIFICATIONS}_EFFECT`:
+      return {
+        ...state,
+        notifications: action.payload
       };
 
     default:

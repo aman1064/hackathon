@@ -302,3 +302,16 @@ export function getPrefetchSuggestors(
     reject
   };
 }
+
+export function getNotifications(userId) {
+  const url = Urlconfig.getLandingLogo
+  const query = {
+    "query":`{ getUserActionHistory(userId: "${userId}"){assessmentPending{jobId,contestId,companyId,companyName,jobTitle} ,assessmentPassed{jobId,contestId,companyId,companyName,jobTitle}, ,assessmentFailed{jobId,contestId,companyId,companyName,jobTitle} ,interviewPending{jobId,contestId,companyId,companyName,jobTitle}  } }`
+  }
+  return {
+    type: `${APP_EVENT.GET_USER_NOTIFICATIONS}_WATCHER`,
+    action_type: `${APP_EVENT.GET_USER_NOTIFICATIONS}_EFFECT`,
+    payload: query,
+    url
+  };
+}

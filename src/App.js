@@ -18,7 +18,7 @@ import ErrorBoundary from "./components/pages/ErrorBoundary/ErrorBoundary";
 import isMobileDevice from "./utils/isMobileDevice";
 import Company from "./components/pages/Company";
 import CompanyJobDetail from "./components/pages/CompanyJobDetail";
-import { access } from "fs";
+import Notification from "./components/pages/Notification";
 
 window.__bgperformance = userTimingsTracker();
 window.inTrack = {
@@ -109,7 +109,8 @@ class App extends Component {
       companyAnalytics,
       companyLanding,
       companyJobDetail,
-      exibitorFloor
+      exibitorFloor,
+      noticeBoard
     } = routeConfig;
     if (
       !accessToken &&
@@ -129,6 +130,7 @@ class App extends Component {
               <Route exact path={publicJD} component={PublicJD} />
               <Route exact path={otpPage} component={OtpPage} />
               <Route exact path={companyAnalytics} component={Analytics} />
+              <Route exact path={noticeBoard} component={Notification} />
               {((accessToken && !mobileNumberVerified) || !accessToken) && (
                 <Route exact path={[login, signup, root]} component={Login} />
               )}

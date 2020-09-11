@@ -32,6 +32,7 @@ const APP_EVENTS = keymirror({
   WHATSAPP_OPT_IN: null,
   SET_WHATSAPP_OPT_IN: null,
   GET_PREFETCH_SUGGESTORS: null,
+  GET_USER_NOTIFICATIONS: null,
   SET_JOBS_NAV_CLICKED: null
 });
 
