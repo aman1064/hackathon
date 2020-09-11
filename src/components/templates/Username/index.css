@@ -1,0 +1,70 @@
+.username-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.username-wrapper ul {
+  list-style-type: none;
+}
+
+.username {
+  padding-right: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+
+.username::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border: 2px solid white;
+  position: absolute;
+  right: 0;
+  transform: rotate(45deg);
+  transform-origin: 0;
+  border-width: 0 2px 2px 0;
+  top: -1px;
+}
+
+.hide {
+  display: none;
+}
+
+.user-dropdown-wrapper {
+  width: 100%;
+  padding-top: 1.6rem;
+  top: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.user-dropdown {
+  color: #595959;
+  float: right;
+  padding: 6px 0;
+  box-shadow: 0 2px 10px 0 #ddd;
+  border-radius: 4px;
+  width: 140px;
+  background: white;
+}
+
+.user-dropdown li {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #232832;
+  cursor: pointer;
+}
+
+.user-dropdown li:hover {
+  background: #f1f1f1;
+}
+
+.user-dropdown-wrapper:hover .user-dropdown {
+  display: block !important;
+}
