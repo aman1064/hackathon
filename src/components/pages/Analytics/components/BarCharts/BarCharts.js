@@ -1,11 +1,35 @@
 import React, { PureComponent } from "react";
 
+import PercentBar from "../../../../../ui-components/PercentBar";
+
+import "./BarCharts.scss";
+
 const BarChartsGroup = () => (
   <div className="barsCntnr score">
-    <PercentBar percent={selfScorePC} color="#ddeffe" />
-    <PercentBar percent={topperScorePC} color="#abd6fc" />
-    <PercentBar percent={topperScorePC} color="#abd6fc" />
-    <PercentBar percent={topperScorePC} color="#abd6fc" />
+    <PercentBar
+      multiplier={2}
+      direction="vertical"
+      percent={100}
+      color="#c6b9f1"
+    />
+    <PercentBar
+      multiplier={2}
+      direction="vertical"
+      percent={50}
+      color="#f8b5b5"
+    />
+    <PercentBar
+      multiplier={2}
+      direction="vertical"
+      percent={30}
+      color="#b7dcfd"
+    />
+    <PercentBar
+      multiplier={2}
+      direction="vertical"
+      percent={20}
+      color="#ffd768"
+    />
   </div>
 );
 
@@ -15,21 +39,29 @@ class BarCharts extends PureComponent {
       <div className="BarCharts">
         <div>
           <div className="legendsCntnr">
-            <h2>Comparison from last attempt</h2>
+            <h2>Time based Analysis in Percentage</h2>
             <div className="legend">
-              <span className="self">Last attempt</span>
-              <span className="from">Current attempt</span>
+              <span className="visits">
+                Company Visitors out of total visitors
+              </span>
+              <span className="applies">Applies out of visitors</span>
+              <span className="assessments">Assessments out of Applies</span>
+              <span className="interviews">Interviews out of assessments</span>
             </div>
           </div>
 
           <div className="chartCntnr">
-            <div className="keys">
-              <p className="label">Score (%)</p>
-              <p className="label">Time taken (%) )}</p>
-              <p className="label">Accuracy (%)</p>
-            </div>
             <div className="diagram">
               <BarChartsGroup />
+              <BarChartsGroup />
+              <BarChartsGroup />
+              <BarChartsGroup />
+            </div>
+            <div className="keys">
+              <p className="label">8:00-11:00</p>
+              <p className="label">11:00-14:00</p>
+              <p className="label">14:00-17:00</p>
+              <p className="label">17:00-20:00</p>
             </div>
           </div>
         </div>

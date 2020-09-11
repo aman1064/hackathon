@@ -1,0 +1,151 @@
+@import "../../../../../assets/styles/common";
+
+.BarCharts {
+  border-radius: getRem(10);
+  border: 1px solid $athens_gray;
+  margin: getRem(12);
+  padding: getRem(24 20);
+  position: relative;
+
+  @include desktop {
+    padding: getRem(28);
+    margin: getRem(24 0);
+  }
+
+  .legendsCntnr {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: getRem(18);
+      line-height: getRem(24);
+      color: $cloud_burst;
+
+      @include desktop {
+        font-size: getRem(20);
+      }
+    }
+
+    .legend {
+      font-weight: 600;
+      font-size: getRem(12);
+      margin-top: getRem(16);
+      color: $cloud_burst;
+
+      @include desktop {
+        margin-top: 0;
+      }
+
+      .assessments,
+      .interviews,
+      .visits,
+      .applies {
+        position: relative;
+        padding-left: getRem(20);
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 2px;
+          width: getRem(12);
+          height: getRem(12);
+          background: #c6b9f1;
+          border-radius: 50%;
+        }
+      }
+
+      .interviews {
+        margin-left: getRem(36);
+
+        &:before {
+          background: #ffd768;
+        }
+      }
+
+      .applies {
+        margin-left: getRem(36);
+
+        &:before {
+          background: #f8b5b5;
+        }
+      }
+
+      .assessments {
+        margin-left: getRem(36);
+
+        &:before {
+          background: #b7dcfd;
+        }
+      }
+    }
+  }
+}
+
+.diagram {
+  display: flex;
+  border-bottom: 1px solid $athens_gray;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  justify-content: space-around;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    border-top: 1px dashed $athens_gray;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    z-index: -1;
+  }
+
+  &:after {
+    top: 50%;
+  }
+}
+
+.PercentBar {
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-end;
+
+  .bar {
+    width: 14px;
+    order: 1;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .label {
+    margin-left: 0;
+  }
+}
+
+.barsCntnr,
+.keys {
+  display: flex;
+  justify-content: space-around;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.barsCntnr,
+.keys .label {
+  width: 120px;
+  text-align: center;
+}
+
+.keys .label {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.chartCntnr {
+  margin-top: 48px;
+}
