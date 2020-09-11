@@ -41,8 +41,11 @@ class Company extends Component {
     return (
       <div className="Company">
         <div className="LogoHeaderCntnr">
-          <LogoHeader>
+          <LogoHeader redirectLink={routeConfig.home}>
             <div className="LogoHeaderLinks">
+              <div className="linkItem">
+                <Link to={routeConfig.home}>Job Fair</Link>
+              </div>
               <div className="linkItem">
                 <Link
                   to={routeConfig.companyAnalytics.replace(
