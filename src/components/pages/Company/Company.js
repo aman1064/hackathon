@@ -52,7 +52,7 @@ class Company extends Component {
 
   render() {
     const { companyData } = this.state;
-    const { userName } = this.props;
+    const { userName, history } = this.props;
     if (!companyData) {
       return <Loading />;
     }
@@ -142,6 +142,7 @@ class Company extends Component {
                   jobDetails={job}
                   renderIndex={renderIndex}
                   companyName={companyData.companyName}
+                  history={history}
                   applyOnJob={this.applyOnJob}
                 />
               );
