@@ -12,7 +12,9 @@ const CollectionCard = ({
   companyName,
   applyOnJob,
   renderIndex,
-  history
+  history,
+  companyId,
+  resetContestQuest
 }) => {
   const [loading, setLoading] = useState(false);
   const primaryCTA = findCTA(jobDetails);
@@ -26,10 +28,12 @@ const CollectionCard = ({
         break;
 
       case CTA_TYPE.ASSESSMENT.value:
+        resetContestQuest();
         history.push(`/practice/contest/${jobDetails.contestId}`, {
-                    jobDetails: jobDetails
-                })
-                break;
+          jobDetails: jobDetails,
+          companyId
+        });
+        break;
 
       case CTA_TYPE.INTERVIEW.value:
         history.push(`/#/${jobDetails.interviewRoomId}`);

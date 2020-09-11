@@ -20,7 +20,7 @@ const ThumbStats = ({
     <div className="ThumbStats">
       <div className="ThumbStatsCard">
         <img className="ThumbStatsIcon" src={speedometer} alt="icon" />
-        <p className="title">Number of Visits</p>
+        <p className="title">Visitors</p>
         <p className="score">
           <CountUp end={visits} />
         </p>

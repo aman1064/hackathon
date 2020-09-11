@@ -6,7 +6,6 @@ import Username from "../../templates/Username";
 import LogoHeader from "../../organisms/LogoHeader";
 import Loading from "../../atoms/Loading";
 
-
 import Urls from "../../../constants/Urlconfig";
 import servives from "../../../utils/services";
 import routeConfig from "../../../constants/routeConfig";
@@ -40,21 +39,25 @@ class Company extends Component {
     const url = Urls.getLandingLogo;
     const { companyId, companyData } = this.state;
     const postobj = {
-      query: `mutation {markJobInterested(companyId:"${companyId}",jobId:"${jobId}")}`  };
-    servives.post(url, postobj).then(res => {
-      if (res.data) {
-        let jobs = companyData.jobs;
-        jobs[index] = {...jobs[index], shownInterest: true};
-        this.setState({companyData: {...companyData}})
-      }
-    }).finally(() => {
-      loaderReset(false);
-    });
-  }
+      query: `mutation {markJobInterested(companyId:"${companyId}",jobId:"${jobId}")}`
+    };
+    servives
+      .post(url, postobj)
+      .then(res => {
+        if (res.data) {
+          let jobs = companyData.jobs;
+          jobs[index] = { ...jobs[index], shownInterest: true };
+          this.setState({ companyData: { ...companyData } });
+        }
+      })
+      .finally(() => {
+        loaderReset(false);
+      });
+  };
 
   render() {
     const { companyData } = this.state;
-    const { userName, history } = this.props;
+    const { userName, history, resetContestQuest } = this.props;
     if (!companyData) {
       return <Loading />;
     }
@@ -67,6 +70,9 @@ class Company extends Component {
                 <Link to={routeConfig.home}>Job Fair</Link>
               </div>
               <div className="linkItem">
+                <Link to={routeConfig.exibitorFloor}>Exibitor Floor</Link>
+              </div>
+              <div className="linkItem">
                 <Link
                   to={routeConfig.companyAnalytics.replace(
                     ":id",
@@ -76,7 +82,7 @@ class Company extends Component {
                   Analytics
                 </Link>
               </div>
-              <Username history={history} userName={userName} isLoggedIn/>
+              <Username history={history} userName={userName} isLoggedIn />
             </div>
           </LogoHeader>
         </div>
@@ -117,9 +123,15 @@ class Company extends Component {
               </p>
             </div>
             <div className="recChat">
-              <Button className="recChatBtn" appearance="secondary" onClick={() =>
-                  location.replace(`https://nishulk.com/#/recruiter-personal-${companyData.recruiters[0].recId}`)
-              }>
+              <Button
+                className="recChatBtn"
+                appearance="secondary"
+                onClick={() =>
+                  location.replace(
+                    `https://nishulk.com/#/recruiter-personal-${companyData.recruiters[0].recId}`
+                  )
+                }
+              >
                 Chat with Recruiter
               </Button>
               <p>
@@ -144,8 +156,10 @@ class Company extends Component {
                   jobDetails={job}
                   renderIndex={renderIndex}
                   companyName={companyData.companyName}
+                  companyId={companyData.id}
                   history={history}
                   applyOnJob={this.applyOnJob}
+                  resetContestQuest={resetContestQuest}
                 />
               );
             })}

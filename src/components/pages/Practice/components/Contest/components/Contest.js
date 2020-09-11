@@ -115,8 +115,11 @@ class Contest extends PureComponent {
       selectedContest,
       submitting,
       totalScore,
-      contestAttemptId
+      contestAttemptId,
+      location
     } = this.props;
+
+    const companyId = location.state && location.state.companyId;
 
     const { currentScore, prevScore, isConfirmModalOpen } = this.state;
 
@@ -130,7 +133,14 @@ class Contest extends PureComponent {
         <form onSubmit={this.handleSubmit} className="contest-form">
           {isQuizComplete && (
             <Redirect
-              to={routeConfig.practiceInsights.replace(":id", contestAttemptId)}
+              to={
+                companyId
+                  ? routeConfig.companyLanding.replace(":id", companyId)
+                  : routeConfig.practiceInsights.replace(
+                      ":id",
+                      contestAttemptId
+                    )
+              }
             />
           )}
           {question ? (
