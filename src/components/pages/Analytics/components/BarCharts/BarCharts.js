@@ -142,16 +142,16 @@ class BarCharts extends PureComponent {
             </div>
             <div className="keys">
               <p className="label">
-                {latest4[0] + 5}:00 - {latest4[1] + 5}:00
+                {latest4[0] + 1}:00 - {latest4[1] + 1}:00
               </p>
               <p className="label">
-                {latest4[1] + 5}:00 - {latest4[2] + 5}:00
+                {latest4[1] + 1}:00 - {latest4[2] + 1}:00
               </p>
               <p className="label">
-                {latest4[2] + 5}:00 - {latest4[3] + 5}:00
+                {latest4[2] + 1}:00 - {latest4[3] + 1}:00
               </p>
               <p className="label">
-                {latest4[3] + 5}:00 - {latest4[3] + 6}:00
+                {latest4[3] + 1}:00 - {latest4[3] + 2}:00
               </p>
             </div>
           </div>

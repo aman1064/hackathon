@@ -166,13 +166,14 @@
 
   .logoCntnr {
     max-width: 40px;
+    flex-shrink: 0;
   }
 
   .companyNameCntnr h1 {
     font-size: 20px;
 
     &:after {
-      display: none;
+      content: " ";
     }
   }
 
