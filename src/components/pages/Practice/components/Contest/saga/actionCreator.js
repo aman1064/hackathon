@@ -2,8 +2,8 @@ import Urlconfig from "../../../../../../constants/Urlconfig";
 import APP_EVENT from "../AppEvents";
 import { getUrl } from "../../../../../../utils/getUrl";
 
-const startContest = (contestId, profileId) => {
-  const url = getUrl(Urlconfig.startContest(contestId, profileId));
+const startContest = (contestId, jobId) => {
+  const url = getUrl(Urlconfig.startContest(contestId, jobId));
   return {
     type: `${APP_EVENT.START_CONTEST_QUEST}_WATCHER`,
     action_type: `${APP_EVENT.START_CONTEST_QUEST}_EFFECT`,

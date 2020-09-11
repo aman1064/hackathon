@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import CollectionCard from "../../templates/CollectionCard";
+import Username from "../../templates/Username";
 import LogoHeader from "../../organisms/LogoHeader";
 import Loading from "../../atoms/Loading";
+
 
 import Urls from "../../../constants/Urlconfig";
 import servives from "../../../utils/services";
@@ -74,7 +76,7 @@ class Company extends Component {
                   Analytics
                 </Link>
               </div>
-              <div className="username linkItem">Hi {userName}</div>
+              <Username history={history} userName={userName} isLoggedIn/>
             </div>
           </LogoHeader>
         </div>

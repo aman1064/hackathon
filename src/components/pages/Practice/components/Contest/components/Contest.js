@@ -24,14 +24,14 @@ class Contest extends PureComponent {
 
   componentDidMount() {
     const {
-      profileId,
+      location,
       contestId,
       isContestStart,
       resetSubmitting,
       submitting
     } = this.props;
     if (!isContestStart) {
-      this.props.startContest(contestId, profileId);
+      this.props.startContest(contestId, location.state.jobDetails.jobId);
     }
     this._currentScore = this.state.currentScore;
     if (submitting) {

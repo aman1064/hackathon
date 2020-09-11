@@ -12,14 +12,6 @@ import "./Instructions.scss";
 class Instructions extends Component {
   componentDidMount() {
     const { contestId } = this.props;
-    tracker().on("ctapPageView", {
-      hitName: "pv_contest_instructions",
-      payload: {
-        page_name: "js_contest_instructions",
-        contestId,
-        ct: true
-      }
-    });
   }
 
   componentDidUpdate() {
@@ -28,7 +20,7 @@ class Instructions extends Component {
         "You have already attempted this Test",
         "error"
       );
-      this.props.history.push(routeConfig.practice);
+      this.props.history.goBack();
     }
   }
 
@@ -37,20 +29,11 @@ class Instructions extends Component {
       history,
       selectedContest: { groupId }
     } = this.props;
-    history.push(routeConfig.practiceDetails.replace(":id", groupId));
+    history.goBack();
   };
 
   _handleStart = () => {
     const { contestId, selectedContest, handleSubmit } = this.props;
-    tracker().on("ctapEvent", {
-      hitName: "quiz_started",
-      payload: {
-        page_name: "js_contest_instructions",
-        contestId,
-        group: selectedContest.group,
-        ct: true
-      }
-    });
     handleSubmit();
   };
 

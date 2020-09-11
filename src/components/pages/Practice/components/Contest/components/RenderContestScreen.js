@@ -44,7 +44,12 @@ class RenderContestScreen extends Component {
   };
 
   render() {
-    const { isQuizBegin, accessToken, selectedContest } = this.props;
+    const { isQuizBegin, accessToken, selectedContest, location, history } = this.props;
+    if (!location.state || !location.state.jobDetails || !location.state.jobDetails.jobId) {
+      history.goBack();
+      return  null;
+    }
+
     const RenderComponent = isQuizBegin ? (
       <Contest {...this.props} />
     ) : (

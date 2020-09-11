@@ -48,10 +48,6 @@ const LogoHeader = ({
         <Link
           to={redirectLink || "/"}
           onClick={() => {
-            if (hitName) {
-              trackLogoClick(hitName);
-            }
-
             if (clickHandler) {
               clickHandler();
             } else if (isErrorBoundary) {
