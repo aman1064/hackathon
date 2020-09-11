@@ -676,6 +676,19 @@ export function* getPrefetchSuggestors({
   }
 }
 
+export function* getNotifications(action) {
+  const {url, payload, action_type} = action
+  try {
+    const { data } = yield call(services.post, url, payload);
+    if(data) {
+      yield put({type: action_type, payload: data.getUserActionHistory})
+    }
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
 export default function* commonWatcherSaga() {
   yield takeEvery(`${APP_EVENT.USER_LOGIN}_WATCHER`, userLogin);
   yield takeEvery(`${APP_EVENT.SOCIAL_LOGIN}_WATCHER`, socialLogin);
@@ -753,5 +766,9 @@ export default function* commonWatcherSaga() {
   yield takeEvery(
     `${APP_EVENT.GET_PREFETCH_SUGGESTORS}_WATCHER`,
     getPrefetchSuggestors
+  );
+  yield takeEvery(
+    `${APP_EVENT.GET_USER_NOTIFICATIONS}_WATCHER`,
+      getNotifications
   );
 }

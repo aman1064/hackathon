@@ -1,0 +1,108 @@
+@import "../../../assets/styles/common";
+
+.notification-container {
+  max-width: 600px;
+  margin: 4em auto;
+
+  .LogoHeaderCntnr {
+    position: fixed;
+    top: 0;
+    background: $white;
+    box-shadow: 0 1px 4px 0 #ddd;
+    width: 100%;
+    height: 80px;
+    z-index: 1;
+  }
+
+  .LogoHeader {
+    @include desktop {
+      max-width: 77.5rem;
+      height: 5rem;
+      position: fixed;
+      width: 100%;
+      background: #fff;
+      z-index: 2;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    &.covid_logo .LogoHeader__Logo {
+      @include desktop {
+        max-width: 13.75rem;
+        width: 13.75rem;
+      }
+    }
+  }
+
+  .LogoHeaderLinks {
+    display: flex;
+  }
+}
+.interviewPending,
+.assessmentPassed {
+  .card {
+    border: 1px solid #00a5b5;
+    border-left: 3em solid #00a5b5;
+    padding: 1em;
+    border-radius: 3px;
+    margin-bottom: 2em;
+    position: relative;
+
+    &:before {
+      content: '';
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA1CAQAAACkLQDFAAAAjElEQVR4Ae2TwQkEMQwDXUpKSIkuYUtMCelAewe3sB9DMArOgTQf/wahxEqCBv/QYODdPwxvBr4ZrDsSNTxxXIw7bkTKiSKJJHIyoYhPdaMwenUSeYKUyBJUN6rfKNEgKbJFzm+UjP6R/hGhkeXY1UgbaSNtpI2WQtjozxvFkahSNMHMjEUdTqTHoo3c7E6QEUE1ZF8AAAAASUVORK5CYII=);
+      background-size: cover;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      left: -2.475em;
+      top: 1em;
+    }
+  }
+}
+
+.assessmentPending {
+  .card {
+    border: 1px solid #6FBF4A;
+    border-left: 3em solid #6FBF4A;
+    padding: 1em;
+    border-radius: 3px;
+    margin-bottom: 2em;
+    position: relative;
+
+    &:before {
+      content: '';
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAxCAQAAAA/vELTAAACAElEQVR4Ad2WrW7jQBSFjRcNLPQj+A0aUGopMNBSHiDFQS5YuFJ4FckKW4UUmNe4yKwqM0i5Ny9w1pJ1pOko63vndtCeAy350/2dm+mFAhXqyd3kenKFApnWGTQu0GDALY1odDgNpIOkjjA7qIZWBzvIIYxlQIsjZrd4x1f1cBaQQ/+lFjVyZPiB0vMWJ1xFlAB68dPi/aAMvMHJr1Ys6NGLZYWMDkD03ourjgHlGIkJ+ukuQNA7D5XrQQ2odfDl/gaEUVGNFpSDOiOcqXLB56WYlurzBxvc445JW4iGbcH0PepAbOsW/MWDgAhj6nUgao8y0jtQCtAKVGnwBbNWMqjCrDcT6BWzKhnENfpqAh05tnrQ8b8D2VL3Ww9aY9a7CfTG1SWDclDbaMwGVK4ZWJ4hp2gQX6ZBtxkOmHXFRosIdt0hfntrIfL2Ft6jJzXmKeY9oh1Gpk/ZElumDSOc7Wb4UIE+QK3tV9A5ojqN5a4blC/T3nrX0QUrhc/Fpv70LyYRJFTqJA4pUH3nyOf1ffkn6CrdqDpQAernTcwvULkE0sbU3gS1UrfpQdVi8i6cnu+D3OJVRGV2kObO4wQNaUCs0jP2gZ/ZcalAkhKBXiCpSQOqIGmtBgnuBVCWCtSlB1mqNKYDOfQLmMICkp/BUMTYQXL6mLa0IDehutByPPRf6NiqghTvXFwAAAAASUVORK5CYII=);
+      background-size: cover;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      left: -2.5em;
+      top: 1em;
+    }
+  }
+}
+
+.assessmentFailed {
+  .card {
+    border: 1px solid #FF6C36;
+    border-left: 3em solid #FF6C36;
+    padding: 1em;
+    border-radius: 3px;
+    margin-bottom: 2em;
+    position: relative;
+
+    &:before {
+      content: '';
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA1CAMAAAA5+jh8AAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMAECAwQFBgcICPn6+/z9/vIxqCigAAAT1JREFUeAHllNGSwyAIRa+x1Wi08v9fu23CLA4dxvC6ex7TYuRwCf4VMcJL6EQ9wMdBbw64eNDJAx5edPKCg0xMdlgYxIz7Lir9Up0WfC46fSiFPnTcInE33FlyWEhSjTV8q+meWBKn/tlIxIo2mWb37aaFDSfbLRfhCt0OZr8iGGAif5LVkENMNjp5Ao2bedLJtrTQIEXyyGA+lovk5YvVK5iLeNgv24LERorCMF3ooRR+px6d5phXIXG9RPBYf4CihE5+sSxUMPQGTLVcZHXzxh6mbjMUX44Ke9BeZ6pOZmwt6hxXZWEx96e4ELpOWG5vsk5l16sniqdE6K9A+rJQYBehsAv7gRSZB0eSMZhFyNyC3SSvuy0rGdEywpmmwY19yZAA7OSBo0ZugEBuAjDIyQAQnVUjXi5d4G/yAwffM21c7ifeAAAAAElFTkSuQmCC);
+      background-size: cover;
+      position: absolute;
+      width: 2em;
+      height: 2em;
+      left: -2.5em;
+      top: 1em;
+    }
+  }
+}
+

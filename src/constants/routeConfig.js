@@ -19,7 +19,8 @@ const routeConfig = {
   companyLanding: "/company/:id",
   companyAnalytics: "/analytics/:id",
   companyJobDetail: "/company/:id/:jobId",
-  exibitorFloor: "/exibitorFloor"
+  exibitorFloor: "/exibitorFloor",
+  noticeBoard: "/notice-board"
 };
 
 export default routeConfig;
