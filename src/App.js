@@ -19,6 +19,7 @@ import isMobileDevice from "./utils/isMobileDevice";
 import Company from "./components/pages/Company";
 import CompanyJobDetail from "./components/pages/CompanyJobDetail";
 import Notification from "./components/pages/Notification";
+import {getNotifications} from "./sagas/ActionCreator";
 
 window.__bgperformance = userTimingsTracker();
 window.inTrack = {
@@ -82,7 +83,27 @@ const ExibitorFloor = Loadable({
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      pollingStart: false
+    };
+  }
+
+  componentDidMount() {
+    const {userId, getNotifications} = this.props;
+    if(userId) {
+      setInterval(() => getNotifications(userId), 60000)
+      this.setState({ pollingStart: true });
+    }
+  }
+
+  componentDidUpdate() {
+    if(!this.state.pollingStart) {
+      const {userId, getNotifications} = this.props;
+      if(userId) {
+        setInterval(() => getNotifications(userId), 60000);
+        this.setState({ pollingStart: true });
+      }
+    }
   }
 
   setLandingRoute(path) {
@@ -189,6 +210,7 @@ const mapStateToProps = ({ commonData, registrationData }) => {
     firstScreenId: registrationData.firstScreenId,
     statusNavRoute: commonData.statusNavRoute,
     profile: commonData.userDetails.profile,
+    userId: commonData.userBasicDetails.id,
     showWhatsappOptInModal: commonData.showWhatsappOptInModal,
     isJobApplied: commonData.isJobApplied,
     trackerCat: commonData.trackerCat,
@@ -204,7 +226,8 @@ export default connect(
     ...CommonSaga,
     getUserProfile,
     getRegistrationScreenData,
-    getJobDetails
+    getJobDetails,
+    getNotifications
   },
   null,
   {

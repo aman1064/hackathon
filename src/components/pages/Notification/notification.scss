@@ -47,6 +47,17 @@
   .LogoHeaderLinks {
     display: flex;
   }
+
+  .linkItem {
+    margin-left: 32px;
+    color: #7c8ba2;
+    font-weight: 700;
+    font-size: 18px;
+
+    &.username {
+      color: $azure_radiance;
+    }
+  }
 }
 
 .interviewPending,

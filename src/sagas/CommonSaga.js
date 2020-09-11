@@ -1,4 +1,4 @@
-import { put, takeEvery, call, take, takeLatest } from "redux-saga/effects";
+import {put, takeEvery, call, take, takeLatest, select} from "redux-saga/effects";
 import { delay } from "redux-saga";
 import APP_EVENT from "../AppEvents";
 import services from "../utils/services";
@@ -681,7 +681,14 @@ export function* getNotifications(action) {
   try {
     const { data } = yield call(services.post, url, payload);
     if(data) {
-      yield put({type: action_type, payload: data.getUserActionHistory})
+      const stateValue = yield select();
+      const currentSize = Object.keys(stateValue.commonData.notifications).reduce((acc, keyName) => {
+        return acc + (stateValue.commonData.notifications[keyName].length || 0)
+      }, 0)
+      const newSize = Object.keys(data.getUserActionHistory).reduce((acc, keyName) => {
+        return acc + (data.getUserActionHistory[keyName].length || 0)
+      }, 0)
+      yield put({type: action_type, payload: data.getUserActionHistory, newNotifications: newSize - currentSize})
     }
   } catch (error) {
     console.log(error)

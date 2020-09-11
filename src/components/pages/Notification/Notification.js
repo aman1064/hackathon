@@ -19,7 +19,8 @@ const Notification = ({
   userId,
   notificationHistory = {},
   history,
-  userName
+  userName,
+  newNotifications
 }) => {
   useEffect(() => {
     getNotifications(userId);
@@ -39,6 +40,14 @@ const Notification = ({
             </div>
             <div className="linkItem">
               <Link to={routeConfig.exibitorFloor}>Exibitor Floor</Link>
+            </div>
+            <div className="linkItem">
+              <Link
+                to={routeConfig.noticeBoard}
+                className={newNotifications ? "red-dot" : ""}
+              >
+                Notifications
+              </Link>
             </div>
             <Username history={history} userName={userName} isLoggedIn />
           </div>
@@ -72,6 +81,7 @@ const Notification = ({
 const mSTP = ({ commonData }) => ({
   userId: commonData.userBasicDetails.id,
   notificationHistory: commonData.notifications,
+  newNotifications: commonData.newNotifications,
   userName: commonData.userDetails.name
 });
 
