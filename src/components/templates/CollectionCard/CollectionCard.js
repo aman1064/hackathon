@@ -81,7 +81,7 @@ const CollectionCard = ({ jobDetails, companyName }) => {
             </Button>
           <Button
               className=""
-              // onClick={undefined}
+              onClick={() => window.open("https://nishulk.com/#/nice-turquoise-cougar")}
               appearance="primary"
               type="button"
               size="small"

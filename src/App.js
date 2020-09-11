@@ -99,7 +99,8 @@ class App extends Component {
       addPhoneNumber,
       companyAnalytics,
       companyLanding,
-      companyJobDetail
+      companyJobDetail,
+      video
     } = routeConfig;
     if (
       !accessToken &&
