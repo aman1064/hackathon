@@ -117,13 +117,14 @@
   justify-content: flex-end;
 
   .bar {
-    width: 14px;
+    width: 16px;
     order: 1;
     border-radius: 3px 3px 0 0;
   }
 
   .label {
     margin-left: 0;
+    font-size: 11px;
   }
 }
 
