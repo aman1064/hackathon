@@ -12,7 +12,6 @@ import routeConfig from "../../../constants/routeConfig";
 
 import "./Company.scss";
 import Button from "../../../ui-components/Button";
-import {getNotifications} from "../../../sagas/ActionCreator";
 
 class Company extends Component {
   constructor(props) {
