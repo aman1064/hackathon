@@ -57,7 +57,7 @@ class Company extends Component {
 
   render() {
     const { companyData } = this.state;
-    const { userName, history } = this.props;
+    const { userName, history, resetContestQuest } = this.props;
     if (!companyData) {
       return <Loading />;
     }
@@ -159,6 +159,7 @@ class Company extends Component {
                   companyId={companyData.id}
                   history={history}
                   applyOnJob={this.applyOnJob}
+                  resetContestQuest={resetContestQuest}
                 />
               );
             })}
