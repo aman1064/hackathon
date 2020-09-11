@@ -39,6 +39,7 @@ class Analytics extends PureComponent {
   }) => {
     const processedData = {};
     const hash = [];
+    const totalVisitors = footFallByBooths.totalCount;
     processedData.visitors = footFallByBooths.bars.reduce(
       (acc, el) => {
         hash[+el.label] = 1;
@@ -81,11 +82,11 @@ class Analytics extends PureComponent {
       hash.length - 2,
       hash.length - 1
     ];
-    this.setState({ processedData, latest4 });
+    this.setState({ processedData, latest4, totalVisitors });
   };
 
   render() {
-    const { stats, processedData, latest4 } = this.state;
+    const { stats, processedData, latest4, totalVisitors } = this.state;
     if (!stats) {
       return <Loading />;
     } else {
@@ -109,6 +110,7 @@ class Analytics extends PureComponent {
               (processedData && processedData.assessments.thumbs) || 0
             }
             interviews={(processedData && processedData.interviews.thumbs) || 0}
+            totalVisitors={totalVisitors}
           />
           <BarChart processedData={processedData} latest4={latest4} />
         </div>

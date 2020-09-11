@@ -40,10 +40,10 @@
         margin-top: 0;
       }
 
-      .assessments,
-      .interviews,
       .visits,
-      .applies {
+      .applies,
+      .assessments,
+      .interviews {
         position: relative;
         padding-left: getRem(20);
 
@@ -54,16 +54,8 @@
           top: 2px;
           width: getRem(12);
           height: getRem(12);
-          background: #c6b9f1;
+          background: #b7dcfd;
           border-radius: 50%;
-        }
-      }
-
-      .interviews {
-        margin-left: getRem(36);
-
-        &:before {
-          background: #ffd768;
         }
       }
 
@@ -71,7 +63,7 @@
         margin-left: getRem(36);
 
         &:before {
-          background: #f8b5b5;
+          background: #ffd768;
         }
       }
 
@@ -79,7 +71,15 @@
         margin-left: getRem(36);
 
         &:before {
-          background: #b7dcfd;
+          background: #c6b9f1;
+        }
+      }
+
+      .interviews {
+        margin-left: getRem(36);
+
+        &:before {
+          background: #f8b5b5;
         }
       }
     }

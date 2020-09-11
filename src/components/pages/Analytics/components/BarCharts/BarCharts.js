@@ -26,25 +26,25 @@ const BarChartsGroup = ({
       multiplier={2}
       direction="vertical"
       percent={visitsPercent}
-      color="#c6b9f1"
-    />
-    <PercentBar
-      multiplier={2}
-      direction="vertical"
-      percent={appliesPercent}
-      color="#f8b5b5"
-    />
-    <PercentBar
-      multiplier={2}
-      direction="vertical"
-      percent={interviewsPercent}
       color="#b7dcfd"
     />
     <PercentBar
       multiplier={2}
       direction="vertical"
-      percent={assessmentsPercent}
+      percent={appliesPercent}
       color="#ffd768"
+    />
+    <PercentBar
+      multiplier={2}
+      direction="vertical"
+      percent={interviewsPercent}
+      color="#c6b9f1"
+    />
+    <PercentBar
+      multiplier={2}
+      direction="vertical"
+      percent={assessmentsPercent}
+      color="#f8b5b5"
     />
   </div>
 );
@@ -74,15 +74,15 @@ class BarCharts extends PureComponent {
                 )}
                 appliesPercent={getPercent(
                   processedData.applies.bars[latest4[0]],
-                  processedData.applies.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
                 interviewsPercent={getPercent(
                   processedData.interviews.bars[latest4[0]],
-                  processedData.interviews.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
                 assessmentsPercent={getPercent(
                   processedData.assessments.bars[latest4[0]],
-                  processedData.assessments.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
               />
               <BarChartsGroup
@@ -92,15 +92,15 @@ class BarCharts extends PureComponent {
                 )}
                 appliesPercent={getPercent(
                   processedData.applies.bars[latest4[1]],
-                  processedData.applies.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
                 interviewsPercent={getPercent(
                   processedData.interviews.bars[latest4[1]],
-                  processedData.interviews.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
                 assessmentsPercent={getPercent(
                   processedData.assessments.bars[latest4[1]],
-                  processedData.assessments.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
               />
               <BarChartsGroup
@@ -110,15 +110,15 @@ class BarCharts extends PureComponent {
                 )}
                 appliesPercent={getPercent(
                   processedData.applies.bars[latest4[2]],
-                  processedData.applies.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
                 interviewsPercent={getPercent(
                   processedData.interviews.bars[latest4[2]],
-                  processedData.interviews.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
                 assessmentsPercent={getPercent(
                   processedData.assessments.bars[latest4[2]],
-                  processedData.assessments.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
               />
               <BarChartsGroup
@@ -128,15 +128,15 @@ class BarCharts extends PureComponent {
                 )}
                 appliesPercent={getPercent(
                   processedData.applies.bars[latest4[3]],
-                  processedData.applies.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
                 interviewsPercent={getPercent(
                   processedData.interviews.bars[latest4[3]],
-                  processedData.interviews.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
                 assessmentsPercent={getPercent(
                   processedData.assessments.bars[latest4[3]],
-                  processedData.assessments.thumbs || 0
+                  processedData.visitors.thumbs || 0
                 )}
               />
             </div>
