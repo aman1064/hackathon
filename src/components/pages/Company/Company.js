@@ -25,7 +25,7 @@ class Company extends Component {
     const url = Urls.getLandingLogo;
     const { companyId } = this.state;
     const postobj = {
-      query: `{ getCompanyPage(id: ${companyId}){id,companyName,companyLogoUrl,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyWebsiteUrl,companyVideoUrl,jobs{jobId,designation,cities,matchDetails,jobDescription,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyLogoUrl,companyWebsiteURL,minCTC,maxCTC,minExperience,maxExperience,benefits,empType,jobRole,ctcConfidential},recruiters{recName,recEmail}} }`
+      query: `{ getCompanyPage(id: ${companyId}){id,companyName,companyLogoUrl,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyWebsiteUrl,companyVideoUrl,jobs{jobId,designation,cities,matchDetails,jobDescription,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyLogoUrl,companyWebsiteURL,minCTC,maxCTC,minExperience,maxExperience,benefits,empType,jobRole,ctcConfidential},recruiters{recId, recName,recEmail}} }`
     };
     servives.post(url, postobj).then(res => {
       if (res.data) {
@@ -99,7 +99,9 @@ class Company extends Component {
               </p>
             </div>
             <div className="recChat">
-              <Button className="recChatBtn" appearance="secondary">
+              <Button className="recChatBtn" appearance="secondary" onClick={() =>
+                  location.replace(`https://nishulk.com/#/recruiter-personal-${companyData.recruiters[0].recId}`)
+              }>
                 Chat with Recruiter
               </Button>
               <p>
