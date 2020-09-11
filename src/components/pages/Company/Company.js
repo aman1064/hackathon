@@ -10,6 +10,7 @@ import servives from "../../../utils/services";
 import routeConfig from "../../../constants/routeConfig";
 
 import "./Company.scss";
+import Button from "../../../ui-components/Button";
 
 class Company extends Component {
   constructor(props) {
@@ -57,48 +58,55 @@ class Company extends Component {
           </LogoHeader>
         </div>
         <div className="page-container">
-          <div className="name-logo-grp">
-            <a
-              href={companyData.companyWebsiteUrl}
-              target="_blank"
-              className="url-link"
-            >
-              <img
-                src={companyData.companyLogoUrl}
-                alt={companyData.companyName}
-              />
-            </a>
+          <div className="heading">
+            <div className="logoCntnr">
+              <a
+                href={companyData.companyWebsiteUrl}
+                target="_blank"
+                className="url-link"
+              >
+                <img
+                  src={companyData.companyLogoUrl}
+                  alt={companyData.companyName}
+                />
+              </a>
+            </div>
+            <div className="companyNameCntnr">
+              <h1>{companyData.companyName}</h1>
+              <p className="desc">
+                is{" "}
+                {companyData.companySize && (
+                  <span>
+                    a <span className="bold">{companyData.companySize}</span>{" "}
+                    company{" "}
+                  </span>
+                )}
+                {companyData.companyLocation && (
+                  <span>
+                    having Headquarter at{" "}
+                    <span className="bold">
+                      {companyData.companyLocation.replace("HQ : ", "")}
+                    </span>
+                  </span>
+                )}
+              </p>
+            </div>
+            <div className="recChat">
+              <Button className="recChatBtn" appearance="secondary">
+                Chat with Recruiter
+              </Button>
+              <p>
+                Ask more about the job role from{" "}
+                {(companyData.recruiters &&
+                  companyData.recruiters[0].recName) ||
+                  "Recruiter"}{" "}
+              </p>
+            </div>
           </div>
-          <p className="financial-note">{companyData.companyFinancials}</p>
-          <div className="overview">
-            <p className="title">{companyData.companyName} Overview</p>
-            <ul className="">
-              <li className="meta-info">
-                <span className="key-label">Website</span>
-                <a href={companyData.companyWebsiteUrl} target="_blank">
-                  {companyData.companyWebsiteUrl}
-                </a>
-              </li>
-              <li className="meta-info">
-                <span className="key-label">Size</span>
-                <span>{companyData.companySize}</span>
-              </li>
-              <li className="meta-info">
-                <span className="key-label">Type</span>
-                <span>{companyData.companyType}</span>
-              </li>
-              <li className="meta-info">
-                <span className="key-label">Headquarter</span>
-                <span>{companyData.companyLocation.replace("HQ : ", "")}</span>
-              </li>
-            </ul>
-          </div>
-          <div
-            className="about-company"
-            dangerouslySetInnerHTML={{
-              __html: companyData.aboutCompany
-            }}
-          />
+
+          <h2 className="openHeading">
+            Open positions at {companyData.companyName}
+          </h2>
           <div className="jobs-grp">
             {companyData.jobs.map(job => {
               return (
@@ -110,12 +118,20 @@ class Company extends Component {
               );
             })}
           </div>
+          <h2 className="openHeading">About {companyData.companyName}</h2>
+          <div
+            className="about-company"
+            dangerouslySetInnerHTML={{
+              __html: companyData.aboutCompany
+            }}
+          />
+
           <div className="video-container">
             <iframe
               className="video-frame"
               key={companyData.companyVideoUrl}
               height="500"
-              src={`${companyData.companyVideoUrl}?autoplay=1&mute=1&controls=0`}
+              src={`${companyData.companyVideoUrl}`}
             ></iframe>
           </div>
         </div>

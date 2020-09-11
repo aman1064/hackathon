@@ -1,7 +1,7 @@
 @import "../../../assets/styles/common";
 
 .Company {
-  padding-top: getRem(80);
+  padding-top: getRem(120);
 
   @include desktop {
     top: 0;
@@ -119,11 +119,7 @@
 
   .about-company {
     line-height: 2;
-    background-color: #feca64;
-    padding: 30px 20px;
-    //box-shadow: 3px 7px 20px 0 #d0d3d4;
-    border-radius: 10px;
-    margin-top: 30px;
+    margin: 30px 0 60px 6px;
   }
 
   .jobs-grp {
@@ -135,5 +131,50 @@
   .video-frame {
     width: 100%;
     border: none;
+  }
+
+  .heading {
+    display: flex;
+    margin-bottom: 20px;
+
+    .logoCntnr {
+      margin-right: 12px;
+    }
+
+    .companyNameCntnr {
+      h1 {
+        font-size: 36px;
+        margin-top: 8px;
+      }
+
+      .desc {
+        margin-top: 6px;
+      }
+    }
+  }
+
+  .openHeading {
+    font-size: 24px;
+    margin-top: 60px;
+    margin-left: 8px;
+    color: #8a8a8a;
+    margin-bottom: 20px;
+  }
+
+  .recChat {
+    align-self: center;
+    margin-left: auto;
+    text-align: right;
+
+    p {
+      font-size: 12px;
+      color: #8a8a8a;
+      font-weight: 600;
+      margin-top: 6px;
+    }
+  }
+
+  .recChatBtn {
+    border-width: 1.5px;
   }
 }
