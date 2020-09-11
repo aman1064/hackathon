@@ -9,6 +9,7 @@ import servives from "../../../utils/services";
 import routeConfig from "../../../constants/routeConfig";
 
 import "./ExibitorFloor.scss";
+import ExhibitorCard from "./ExhibitorCard";
 
 class ExibitorFloor extends PureComponent {
   constructor() {
@@ -33,7 +34,7 @@ class ExibitorFloor extends PureComponent {
 
   render() {
     const { landingData } = this.state;
-    const { userName } = this.props;
+    const { userName, history } = this.props;
     return (
       <div className="ExibitorFloor">
         <div className="LogoHeaderCntnr">
@@ -51,11 +52,23 @@ class ExibitorFloor extends PureComponent {
         </div>
         {!landingData && <Loading />}
         {landingData && (
-          <div>
-            <div className="diamond">diamond</div>
-            <div className="gold">gold</div>
-            <div className="silver">silver</div>
-          </div>
+            <div className="exhibitor-container">
+              {
+                ["goldPartner", "diamondPartner", "silverPartner"].map((key) => {
+                  return (<div key={key} className={key}>
+                    <p className="title">{landingData[key].name}</p>
+                    <div className="card-container">
+                      {
+                        landingData[key].companies.map(companydata => {
+                          return <ExhibitorCard key={companydata.id} companyData={companydata}
+                                                history={history} isPremium={key !== "silverPartner"}/>
+                        })
+                      }
+                    </div>
+                  </div>)
+                })
+              }
+            </div>
         )}
       </div>
     );
