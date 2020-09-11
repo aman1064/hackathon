@@ -36,8 +36,11 @@ const CollectionCard = ({
         break;
 
       case CTA_TYPE.INTERVIEW.value:
-        history.push(`/#/${jobDetails.interviewRoomId}`);
-        location.reload();
+        location.replace(
+            `https://nishulk.com/#/${jobDetails.interviewRoomId}`
+        )
+        // history.push(`/#/${jobDetails.interviewRoomId}`);
+        // location.reload();
         break;
       default:
         return null;
