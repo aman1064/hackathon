@@ -90,7 +90,9 @@ class Company extends Component {
                   <span>
                     having Headquarter at{" "}
                     <span className="bold">
-                      {companyData.companyLocation.replace("HQ : ", "")}
+                      {companyData.companyLocation
+                        .replace("HQ : ", "")
+                        .replace("HQ:", "")}
                     </span>
                   </span>
                 )}
@@ -102,9 +104,11 @@ class Company extends Component {
               </Button>
               <p>
                 Ask more about the job role from{" "}
-                {(companyData.recruiters &&
-                  companyData.recruiters[0].recName) ||
-                  "Recruiter"}{" "}
+                <span className="capitalize">
+                  {(companyData.recruiters &&
+                    companyData.recruiters[0].recName) ||
+                    "Recruiter"}
+                </span>
               </p>
             </div>
           </div>
