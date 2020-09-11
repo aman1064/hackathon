@@ -187,6 +187,10 @@ class Home extends React.PureComponent {
                     <img src={landingData.youtubeLink3.thumbnailUrl} />
                   </div>
                 )}
+                <Link
+                  className="exibitorFloorCta"
+                  to={routeConfig.exibitorFloor}
+                ></Link>
                 <Modal
                   className="youtubeModal"
                   open={isYoutubeModalOpen}

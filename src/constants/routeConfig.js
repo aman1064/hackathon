@@ -18,7 +18,8 @@ const routeConfig = {
   practiceSignup: "/practice/signup",
   companyLanding: "/company/:id",
   companyAnalytics: "/analytics/:id",
-  companyJobDetail: "/company/:id/:jobId"
+  companyJobDetail: "/company/:id/:jobId",
+  exibitorFloor: "/exibitorFloor"
 };
 
 export default routeConfig;

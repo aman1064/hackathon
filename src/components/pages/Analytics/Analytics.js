@@ -11,9 +11,9 @@ import "./Analytics.scss";
 class Analytics extends PureComponent {
   componentDidMount() {
     const url = Urls.getLandingLogo;
+    const { match } = this.props;
     const postobj = {
-      query:
-        "{ getJobFairStatistics{footFallByBooths{label,totalCount,bars{label,value}}, footFallByJobInterests{label,totalCount,bars{label,value}} , footFallByInInterview{label,totalCount,bars{label,value}} , footFallByAssessmentDone{label,totalCount,bars{label,value}}} }"
+      query: `{ getJobFairStatistics(companyId: \"${match.params.id}\"){footFallByBooths{label,totalCount,bars{label,value}}, footFallByJobInterests{label,totalCount,bars{label,value}} , footFallByInInterview{label,totalCount,bars{label,value}} , footFallByAssessmentDone{label,totalCount,bars{label,value}}} }`
     };
     servives.post(url, postobj).then(res => {
       if (res.data) {

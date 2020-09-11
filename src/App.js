@@ -18,6 +18,7 @@ import ErrorBoundary from "./components/pages/ErrorBoundary/ErrorBoundary";
 import isMobileDevice from "./utils/isMobileDevice";
 import Company from "./components/pages/Company";
 import CompanyJobDetail from "./components/pages/CompanyJobDetail";
+import { access } from "fs";
 
 window.__bgperformance = userTimingsTracker();
 window.inTrack = {
@@ -70,6 +71,14 @@ const Analytics = Loadable({
   loading: Loading
 });
 
+const ExibitorFloor = Loadable({
+  loader: () =>
+    import(
+      /* webpackChunkName: "analytics-view" */ "./components/pages/ExibitorFloor"
+    ),
+  loading: Loading
+});
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -100,7 +109,7 @@ class App extends Component {
       companyAnalytics,
       companyLanding,
       companyJobDetail,
-      video
+      exibitorFloor
     } = routeConfig;
     if (
       !accessToken &&
@@ -136,12 +145,19 @@ class App extends Component {
               {accessToken && (
                 <Route exact path={[addPhoneNumber]} component={Registration} />
               )}
-              <Route
-                exact
-                path={companyJobDetail}
-                component={CompanyJobDetail}
-              />
-              <Route exact path={companyLanding} component={Company} />
+              {accessToken && (
+                <Route
+                  exact
+                  path={companyJobDetail}
+                  component={CompanyJobDetail}
+                />
+              )}
+              {accessToken && (
+                <Route exact path={companyLanding} component={Company} />
+              )}
+              {accessToken && (
+                <Route exact path={exibitorFloor} component={ExibitorFloor} />
+              )}
               {accessToken && (
                 <Route exact path={[root, home]} component={Home} />
               )}
