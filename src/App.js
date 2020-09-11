@@ -20,6 +20,9 @@ import Company from "./components/pages/Company";
 import CompanyJobDetail from "./components/pages/CompanyJobDetail";
 
 window.__bgperformance = userTimingsTracker();
+window.inTrack = {
+  push: () => {}
+};
 
 const Login = Loadable({
   loader: () =>

@@ -11,7 +11,8 @@ const defaultConfig = () => ({
 });
 
 const requiredHeaders = config => ({
-  platform: "mweb"
+  platform: "mweb",
+  userid: setAndGetUserId()
 });
 
 function setAndGetUserId() {

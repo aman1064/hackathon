@@ -1,3 +1,3 @@
-import Company from "./Company"
+import CompanyContainer from "./CompanyContainer";
 
-export default Company;
+export default CompanyContainer;
