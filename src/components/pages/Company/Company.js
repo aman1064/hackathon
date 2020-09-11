@@ -25,12 +25,28 @@ class Company extends Component {
     const url = Urls.getLandingLogo;
     const { companyId } = this.state;
     const postobj = {
-      query: `{ getCompanyPage(id: ${companyId}){id,companyName,companyLogoUrl,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyWebsiteUrl,companyVideoUrl,jobs{jobId,designation,cities,matchDetails,jobDescription,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyLogoUrl,companyWebsiteURL,minCTC,maxCTC,minExperience,maxExperience,benefits,empType,jobRole,ctcConfidential},recruiters{recId, recName,recEmail}} }`
+      query: `{ getCompanyPage(id: ${companyId}){id,companyName,companyLogoUrl,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyWebsiteUrl,companyVideoUrl,jobs{jobId,designation,cities,matchDetails,jobDescription,aboutCompany,companyLocation,companySize,companyType,companyFinancials,companyLogoUrl,companyWebsiteURL,minCTC,maxCTC,minExperience,maxExperience,benefits,empType,jobRole,ctcConfidential,contestId,assessed,assessmentPassed,eligibleForInterview,interviewRoomId, shownInterest},recruiters{recId, recName,recEmail}} }`
     };
     servives.post(url, postobj).then(res => {
       if (res.data) {
         this.setState({ companyData: res.data.getCompanyPage });
       }
+    });
+  }
+
+  applyOnJob = (jobId, index, loaderReset) => {
+    const url = Urls.getLandingLogo;
+    const { companyId, companyData } = this.state;
+    const postobj = {
+      query: `mutation {markJobInterested(companyId:"${companyId}",jobId:"${jobId}")}`  };
+    servives.post(url, postobj).then(res => {
+      if (res.data) {
+        let jobs = companyData.jobs;
+        jobs[index] = {...jobs[index], shownInterest: true};
+        this.setState({companyData: {...companyData}})
+      }
+    }).finally(() => {
+      loaderReset(false);
     });
   }
 
@@ -119,12 +135,14 @@ class Company extends Component {
             Open positions at {companyData.companyName}
           </h2>
           <div className="jobs-grp">
-            {companyData.jobs.map(job => {
+            {companyData.jobs.map((job, renderIndex) => {
               return (
                 <CollectionCard
                   key={job.jobId}
                   jobDetails={job}
+                  renderIndex={renderIndex}
                   companyName={companyData.companyName}
+                  applyOnJob={this.applyOnJob}
                 />
               );
             })}
@@ -143,7 +161,7 @@ class Company extends Component {
               key={companyData.companyVideoUrl}
               height="500"
               src={`${companyData.companyVideoUrl}`}
-            ></iframe>
+            />
           </div>
         </div>
       </div>

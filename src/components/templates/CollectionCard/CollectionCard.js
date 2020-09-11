@@ -1,12 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import {getExpStr, getPackageStr} from "../../../utils/jobDetailsUtils";
 import getKey from "../../../utils/getKey";
 import SpanWithIcon from "../../molecules/SpanWithIcon";
 import "./CollectionCard.scss";
 import Button from "../../../ui-components/Button";
+import {CTA_TYPE, findCTA} from "./util";
 
-const CollectionCard = ({ jobDetails, companyName }) => {
+const CollectionCard = ({ jobDetails, companyName, applyOnJob, renderIndex, history }) => {
+    const [loading, setLoading] = useState(false);
+    const primaryCTA = findCTA(jobDetails);
+
+    const handlePrimaryCTA = () => {
+        const ctaValue = primaryCTA.value
+        switch (ctaValue) {
+            case CTA_TYPE.APPLY.value:
+                setLoading(true);
+                applyOnJob(jobDetails.jobId, renderIndex, setLoading)
+                break;
+
+            case CTA_TYPE.ASSESSMENT.value:
+                break;
+
+            case CTA_TYPE.INTERVIEW.value:
+                history.push(`#/${jobDetails.interviewRoomId}`);
+                location.reload();
+                break;
+            default:
+                return null;
+        }
+    }
+
   return (
       <div className="CollectionCard">
           <div className="card-details">
@@ -79,16 +103,20 @@ const CollectionCard = ({ jobDetails, companyName }) => {
             >
                 Know More
             </Button>
-          <Button
-              className=""
-              onClick={() => window.open("https://nishulk.com/#/nice-turquoise-cougar")}
-              appearance="primary"
-              type="button"
-              size="small"
-          >
-            Send Link
-          </Button>
+            {primaryCTA.label &&
+                <Button
+                    className=""
+                    loading={loading}
+                    onClick={handlePrimaryCTA}
+                    appearance="primary"
+                    type="button"
+                    size="small"
+                >
+                    {primaryCTA.label}
+                </Button>
+            }
         </div>
+          {primaryCTA.msg && (<span>{primaryCTA.msg}</span>)}
       </div>
   );
 };
