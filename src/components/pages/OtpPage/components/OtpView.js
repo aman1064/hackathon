@@ -4,16 +4,9 @@ import "../OtpPage.scss";
 import Button from "../../../atoms/Button";
 import LogoHeader from "../../../organisms/LogoHeader";
 import routeConfig from "../../../../constants/routeConfig";
-import {
-  trackCleverTap,
-  filterJobDetailsForCleverTap
-} from "../../../../utils/tracking";
-import getSessionStorage from "../../../../utils/getSessionStorage";
+import { filterJobDetailsForCleverTap } from "../../../../utils/tracking";
 import Timer from "../../../organisms/Timer";
 import getKey from "../../../../utils/getKey";
-import services from "../../../../utils/services";
-import { getUrl } from "../../../../utils/getUrl";
-import Urlconfig from "../../../../constants/Urlconfig";
 import tracker from "../../../../analytics/tracker";
 import { get } from "../../../../utils/jsUtils";
 
@@ -105,15 +98,6 @@ export default class OtpView extends Component {
           ? this.landingRoute + "&prevRoute=otp"
           : this.landingRoute + "?prevRoute=otp";
       }
-      tracker().on("ctapEvent", {
-        hitName: "login_success",
-        payload: {
-          flow: "product_flow"
-        }
-      });
-      tracker().on("ctapProfile", {
-        hitName: "login_success"
-      });
       this.props.history.push(this.landingRoute || routeConfig.home);
     }
   };
@@ -124,15 +108,9 @@ export default class OtpView extends Component {
 
   handleRedirectBack = () => {
     const { location, history } = this.props;
-    tracker().on("ctapProfile", {
-      hitName: "login_success"
-    });
     history.replace(get(location, "state.from"));
   };
   handleNextButtonClick = () => {
-    tracker().on("event", {
-      hitName: "registration$otp_submit_clicked$enter_otp_screen"
-    });
     const { otpValue, validateUrl, prevRoute } = this.state;
     this.setState({ isNextButtonEnabled: false });
     const { interactionId } = this.props;
@@ -153,19 +131,8 @@ export default class OtpView extends Component {
     });
     promise.then(res => {
       this.setState({ isNextButtonEnabled: true });
-      tracker().on("event", {
-        hitName: "registration$otp_submit_success$enter_otp_screen"
-      });
-      trackCleverTap("OTPsubmit_OTPscreen", {
-        OTPconfirm_clickedStatus: "Success"
-      });
-      tracker().on("ctapEvent", {
-        hitName: "otp_verification_next_click",
-        payload: {
-          page_name: "js_otp_verification",
-          status: "success"
-        }
-      });
+      const openViduObj = { item: { userName: "Dummy user" } };
+      localStorage.setItem("openviduCallNickname", JSON.stringify(openViduObj));
       switch (prevRoute) {
         case "instaApply":
           this.handlePrevRouteInstaApply(res);
@@ -184,23 +151,10 @@ export default class OtpView extends Component {
     });
     promise.catch(err => {
       this.setState({ isNextButtonEnabled: true });
-      tracker().on("event", {
-        hitName: "registration$otp_submit_fail$enter_otp_screen"
-      });
-      tracker().on("ctapEvent", {
-        hitName: "otp_verification_next_click",
-        payload: {
-          page_name: "js_otp_verification",
-          status: "fail"
-        }
-      });
       this.props.openGlobalPrompt(err.message || "otp submit Failed", "error");
     });
   };
   handleResendOtpClick = () => {
-    tracker().on("event", {
-      hitName: `registration$resend_otp_clicked$enter_otp_screen`
-    });
     const { resendUrl, resendData } = this.state;
     localStorage.setItem("otpTimerDuration", 30);
     const promise = new Promise((resolve, reject) => {

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import Modal from "../../../ui-components/Modal";
 import ModalTitle from "../../../ui-components/Modal/Title";
+import Loading from "../../atoms/Loading";
 
 import servives from "../../../utils/services";
 import Urls from "../../../constants/Urlconfig";
@@ -49,158 +50,164 @@ class Home extends React.PureComponent {
 
   render() {
     const { landingData, isYoutubeModalOpen, youtubeUrl } = this.state;
-    // const modalContent = (
+    if (!landingData) {
+      return <Loading />;
+    } else {
+      return (
+        <div className="Home">
+          <div className="imgWrapper">
+            <img alt="landing" src={LandingImg} />
+            {landingData && (
+              <div className="overlayWrapper">
+                <div className="diamondList">
+                  {landingData.diamondPartner.companies.map((el, index) => (
+                    <div
+                      key={el.id}
+                      className={`diamondItem diamond${index + 1}`}
+                    >
+                      <Link
+                        className="companyLink"
+                        to={routeConfig.companyLanding.replace(":id", el.id)}
+                      >
+                        <img src={el.companyLogoUrl} />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
 
-    // );
-    // console.info("qwe", { youtubeUrl });
-    return (
-      <div className="Home">
-        <div className="imgWrapper">
-          <img alt="landing" src={LandingImg} />
-          {landingData && (
-            <div className="overlayWrapper">
-              <div className="diamondList">
-                {landingData.diamondPartner.companies.map((el, index) => (
+                <div className="diamondList isRight">
+                  {landingData.diamondPartner.companies.map((el, index) => (
+                    <div key={el.id} className={`diamondItem gold${index + 1}`}>
+                      <Link
+                        className="companyLink"
+                        to={routeConfig.companyLanding.replace(":id", el.id)}
+                      >
+                        <img src={el.companyLogoUrl} />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="goldList">
+                  {landingData.goldPartner.companies.map((el, index) => (
+                    <div key={el.id} className={`goldItem gold${index + 1}`}>
+                      <Link
+                        className="companyLink"
+                        to={routeConfig.companyLanding.replace(":id", el.id)}
+                      >
+                        <img src={el.companyLogoUrl} />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="goldList isRight">
+                  {landingData.goldPartner.companies.map((el, index) => (
+                    <div key={el.id} className={`goldItem gold${index + 1}`}>
+                      <Link
+                        className="companyLink"
+                        to={routeConfig.companyLanding.replace(":id", el.id)}
+                      >
+                        <img src={el.companyLogoUrl} />
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="silverList">
+                  {landingData.silverPartner.companies.map((el, index) => {
+                    if (index < 2) {
+                      return (
+                        <div
+                          key={el.id}
+                          className={`silverItem silver${index + 1}`}
+                        >
+                          <Link
+                            className="companyLink"
+                            to={routeConfig.companyLanding.replace(
+                              ":id",
+                              el.id
+                            )}
+                          >
+                            <img src={el.companyLogoUrl} />
+                          </Link>
+                        </div>
+                      );
+                    }
+                  })}
+                </div>
+
+                <div className="silverList isRight">
+                  {landingData.silverPartner.companies.map((el, index) => {
+                    if (index > 1) {
+                      return (
+                        <div
+                          key={el.id}
+                          className={`silverItem silver${index + 1}`}
+                        >
+                          <Link
+                            className="companyLink"
+                            to={routeConfig.companyLanding.replace(
+                              ":id",
+                              el.id
+                            )}
+                          >
+                            <img src={el.companyLogoUrl} />
+                          </Link>
+                        </div>
+                      );
+                    }
+                  })}
+                </div>
+
+                {landingData.youtubeLink1 && (
                   <div
-                    key={el.id}
-                    className={`diamondItem diamond${index + 1}`}
+                    className="videoThumb is1st"
+                    onClick={this.openYoutubeModal(landingData.youtubeLink1)}
+                    title={landingData.youtubeLink1.title}
                   >
-                    <Link
-                      className="companyLink"
-                      to={routeConfig.companyLanding.replace(":id", el.id)}
-                    >
-                      <img src={el.companyLogoUrl} />
-                    </Link>
+                    <img src={landingData.youtubeLink1.thumbnailUrl} />
                   </div>
-                ))}
-              </div>
-
-              <div className="diamondList isRight">
-                {landingData.diamondPartner.companies.map((el, index) => (
-                  <div key={el.id} className={`diamondItem gold${index + 1}`}>
-                    <Link
-                      className="companyLink"
-                      to={routeConfig.companyLanding.replace(":id", el.id)}
-                    >
-                      <img src={el.companyLogoUrl} />
-                    </Link>
+                )}
+                {landingData.youtubeLink2 && (
+                  <div
+                    className="videoThumb is2nd"
+                    onClick={this.openYoutubeModal(landingData.youtubeLink2)}
+                    title={landingData.youtubeLink2.title}
+                  >
+                    <img src={landingData.youtubeLink2.thumbnailUrl} />
                   </div>
-                ))}
-              </div>
-
-              <div className="goldList">
-                {landingData.goldPartner.companies.map((el, index) => (
-                  <div key={el.id} className={`goldItem gold${index + 1}`}>
-                    <Link
-                      className="companyLink"
-                      to={routeConfig.companyLanding.replace(":id", el.id)}
-                    >
-                      <img src={el.companyLogoUrl} />
-                    </Link>
+                )}
+                {landingData.youtubeLink3 && (
+                  <div
+                    className="videoThumb is3rd"
+                    onClick={this.openYoutubeModal(landingData.youtubeLink3)}
+                    title={landingData.youtubeLink3.title}
+                  >
+                    <img src={landingData.youtubeLink3.thumbnailUrl} />
                   </div>
-                ))}
-              </div>
-
-              <div className="goldList isRight">
-                {landingData.goldPartner.companies.map((el, index) => (
-                  <div key={el.id} className={`goldItem gold${index + 1}`}>
-                    <Link
-                      className="companyLink"
-                      to={routeConfig.companyLanding.replace(":id", el.id)}
-                    >
-                      <img src={el.companyLogoUrl} />
-                    </Link>
-                  </div>
-                ))}
-              </div>
-
-              <div className="silverList">
-                {landingData.silverPartner.companies.map((el, index) => {
-                  if (index < 2) {
-                    return (
-                      <div
-                        key={el.id}
-                        className={`silverItem silver${index + 1}`}
-                      >
-                        <Link
-                          className="companyLink"
-                          to={routeConfig.companyLanding.replace(":id", el.id)}
-                        >
-                          <img src={el.companyLogoUrl} />
-                        </Link>
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-
-              <div className="silverList isRight">
-                {landingData.silverPartner.companies.map((el, index) => {
-                  if (index > 1) {
-                    return (
-                      <div
-                        key={el.id}
-                        className={`silverItem silver${index + 1}`}
-                      >
-                        <Link
-                          className="companyLink"
-                          to={routeConfig.companyLanding.replace(":id", el.id)}
-                        >
-                          <img src={el.companyLogoUrl} />
-                        </Link>
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-
-              {landingData.youtubeLink1 && (
-                <div
-                  className="videoThumb is1st"
-                  onClick={this.openYoutubeModal(landingData.youtubeLink1)}
-                  title={landingData.youtubeLink1.title}
+                )}
+                <Modal
+                  className="youtubeModal"
+                  open={isYoutubeModalOpen}
+                  onClose={this.closeYoutubeModal}
+                  closeOnClickOutside
+                  backdrop
                 >
-                  <img src={landingData.youtubeLink1.thumbnailUrl} />
-                </div>
-              )}
-              {landingData.youtubeLink2 && (
-                <div
-                  className="videoThumb is2nd"
-                  onClick={this.openYoutubeModal(landingData.youtubeLink2)}
-                  title={landingData.youtubeLink2.title}
-                >
-                  <img src={landingData.youtubeLink2.thumbnailUrl} />
-                </div>
-              )}
-              {landingData.youtubeLink3 && (
-                <div
-                  className="videoThumb is3rd"
-                  onClick={this.openYoutubeModal(landingData.youtubeLink3)}
-                  title={landingData.youtubeLink3.title}
-                >
-                  <img src={landingData.youtubeLink3.thumbnailUrl} />
-                </div>
-              )}
-              <Modal
-                className="youtubeModal"
-                open={isYoutubeModalOpen}
-                onClose={this.closeYoutubeModal}
-                closeOnClickOutside
-                backdrop
-              >
-                <ModalTitle handleClose={this.closeYoutubeModal} />
-                <iframe
-                  key={youtubeUrl}
-                  width="520"
-                  height="380"
-                  src={`${youtubeUrl}?autoplay=1&mute=1`}
-                ></iframe>
-              </Modal>
-            </div>
-          )}
+                  <ModalTitle handleClose={this.closeYoutubeModal} />
+                  <iframe
+                    key={youtubeUrl}
+                    width="520"
+                    height="380"
+                    src={`${youtubeUrl}?autoplay=1&mute=1`}
+                  ></iframe>
+                </Modal>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
