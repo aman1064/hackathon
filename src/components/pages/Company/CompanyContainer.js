@@ -8,7 +8,8 @@ import { resetContestQuest } from "../Practice/components/Contest/saga/actionCre
 let CompanyContainer = props => <Company {...props} />;
 
 const mapSTP = ({ commonData }) => ({
-  userName: commonData.userDetails.name
+  userName: commonData.userDetails.name,
+  newNotifications: commonData.newNotifications,
 });
 
 const mapDTP = {
