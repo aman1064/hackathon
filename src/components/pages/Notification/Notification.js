@@ -7,7 +7,7 @@ import routeConfig from "../../../constants/routeConfig";
 import {Link} from "react-router-dom";
 import Username from "../../templates/Username";
 
-const Notification = ({getNotifications, userId, notificationHistory, history, userName}) => {
+const Notification = ({getNotifications, userId, notificationHistory, history, userName, newNotifications}) => {
     useEffect(() => {
         getNotifications(userId)
     }, [userId]);
@@ -26,6 +26,11 @@ const Notification = ({getNotifications, userId, notificationHistory, history, u
                         </div>
                         <div className="linkItem">
                             <Link to={routeConfig.exibitorFloor}>Exibitor Floor</Link>
+                        </div>
+                        <div className="linkItem">
+                            <Link to={routeConfig.noticeBoard} className={newNotifications ? "red-dot" : ""}>
+                                Notifications
+                            </Link>
                         </div>
                         <Username history={history} userName={userName} isLoggedIn />
                     </div>
@@ -57,7 +62,8 @@ const Notification = ({getNotifications, userId, notificationHistory, history, u
 const mSTP = ({commonData}) => ({
     userId: commonData.userBasicDetails.id,
     notificationHistory: commonData.notifications,
-    userName: commonData.userDetails.name
+    newNotifications: commonData.newNotifications,
+    userName: commonData.userDetails.name,
 });
 
 const mDTP = {

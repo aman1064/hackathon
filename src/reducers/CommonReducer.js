@@ -19,7 +19,8 @@ const initialState = {
     company: [],
     location: []
   },
-  notifications: {}
+  notifications: {},
+  newNotifications: 0
 };
 
 export default function(state = initialState, action) {
@@ -133,7 +134,8 @@ export default function(state = initialState, action) {
     case `${APP_EVENT.GET_USER_NOTIFICATIONS}_EFFECT`:
       return {
         ...state,
-        notifications: action.payload
+        notifications: action.payload,
+        newNotifications: action.newNotifications
       };
 
     default:
